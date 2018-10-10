@@ -16,9 +16,9 @@ import seedu.address.model.event.Event;
 /**
  * Creates an event in event list.
  */
-public class CreateCommand extends Command {
+public class AddEventCommand extends Command {
 
-    public static final String COMMAND_WORD = "create";
+    public static final String COMMAND_WORD = "addEvent";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Creates an event to the event list. "
             + "Parameters: "
@@ -42,7 +42,7 @@ public class CreateCommand extends Command {
     /**
      * Creates an AddCommand to add the specified {@code Person}
      */
-    public CreateCommand(Event event) {
+    public AddEventCommand(Event event) {
         requireNonNull(event);
         toAdd = event;
     }
@@ -63,7 +63,7 @@ public class CreateCommand extends Command {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof CreateCommand // instanceof handles nulls
-                && toAdd.equals(((CreateCommand) other).toAdd));
+                || (other instanceof AddEventCommand // instanceof handles nulls
+                && toAdd.equals(((AddEventCommand) other).toAdd));
     }
 }

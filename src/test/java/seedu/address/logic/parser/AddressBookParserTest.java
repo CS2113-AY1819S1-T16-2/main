@@ -16,7 +16,7 @@ import org.junit.rules.ExpectedException;
 
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.ClearCommand;
-import seedu.address.logic.commands.CreateCommand;
+import seedu.address.logic.commands.AddEventCommand;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.EditCommand.EditPersonDescriptor;
@@ -60,8 +60,8 @@ public class AddressBookParserTest {
     @Test
     public void parseCommand_create() throws Exception {
         Event event = new EventBuilder().build();
-        CreateCommand command = (CreateCommand) parser.parseCommand(EventsUtil.getCreateCommand(event));
-        // TODO: Debug assertEquals(new CreateCommand(event), command)
+        AddEventCommand command = (AddEventCommand) parser.parseCommand(EventsUtil.getAddEventCommand(event));
+        // TODO: Debug assertEquals(new AddEventCommand(event), command)
         assertEquals(command, command);
     }
 
