@@ -33,11 +33,11 @@ public class EditEventCommand extends Command {
             + "[" + PREFIX_NAME + "NAME] "
             + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] "
             + "[" + PREFIX_START_DATE + "START_DATE] "
-            + "[" + PREFIX_END_DATE + "END_DATE]"
+            + "[" + PREFIX_END_DATE + "END_DATE] "
             + "[" + PREFIX_LOCATION + "LOCATION]\n"
             + "Example: " + COMMAND_WORD + " 1 "
-            + PREFIX_NAME + "Strategy Meeting"
-            + PREFIX_LOCATION + "Meeting Room 2";
+            + PREFIX_NAME + "Strategy Meeting "
+            + PREFIX_LOCATION + "Meeting Room 2 ";
 
     public static final String MESSAGE_EDIT_EVENT_SUCCESS = "Edited Event: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
