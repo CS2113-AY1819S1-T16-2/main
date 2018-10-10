@@ -1,5 +1,17 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_END_DATE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_START_DATE;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_EVENTS;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
@@ -10,14 +22,6 @@ import seedu.address.model.event.Description;
 import seedu.address.model.event.Event;
 import seedu.address.model.event.EventName;
 import seedu.address.model.event.Location;
-
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
-
-import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.*;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_EVENTS;
 
 /**
  * Edits the details of an existing event in the address book.
@@ -58,6 +62,22 @@ public class EditEventCommand extends Command {
         this.editEventDescriptor = new EditEventDescriptor(editEventDescriptor);
     }
 
+    /**
+     * Creates and returns a {@code Event} with the details of {@code eventToEdit}
+     * edited with {@code editEventDescriptor}.
+     */
+    private static Event createEditedEvent(Event eventToEdit, EditEventDescriptor editEventDescriptor) {
+        assert eventToEdit != null;
+
+        EventName updatedName = editEventDescriptor.getEventName().orElse(eventToEdit.getEventName());
+        Description updatedDescription = editEventDescriptor.getDescription().orElse(eventToEdit.getDescription());
+        LocalDate updatedStartTime = editEventDescriptor.getStartTime().orElse(eventToEdit.getStartTime());
+        LocalDate updatedEndTime = editEventDescriptor.getEndTime().orElse(eventToEdit.getEndTime());
+        Location updatedLocation = editEventDescriptor.getLocation().orElse(eventToEdit.getLocation());
+
+        return new Event(updatedName, updatedDescription, updatedStartTime, updatedEndTime, updatedLocation);
+    }
+
     @Override
     public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
@@ -78,22 +98,6 @@ public class EditEventCommand extends Command {
         model.updateFilteredEventList(PREDICATE_SHOW_ALL_EVENTS);
         model.commitEventList();
         return new CommandResult(String.format(MESSAGE_EDIT_EVENT_SUCCESS, editedEvent));
-    }
-
-    /**
-     * Creates and returns a {@code Event} with the details of {@code eventToEdit}
-     * edited with {@code editEventDescriptor}.
-     */
-    private static Event createEditedEvent(Event eventToEdit, EditEventDescriptor editEventDescriptor) {
-        assert eventToEdit != null;
-
-        EventName updatedName = editEventDescriptor.getEventName().orElse(eventToEdit.getEventName());
-        Description updatedDescription = editEventDescriptor.getDescription().orElse(eventToEdit.getDescription());
-        LocalDate updatedStartTime = editEventDescriptor.getStartTime().orElse(eventToEdit.getStartTime());
-        LocalDate updatedEndTime = editEventDescriptor.getEndTime().orElse(eventToEdit.getEndTime());
-        Location updatedLocation = editEventDescriptor.getLocation().orElse(eventToEdit.getLocation());
-
-        return new Event(updatedName, updatedDescription, updatedStartTime, updatedEndTime, updatedLocation);
     }
 
     @Override
@@ -147,44 +151,44 @@ public class EditEventCommand extends Command {
             return CollectionUtil.isAnyNonNull(eventName, startTime, endTime, location);
         }
 
-        public void setEventName(EventName eventName) {
-            this.eventName = eventName;
-        }
-
         public Optional<EventName> getEventName() {
             return Optional.ofNullable(eventName);
         }
 
-        public void setDescription(Description description) {
-            this.description = description;
+        public void setEventName(EventName eventName) {
+            this.eventName = eventName;
         }
 
         public Optional<Description> getDescription() {
             return Optional.ofNullable(description);
         }
 
-        public void setStartTime(LocalDate startTime) {
-            this.startTime = startTime;
+        public void setDescription(Description description) {
+            this.description = description;
         }
 
         public Optional<LocalDate> getStartTime() {
             return Optional.ofNullable(startTime);
         }
 
-        public void setEndTime(LocalDate endTime) {
-            this.endTime = endTime;
+        public void setStartTime(LocalDate startTime) {
+            this.startTime = startTime;
         }
 
         public Optional<LocalDate> getEndTime() {
             return Optional.ofNullable(endTime);
         }
 
-        public void setLocation(Location location) {
-            this.location = location;
+        public void setEndTime(LocalDate endTime) {
+            this.endTime = endTime;
         }
 
         public Optional<Location> getLocation() {
             return Optional.ofNullable(location);
+        }
+
+        public void setLocation(Location location) {
+            this.location = location;
         }
 
         @Override
