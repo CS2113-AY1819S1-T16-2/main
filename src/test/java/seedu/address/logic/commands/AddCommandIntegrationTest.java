@@ -18,7 +18,8 @@ import seedu.address.testutil.EventBuilder;
 import seedu.address.testutil.PersonBuilder;
 
 /**
- * Contains integration tests (interaction with the Model) for {@code AddCommand}.
+ * Contains integration tests (interaction with the Model) for {@code AddEmployeeCommand}
+ * and {@code AddEventCommand}.
  */
 public class AddCommandIntegrationTest {
 
@@ -38,8 +39,8 @@ public class AddCommandIntegrationTest {
         expectedModel.addPerson(validPerson);
         expectedModel.commitAddressBook();
 
-        assertCommandSuccess(new AddCommand(validPerson), model, commandHistory,
-                String.format(AddCommand.MESSAGE_SUCCESS, validPerson), expectedModel);
+        assertCommandSuccess(new AddEmployeeCommand(validPerson), model, commandHistory,
+                String.format(AddEmployeeCommand.MESSAGE_SUCCESS, validPerson), expectedModel);
     }
 
     @Test
@@ -58,15 +59,15 @@ public class AddCommandIntegrationTest {
     @Test
     public void execute_duplicatePerson_throwsCommandException() {
         Person personInList = model.getAddressBook().getPersonList().get(0);
-        assertCommandFailure(new AddCommand(personInList), model, commandHistory,
-                AddCommand.MESSAGE_DUPLICATE_PERSON);
+        assertCommandFailure(new AddEmployeeCommand(personInList), model, commandHistory,
+                AddEmployeeCommand.MESSAGE_DUPLICATE_PERSON);
     }
 
     @Test
     public void execute_duplicateEvent_throwsCommandException() {
         Event eventInList = model.getEventList().getEventList().get(0);
-        assertCommandFailure(new CreateCommand(eventInList), model, commandHistory,
-                CreateCommand.MESSAGE_DUPLICATE_EVENT);
+        assertCommandFailure(new AddEventCommand(eventInList), model, commandHistory,
+                AddEventCommand.MESSAGE_DUPLICATE_EVENT);
     }
 
 }

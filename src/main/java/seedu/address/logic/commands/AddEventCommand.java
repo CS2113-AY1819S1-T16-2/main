@@ -40,7 +40,7 @@ public class AddEventCommand extends Command {
     private final Event toAdd;
 
     /**
-     * Creates an AddCommand to add the specified {@code Person}
+     * Creates an AddEventCommand to add the specified {@code Event}
      */
     public AddEventCommand(Event event) {
         requireNonNull(event);
