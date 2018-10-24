@@ -523,6 +523,42 @@ To allow sorting of these parameters, there are three types of comparators.</p>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="committing-event-list-after-sorting"><a class="link" href="#committing-event-list-after-sorting">Committing Event List after sorting</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Commits and saves the entire event list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and able to use undo to the previous state.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Does not commit the event list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will use less memory.</p>
+</li>
+<li>
+<p>Cons: Unable to use undo function to revert back to the previous view.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="invite-feature"><a class="link" href="#invite-feature">3.2. Invite feature</a></h3>
@@ -565,6 +601,9 @@ This command adds the invited <code>Person</code> 's name, which is unique, to a
 <div class="paragraph">
 <p>We can also have a summarized content of persons (their names) involved in an event. Obtaining the full information of the list of persons in a particular event is not required in the current version of project, but can still be implemented easily with the current <code>Attendee</code> structure. This can be done by filtering through the address book based on the person names present in <code>Attendees</code>. Thus, there is no need to store any event information in the <code>Person</code> object.</p>
 </div>
+<div class="paragraph">
+<p>Implementation of RemoveCommand is similar to InviteCommand, but removes persons from attendees of events instead.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="execution-of-command"><a class="link" href="#execution-of-command">3.2.2. Execution of Command</a></h4>
@@ -572,7 +611,7 @@ This command adds the invited <code>Person</code> 's name, which is unique, to a
 <p>Given below is an example usage scenario and how the invite mechanism works.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user executes <code>invite 1 to/1</code> to invite the 1st person in the address book to the 1st event in the event list. The command text is passed to an instance of the <code>LogicManager</code> class.</p>
+<p>Step 1. The user inputs <code>invite 1 to/1</code> to invite the 1st person in the address book to the 1st event in the event list. The command text is passed to an instance of the <code>LogicManager</code> class.</p>
 </div>
 <div class="paragraph">
 <p>Step 2. The <code>LogicManager</code> instance calls <code>AddressBookParser#parsecommand</code>, which parses the <code>invite</code> command phrase.</p>
@@ -717,82 +756,20 @@ One possible way to to implement this is to have the user</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="event-sorting-2"><a class="link" href="#event-sorting-2">3.3. Event Sorting</a></h3>
-<div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current Implementation</a></h4>
-<div class="paragraph">
-<p>The sort mechanism is facilitated by Comparator&lt;Event&gt;.
-When the sort method for FXObservableList is called, it will take a Comparator object to be used for sorting the list.
-The comparator is able to take in two Event class objects and compare the relative parameter values.
-The parameter can be <code>EventName</code>, <code>Date</code> &amp; <code>StartTime</code>.
-To allow sorting of these parameters, there are three types of comparators.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SortNewCommand1StateListDiagram.png" alt="SortNewCommand1StateListDiagram" width="650">
-</div>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the sort operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SortSequenceDiagram.png" alt="SortSequenceDiagram" width="650">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.3.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="committing-event-list-after-sorting"><a class="link" href="#committing-event-list-after-sorting">Committing Event List after sorting</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Commits and saves the entire event list.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement and able to use undo to the previous state.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Does not commit the event list.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory.</p>
-</li>
-<li>
-<p>Cons: Unable to use undo function to revert back to the previous view.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -823,7 +800,7 @@ To allow sorting of these parameters, there are three types of comparators.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2905,4 +2882,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-24 10:56:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-24 14:39:08 UTC</div></div></div></body></html>
