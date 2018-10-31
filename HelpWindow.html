@@ -16,9 +16,9 @@
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#login-the-app-code-login-code">3.2. Login the app: <code>login</code></a></li>
 <li><a href="#adding-an-employee-code-add-code">3.3. Adding an employee : <code>add</code></a></li>
-<li><a href="#listing-all-personnel-of-the-company-list">3.4. Listing all personnel of the company : 'list'</a></li>
-<li><a href="#editing-an-employee-edit">3.5. Editing an employee : 'edit'</a></li>
-<li><a href="#deleting-an-employee-code-delete-code">3.6. Deleting an employee : <code>delete</code></a></li>
+<li><a href="#editing-an-employee-edit">3.4. Editing an employee : 'edit'</a></li>
+<li><a href="#deleting-an-employee-code-delete-code">3.5. Deleting an employee : <code>delete</code></a></li>
+<li><a href="#listing-all-personnel-of-the-company-list">3.6. Listing all personnel of the company : 'list'</a></li>
 <li><a href="#adding-an-event-code-addevent-code">3.7. Adding an event: <code>addEvent</code></a></li>
 <li><a href="#modifying-an-event-code-editevent-code">3.8. Modifying an event: <code>editEvent</code></a></li>
 <li><a href="#deleting-an-event-code-deleteevent-code">3.9. Deleting an event : <code>deleteEvent</code></a></li>
@@ -45,9 +45,10 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>ProManage is a <strong>professional desktop application</strong> for companies that specialises in executing projects that undergoes a
-long and tedious planning phase, prior to their event. This is particularly useful for companies that have a distinct structure
+long and tedious planning phase. This is particularly useful for companies that have a distinct structure
 and chain of command. For each project, there is a project team, which is usually led by a <strong>Manager</strong>. The planning
-committee consists of various branches such as <strong>Admin, Logistics, Programmes, Finance, Publicity, Marketing and Safety</strong>.</p>
+committee consists of various branches such as <strong>Admin, Logistics, Programmes, Finance, Publicity, Marketing and Safety</strong>.
+ProManage targets these respective project teams, and allow <strong>Manager</strong> and <strong>Employees</strong> to manage their teams and events.</p>
 </div>
 <div class="paragraph">
 <p>Our application aims to ease the mode of task, event allocation and management by providing an all-in-one platform for
@@ -68,7 +69,7 @@ Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#82
 <p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/releases">here</a>.</p>
+<p>Download the latest <code>proManage.jar</code> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your ProManage App.</p>
@@ -85,11 +86,15 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all employees and employers in our contact list</p>
+<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds an employee named
+<code>John Doe</code> to the Employee List.</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named
-<code>John Doe</code> to the Address Book.</p>
+<p><strong><code>addEvent</code></strong><code>n/Annual General Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59 ` : creates
+a new event `Annual General Meeting</code></p>
+</li>
+<li>
+<p><strong>  <code>delete</code></strong><code>3</code> : deletes the 3rd person shown in the contact list list</p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd person shown in the contact list list</p>
@@ -183,9 +188,7 @@ Once login cannot logout till the app is closed.</p>
 </div>
 <div class="paragraph">
 <p>Adds an employee to ProManage<br>
-Format/Prompts:<br>
-Enter a command: <code>add</code><br>
-Enter employee details: <code>n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -200,37 +203,25 @@ An employee can have any number of tags (including 0)
 </table>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-<code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dep/ADMIN</code></p>
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dep/ADMIN</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-personnel-of-the-company-list"><a class="link" href="#listing-all-personnel-of-the-company-list">3.4. Listing all personnel of the company : 'list'</a></h3>
-<div class="paragraph">
-<p>Shows a list of all the personnel, all the events, or those people in the specific department in the project team<br>
-Format/Prompts:<br></p>
-</div>
-<div class="paragraph">
-<p>Enter command to list all people: <code>list all people</code><br>
-Enter a command to list all the events: <code>list all events</code><br>
-Enter a command to list all people and events: <code>list all</code><br>
-Enter a command to list people in the specific <code>DEPARTMENT</code>: <code>list dep DEPARTMENT</code></p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-<code>list dep Admin</code><br>
-<code>list dep Admin Finance</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-an-employee-edit"><a class="link" href="#editing-an-employee-edit">3.5. Editing an employee : 'edit'</a></h3>
+<h3 id="editing-an-employee-edit"><a class="link" href="#editing-an-employee-edit">3.4. Editing an employee : 'edit'</a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
 <div class="paragraph">
 <p>Edits the details of the employee:<br>
-Format/Prompts:<br>
-Enter a command: <code>edit PERSON_INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [dep/DEPARTMENT] [t/TAG]…​</code></p>
+Format:
+<code>edit PERSON_INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [dep/DEPARTMENT] [t/TAG]…​</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -259,16 +250,26 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
+Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-employee-code-delete-code"><a class="link" href="#deleting-an-employee-code-delete-code">3.6. Deleting an employee : <code>delete</code></a></h3>
+<h3 id="deleting-an-employee-code-delete-code"><a class="link" href="#deleting-an-employee-code-delete-code">3.5. Deleting an employee : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
 <div class="paragraph">
 <p>Delete an employee from ProManage:<br>
-Format/Prompts:<br>
-Enter a command: <code>delete PERSON_INDEX</code></p>
+Format: <code>delete PERSON_INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -287,6 +288,36 @@ Enter a command: <code>delete PERSON_INDEX</code></p>
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list all people</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd person in the employee list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-personnel-of-the-company-list"><a class="link" href="#listing-all-personnel-of-the-company-list">3.6. Listing all personnel of the company : 'list'</a></h3>
+<div class="paragraph">
+<p>Shows a list of all the personnel, all the events, or those people in the specific department in the project team<br>
+Format/Prompts:<br></p>
+</div>
+<div class="paragraph">
+<p>Enter command to list all people: <code>list all people</code><br>
+Enter a command to list all the events: <code>list all events</code><br>
+Enter a command to list all people and events: <code>list all</code><br>
+Enter a command to list people in the specific <code>DEPARTMENT</code>: <code>list dep DEPARTMENT</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>list dep Admin</code><br>
+<code>list dep Admin Finance</code></p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="adding-an-event-code-addevent-code"><a class="link" href="#adding-an-event-code-addevent-code">3.7. Adding an event: <code>addEvent</code></a></h3>
@@ -295,9 +326,7 @@ Enter a command: <code>delete PERSON_INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Adds an event to ProManage<br>
-Format/Prompts:<br>
-Enter a command: <code>addEvent</code><br>
-Enter event details: <code>n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_TIME</code> <br></p>
+Format: <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_TIME</code> <br></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -335,10 +364,15 @@ Enter event details: <code>n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIM
 </table>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-<code>addEvent</code><br>
-`n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59 `<br>
-Creates an event named Board Meeting.</p>
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addEvent n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59 `<br>
+Creates an event named Board Meeting.</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -347,10 +381,8 @@ Creates an event named Board Meeting.</p>
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
 <div class="paragraph">
-<p>Edits the details of the events:
-Format/Prompts:<br>
-Enter a command: <code>editEvent EVENT_INDEX</code><br>
-Enter event details: <code>[n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME [e/END_TIME]</code> <br></p>
+<p>Edits the details of the events:<br>
+Format: <code>editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME [e/END_TIME]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -380,9 +412,14 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:
-* Enter a command: <code>editEvent 10</code> <br>
-Enter event details: <code>n/Weekly Meeting d/Check on progress l/Conference Room 2 date/2018-09-10 s/12:00 e/14:00</code></p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editEvent 10 n/Weekly Meeting d/Check on progress l/Conference Room 2 date/2018-09-10 s/12:00 e/14:00</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -392,8 +429,8 @@ Enter event details: <code>n/Weekly Meeting d/Check on progress l/Conference Roo
 </div>
 <div class="paragraph">
 <p>Delete the specified event from ProManage.<br>
-Format/Prompts:<br>
-Enter a command: <code>deleteEvent EVENT_INDEX</code></p>
+Format:
+<code>deleteEvent EVENT_INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -440,16 +477,36 @@ Able to sort with event&#8217;s name, event&#8217;s date, event&#8217;s starttim
 </div>
 <div class="paragraph">
 <p>Format: sort <code>key word</code><br>
-Example: sort name</p>
+Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort name</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="invite-employees-code-invite-code"><a class="link" href="#invite-employees-code-invite-code">3.11. Invite employees: <code>invite</code></a></h3>
 <div class="paragraph">
-<p>Priority level: all
+<p>Priority level: <code>all</code><br>
 Invites an employee to an event.<br>
 Format: <code>invite PERSON_INDEX to/EVENT_INDEX</code><br>
-Example: invite 1 to/2</p>
+Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>invite 1 to/3</code><br>
+Invite 1st employee at employee list to 3rd event at event list</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/InviteCommandGuide.png" alt="InviteCommandGuide" width="600">
+</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -480,7 +537,15 @@ Example: invite 1 to/2</p>
 <div class="paragraph">
 <p>Removes an employee from the an event.<br>
 Format/Prompts: <code>remove PERSON_INDEX  from/EVENT_INDEX</code><br>
-Example: remove 1 from/2</p>
+Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>remove 1 from/2</code><br>
+Remove 1st employee at employee list from 2nd event at event list</p>
+</li>
+</ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -506,7 +571,7 @@ Example: remove 1 from/2</p>
 <div class="sect2">
 <h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">3.13. Selecting a person: <code>select</code></a></h3>
 <div class="paragraph">
-<p>Priority level: all</p>
+<p>Priority level: <code>all</code></p>
 </div>
 <div class="paragraph">
 <p>Selects an employee and view the specified employee&#8217;s events by date, year, month, month and year, or all his/her events.<br>
@@ -551,19 +616,24 @@ Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code>
 <div class="ulist">
 <ul>
 <li>
-<p><code>select 1</code></p>
+<p><code>select 1</code><br>
+view all events of employee at index 1</p>
 </li>
 <li>
-<p><code>select 1 date/2018-10-31</code></p>
+<p><code>select 1 date/2018-10-31</code><br>
+view all events of employee at index 1 at 2018-10-31</p>
 </li>
 <li>
-<p><code>select 1 m/08</code></p>
+<p><code>select 1 m/08</code><br>
+view all events of employee at index 1 in August</p>
 </li>
 <li>
-<p><code>select 1 y/2018</code></p>
+<p><code>select 1 y/2018</code><br>
+view all events of employee at index 1 in 2018</p>
 </li>
 <li>
-<p><code>select 1 y/2018 m/08</code></p>
+<p><code>select 1 y/2018 m/08</code><br>
+view all events of employee at index 1 in August 2018</p>
 </li>
 </ul>
 </div>
@@ -807,4 +877,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 13:41:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 17:19:05 UTC</div></div></div></body></html>
