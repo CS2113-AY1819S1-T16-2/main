@@ -13,9 +13,26 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#strong-project-manager-strong">3.1. <strong>Project Manager</strong></a></li>
-<li><a href="#strong-department-head-strong">3.2. <strong>Department Head</strong></a></li>
-<li><a href="#strong-employee-strong">3.3. <strong>Employee</strong></a></li>
+<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
+<li><a href="#login-the-app-login">3.2. Login the app: 'login'</a></li>
+<li><a href="#adding-an-employee-add">3.3. Adding an employee : 'add'</a></li>
+<li><a href="#listing-all-personnel-of-the-company-list">3.4. Listing all personnel of the company : 'list'</a></li>
+<li><a href="#editing-an-employee-edit">3.5. Editing an employee : 'edit'</a></li>
+<li><a href="#deleting-an-employee-delete">3.6. Deleting an employee : 'delete'</a></li>
+<li><a href="#adding-an-event-code-addevent-code">3.7. Adding an event: <code>addEvent</code></a></li>
+<li><a href="#sorting-all-events-code-sort-code">3.8. Sorting all events: <code>sort</code></a></li>
+<li><a href="#invite-employees-code-invite-code">3.9. Invite employees: <code>invite</code></a></li>
+<li><a href="#remove-employee-code-remove-code">3.10. Remove employee: <code>remove</code></a></li>
+<li><a href="#modifying-an-event-code-editevent-code">3.11. Modifying an event: <code>editEvent</code></a></li>
+<li><a href="#locating-events-by-name-code-find-code">3.12. Locating events by name: <code>find</code></a></li>
+<li><a href="#deleting-an-event-code-deleteevent-code">3.13. Deleting an event : <code>deleteEvent</code></a></li>
+<li><a href="#selecting-an-event-code-select-code">3.14. Selecting an event: <code>select</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.15. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.16. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.17. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.18. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.19. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.20. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -118,8 +135,6 @@ can be used as <code>add n/Some Meeting</code>.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="strong-project-manager-strong"><a class="link" href="#strong-project-manager-strong">3.1. <strong>Project Manager</strong></a></h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -128,21 +143,41 @@ can be used as <code>add n/Some Meeting</code>.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This section is meant for Project Managers'. Some of the following commands are exclusive to the Project Manager.
-Project Managers have full jurisdriction to view all information and events.</p>
+<p>Three types priorities: <code>default</code>,<code>manager</code>,<code>employee</code><br>
+If login command is not executed, the priority will be <code>default</code>.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="sect3">
-<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1.1. Viewing help : <code>help</code></a></h4>
+<div class="sect2">
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="adding-an-employee-add"><a class="link" href="#adding-an-employee-add">3.1.2. Adding an employee : 'add'</a></h4>
+<div class="sect2">
+<h3 id="login-the-app-login"><a class="link" href="#login-the-app-login">3.2. Login the app: 'login'</a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code></p>
+</div>
+<div class="paragraph">
+<p>Login to the app as one of the following identity: <code>manager</code> or <code>employee</code><br>
+Once login cannot logout till the app is closed.</p>
+</div>
+<div class="paragraph">
+<p>Format: login <code>identity</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+login manager</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-employee-add"><a class="link" href="#adding-an-employee-add">3.3. Adding an employee : 'add'</a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
 <div class="paragraph">
 <p>Adds an employee to ProManage<br>
 Format/Prompts:<br>
@@ -154,16 +189,22 @@ Enter employee details: <code>n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPART
 <code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dep/ADMIN</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="listing-all-personnel-of-the-company-list"><a class="link" href="#listing-all-personnel-of-the-company-list">3.1.3. Listing all personnel of the company : 'list'</a></h4>
+<div class="sect2">
+<h3 id="listing-all-personnel-of-the-company-list"><a class="link" href="#listing-all-personnel-of-the-company-list">3.4. Listing all personnel of the company : 'list'</a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
 <div class="paragraph">
 <p>Shows a list of personnel in the company<br>
 Format/Prompts:<br>
 Enter a command: <code>list</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="editing-an-employee-edit"><a class="link" href="#editing-an-employee-edit">3.1.4. Editing an employee : 'edit'</a></h4>
+<div class="sect2">
+<h3 id="editing-an-employee-edit"><a class="link" href="#editing-an-employee-edit">3.5. Editing an employee : 'edit'</a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
 <div class="paragraph">
 <p>Edits the details of the employee:<br>
 Format/Prompts:<br>
@@ -197,16 +238,22 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="deleting-an-employee-delete"><a class="link" href="#deleting-an-employee-delete">3.1.5. Deleting an employee : 'delete'</a></h4>
+<div class="sect2">
+<h3 id="deleting-an-employee-delete"><a class="link" href="#deleting-an-employee-delete">3.6. Deleting an employee : 'delete'</a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
 <div class="paragraph">
 <p>Delete an employee from ProManage:<br>
 Format/Prompts:<br>
 Enter a command: <code>delete LIST_INDEX</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="adding-an-event-code-addevent-code"><a class="link" href="#adding-an-event-code-addevent-code">3.1.6. Adding an event: <code>addEvent</code></a></h4>
+<div class="sect2">
+<h3 id="adding-an-event-code-addevent-code"><a class="link" href="#adding-an-event-code-addevent-code">3.7. Adding an event: <code>addEvent</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
 <div class="paragraph">
 <p>Adds an event to ProManage, via a series of prompts<br>
 Format/Prompts:<br>
@@ -220,15 +267,30 @@ Enter event details: <code>n/NAME d/DESCRIPTION l/LOCATION date/DATE(DDMMYY) s/S
 Creates an event named Board Meeting.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="listing-all-events-code-schedule-code"><a class="link" href="#listing-all-events-code-schedule-code">3.1.7. Listing all events: <code>schedule</code></a></h4>
+<div class="sect2">
+<h3 id="sorting-all-events-code-sort-code"><a class="link" href="#sorting-all-events-code-sort-code">3.8. Sorting all events: <code>sort</code></a></h3>
 <div class="paragraph">
-<p>Display the full list of events in the project.<br>
-Format: <code>schedule</code></p>
+<p>Priority level: all</p>
+</div>
+<div class="paragraph">
+<p>Sort the event listing based on the key words provided.<br>
+Able to sort with event&#8217;s name, event&#8217;s date, event&#8217;s starttime, event&#8217;s endtime. <br>
+<strong>Key word:</strong><br>
+1) event&#8217;s name: <code>name</code><br>
+2) event&#8217;s data: <code>date</code><br>
+3) event&#8217;s starttime: <code>starttime</code><br>
+4) event&#8217;s endtime: <code>endtime</code></p>
+</div>
+<div class="paragraph">
+<p>Format: sort <code>key word</code><br>
+Example: sort name</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="invite-employees-code-invite-code"><a class="link" href="#invite-employees-code-invite-code">3.1.8. Invite employees: <code>invite</code></a></h4>
+<div class="sect2">
+<h3 id="invite-employees-code-invite-code"><a class="link" href="#invite-employees-code-invite-code">3.9. Invite employees: <code>invite</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
 <div class="paragraph">
 <p>Add employees to the project event at the respective specified INDEX. The index refers to the index number shown in the
 displayed person and event list. The index must be a positive integer 1, 2, 3&#8230;&#8203;<br>
@@ -236,16 +298,22 @@ Format: <code>invite PERSON_INDEX to/EVENT_INDEX</code><br>
 Example: invite 1 to/2</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="remove-employee-code-remove-code"><a class="link" href="#remove-employee-code-remove-code">3.1.9. Remove employee: <code>remove</code></a></h4>
+<div class="sect2">
+<h3 id="remove-employee-code-remove-code"><a class="link" href="#remove-employee-code-remove-code">3.10. Remove employee: <code>remove</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
 <div class="paragraph">
 <p>Removes an employee from the project event.<br>
 Format/Prompts: <code>remove PERSON_INDEX  from/EVENT_INDEX</code><br>
 Example: remove 1 from/2</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="modifying-an-event-code-editevent-code"><a class="link" href="#modifying-an-event-code-editevent-code">3.1.10. Modifying an event: <code>editEvent</code></a></h4>
+<div class="sect2">
+<h3 id="modifying-an-event-code-editevent-code"><a class="link" href="#modifying-an-event-code-editevent-code">3.11. Modifying an event: <code>editEvent</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
 <div class="paragraph">
 <p>Modifying the event at the specified INDEX. The index refers to the index number shown in the displayed event list. The
 index must be a positive integer 1, 2, 3&#8230;&#8203;<br>
@@ -278,8 +346,11 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 Enter event details: n/Weekly Meeting d/Check on progress l/Conference Room 2 date/2018-09-10 s/12:00 e/14:00`</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="locating-events-by-name-code-find-code"><a class="link" href="#locating-events-by-name-code-find-code">3.1.11. Locating events by name: <code>find</code></a></h4>
+<div class="sect2">
+<h3 id="locating-events-by-name-code-find-code"><a class="link" href="#locating-events-by-name-code-find-code">3.12. Locating events by name: <code>find</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
 <div class="paragraph">
 <p>Finds the event whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -323,8 +394,11 @@ Returns any event having names <code>Budget</code> or <code>Review</code></p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="deleting-an-event-code-deleteevent-code"><a class="link" href="#deleting-an-event-code-deleteevent-code">3.1.12. Deleting an event : <code>deleteEvent</code></a></h4>
+<div class="sect2">
+<h3 id="deleting-an-event-code-deleteevent-code"><a class="link" href="#deleting-an-event-code-deleteevent-code">3.13. Deleting an event : <code>deleteEvent</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
 <div class="paragraph">
 <p>Delete the event at the specified INDEX.<br>
 Format/Prompts:<br>
@@ -365,8 +439,11 @@ Deletes the 1st event in the results of the <code>find</code> command.</p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="selecting-an-event-code-select-code"><a class="link" href="#selecting-an-event-code-select-code">3.1.13. Selecting an event: <code>select</code></a></h4>
+<div class="sect2">
+<h3 id="selecting-an-event-code-select-code"><a class="link" href="#selecting-an-event-code-select-code">3.14. Selecting an event: <code>select</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
 <div class="paragraph">
 <p>Selects the event identified by the index number used in the displayed event list.<br>
 Format/Prompts:<br>
@@ -407,8 +484,11 @@ Selects the 1st event in the results of the <code>find</code> command.</p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.1.14. Listing entered commands : <code>history</code></a></h4>
+<div class="sect2">
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.15. Listing entered commands : <code>history</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format/Prompts:<br>
@@ -429,8 +509,11 @@ Enter a command: <code>history</code></p>
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.1.15. Undoing previous command : <code>undo</code></a></h4>
+<div class="sect2">
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.16. Undoing previous command : <code>undo</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
 <div class="paragraph">
 <p>Restores the event schedule to the state before the previous <em>undoable</em> command was executed.<br>
 Format/Prompts:<br>
@@ -475,8 +558,11 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.1.16. Redoing the previously undone command : <code>redo</code></a></h4>
+<div class="sect2">
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.17. Redoing the previously undone command : <code>redo</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Format/Prompts:<br>
@@ -508,433 +594,33 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.1.17. Clearing all entries : <code>clear</code></a></h4>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.18. Clearing all entries : <code>clear</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
 <div class="paragraph">
 <p>Clears all entries from the event schedule.<br>
 Format/Prompts:<br>
 Enter a command: <code>clear</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.1.18. Exiting the program : <code>exit</code></a></h4>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.19. Exiting the program : <code>exit</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format/Prompts:<br>
 Enter a command: <code>exit</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.1.19. Saving the data</a></h4>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.20. Saving the data</a></h3>
 <div class="paragraph">
 <p>ProManage data saves data in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="strong-department-head-strong"><a class="link" href="#strong-department-head-strong">3.2. <strong>Department Head</strong></a></h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This section is meant for Department Heads'.
-Department Heads can only access his/her own department’s events.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="viewing-help-code-help-code-2"><a class="link" href="#viewing-help-code-help-code-2">3.2.1. Viewing help : <code>help</code></a></h4>
-<div class="paragraph">
-<p>Format: <code>help</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-an-event-code-addevent-code-2"><a class="link" href="#adding-an-event-code-addevent-code-2">3.2.2. Adding an event: <code>addEvent</code></a></h4>
-<div class="paragraph">
-<p>Adds an event to ProManage, via a series of prompts<br>
-Format/Prompts:<br>
-Enter a command: <code>addEvent</code><br>
-Enter event details: <code>n/NAME d/DESCRIPTION l/LOCATION date/DATE(DDMMYY) s/START TIME e/END TIME</code> <br></p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-<code>addEvent</code><br>
-`n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59 `<br>
-Creates an event named Board Meeting.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-all-events-code-schedule-code-2"><a class="link" href="#listing-all-events-code-schedule-code-2">3.2.3. Listing all events: <code>schedule</code></a></h4>
-<div class="paragraph">
-<p>Display the full list of events in the project.<br>
-Format: <code>schedule</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="invite-employees-code-invite-code-2"><a class="link" href="#invite-employees-code-invite-code-2">3.2.4. Invite employees: <code>invite</code></a></h4>
-<div class="paragraph">
-<p>Add employees to the project event at the respective specified INDEX. The index refers to the index number shown in the
-displayed person and event list. The index must be a positive integer 1, 2, 3&#8230;&#8203;<br>
-Format: <code>invite LIST_INDEX to/SCHEDULE_INDEX</code><br>
-Example: invite 1 to/2</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="remove-employee-code-remove-code-2"><a class="link" href="#remove-employee-code-remove-code-2">3.2.5. Remove employee: <code>remove</code></a></h4>
-<div class="paragraph">
-<p>Removes an employee from the project event.<br>
-Format/Prompts: <code>remove EVENT_INDEX  from/PERSON_INDEX</code><br>
-Example: remove 1 from/2</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="modifying-an-event-code-editevent-code-2"><a class="link" href="#modifying-an-event-code-editevent-code-2">3.2.6. Modifying an event: <code>editEvent</code></a></h4>
-<div class="paragraph">
-<p>Modifying the event at the specified INDEX. The index refers to the index number shown in the displayed event list. The
-index must be a positive integer 1, 2, 3&#8230;&#8203;<br>
-Input nil if it is not the field to be changed.<br>
-Format/Prompts:<br>
-Enter a command: <code>editEvent SCHEDULE_INDEX</code><br>
-Enter event details: <code>d/DESCRIPTION l/LOCATION date/DATE(DDMMYY) s/START TIME e/END TIME</code> <br></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the event at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed event list. The
-index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:
-* Enter a command: <code>editEvent 10</code> <br>
-Enter event details: n/Weekly Meeting d/Check on progress l/Conference Room 2 date/2018-09-10 s/12:00 e/14:00`</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="locating-events-by-name-code-find-code-2"><a class="link" href="#locating-events-by-name-code-find-code-2">3.2.7. Locating events by name: <code>find</code></a></h4>
-<div class="paragraph">
-<p>Finds the event whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>Budget Review</code> will match <code>budget review</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>Budget Review</code> will match <code>Review Budget</code></p>
-</li>
-<li>
-<p>Only the name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Budget</code> will not match <code>Budg</code></p>
-</li>
-<li>
-<p>Events matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Budget Review</code> will return <code>Budget</code>, <code>Review</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find Budget</code><br>
-Returns <code>Budget Review</code> and <code>Budget Press Release</code></p>
-</li>
-<li>
-<p><code>find Budget Review</code><br>
-Returns any event having names <code>Budget</code> or <code>Review</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-an-event-code-deleteevent-code-2"><a class="link" href="#deleting-an-event-code-deleteevent-code-2">3.2.8. Deleting an event : <code>deleteEvent</code></a></h4>
-<div class="paragraph">
-<p>Delete the event at the specified INDEX.<br>
-Format/Prompts:<br>
-Enter a command: <code>deleteEvent SCHEDULE_INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the event at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed event/task list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>schedule</code><br>
-<code>deleteEvent 2</code><br>
-Deletes the 2nd event in the address book.</p>
-</li>
-<li>
-<p><code>find Meeting</code><br>
-<code>deleteEvent 1</code><br>
-Deletes the 1st event in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="selecting-an-event-code-select-code-2"><a class="link" href="#selecting-an-event-code-select-code-2">3.2.9. Selecting an event: <code>select</code></a></h4>
-<div class="paragraph">
-<p>Selects the event identified by the index number used in the displayed event list.<br>
-Format/Prompts:<br>
-Enter a command: <code>select SCHEDULE_INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Selects the event and loads the full description of the event at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed event list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>schedule</code><br>
-<code>select 2</code><br>
-Selects the 2nd event in the event schedule.</p>
-</li>
-<li>
-<p><code>find Meeting</code><br>
-<code>select 1</code><br>
-Selects the 1st event in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-entered-commands-code-history-code-2"><a class="link" href="#listing-entered-commands-code-history-code-2">3.2.10. Listing entered commands : <code>history</code></a></h4>
-<div class="paragraph">
-<p>Lists all the commands that you have entered in reverse chronological order.<br>
-Format/Prompts:<br>
-Enter a command: <code>history</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="undoing-previous-command-code-undo-code-2"><a class="link" href="#undoing-previous-command-code-undo-code-2">3.2.11. Undoing previous command : <code>undo</code></a></h4>
-<div class="paragraph">
-<p>Restores the event schedule to the state before the previous <em>undoable</em> command was executed.<br>
-Format/Prompts:<br>
-Enter a command: <code>undo</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Undoable commands: those commands that modify the event schedule&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>cancel 1</code><br>
-<code>list</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>select 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>cancel 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="redoing-the-previously-undone-command-code-redo-code-2"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code-2">3.2.12. Redoing the previously undone command : <code>redo</code></a></h4>
-<div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format/Prompts:<br>
-Enter a command: <code>redo</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>cancel 1</code><br>
-<code>undo</code> (reverses the <code>cancel 1</code> command)<br>
-<code>redo</code> (reapplies the <code>cancel 1</code> command)<br></p>
-</li>
-<li>
-<p><code>cancel 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>cancel 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>cancel 1</code> command)<br>
-<code>redo</code> (reapplies the <code>cancel 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code-2"><a class="link" href="#clearing-all-entries-code-clear-code-2">3.2.13. Clearing all entries : <code>clear</code></a></h4>
-<div class="paragraph">
-<p>Clears all entries from the event schedule.<br>
-Format/Prompts:<br>
-Enter a command: <code>clear</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="exiting-the-program-code-exit-code-2"><a class="link" href="#exiting-the-program-code-exit-code-2">3.2.14. Exiting the program : <code>exit</code></a></h4>
-<div class="paragraph">
-<p>Exits the program.<br>
-Format/Prompts:<br>
-Enter a command: <code>exit</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="saving-the-data-2"><a class="link" href="#saving-the-data-2">3.2.15. Saving the data</a></h4>
-<div class="paragraph">
-<p>ProManage data saves data in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="strong-employee-strong"><a class="link" href="#strong-employee-strong">3.3. <strong>Employee</strong></a></h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This section is meant for Employees.
-Employees can only access his/her own departments' events.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="listing-all-events-code-schedule-code-3"><a class="link" href="#listing-all-events-code-schedule-code-3">3.3.1. Listing all events: <code>schedule</code></a></h4>
-<div class="paragraph">
-<p>Display the full list of events in the project.<br>
-Format/Prompts: <code>schedule</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="requests-for-a-statistics-of-a-week-or-get-a-suggested-common-meeting-time-by-analysing-multiple-users-calendars-code-query-code"><a class="link" href="#requests-for-a-statistics-of-a-week-or-get-a-suggested-common-meeting-time-by-analysing-multiple-users-calendars-code-query-code">3.3.2. Requests for a statistics of a week or get a suggested common meeting time by analysing multiple users’ calendars: <code>query</code></a></h4>
-<div class="paragraph">
-<p>Format/Prompts:<br>
-Enter a command: `query'
-Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>query stats</code><br>
-Displays the statistics of a week</p>
-</li>
-<li>
-<p><code>query meetings</code><br>
-Displays a suggested common meeting time</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="submit-a-completed-task-code-submit-code"><a class="link" href="#submit-a-completed-task-code-submit-code">3.3.3. Submit a completed task: <code>submit</code></a></h4>
-<div class="paragraph">
-<p>Example:
-* <code>submit 1</code><br></p>
-</div>
-<div class="paragraph">
-<p>Task with id 1 is submitted as complete.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1007,4 +693,4 @@ Displays a suggested common meeting time</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 06:49:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 07:42:31 UTC</div></div></div></body></html>
