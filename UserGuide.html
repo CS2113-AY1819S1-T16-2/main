@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ProManage - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team 16-2</code>      Since: <code>Sept 2018</code>      Licence: <code>MIT</code></p>
+<p>By: <code>T16-2</code>      Since: <code>Sept 2018</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -14,22 +14,22 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#login-the-app-login">3.2. Login the app: 'login'</a></li>
-<li><a href="#adding-an-employee-add">3.3. Adding an employee : 'add'</a></li>
-<li><a href="#listing-all-personnel-of-the-company-list">3.4. Listing all personnel of the company : 'list'</a></li>
-<li><a href="#editing-an-employee-edit">3.5. Editing an employee : 'edit'</a></li>
-<li><a href="#deleting-an-employee-delete">3.6. Deleting an employee : 'delete'</a></li>
+<li><a href="#login-the-app-code-login-code">3.2. Login the app: <code>login</code></a></li>
+<li><a href="#adding-an-employee-code-add-code">3.3. Adding an employee : <code>add</code></a></li>
+<li><a href="#editing-an-employee-code-edit-code">3.4. Editing an employee : <code>edit</code></a></li>
+<li><a href="#deleting-an-employee-code-delete-code">3.5. Deleting an employee : <code>delete</code></a></li>
+<li><a href="#listing-all-employee-of-the-company-code-list-code">3.6. Listing all employee of the company : <code>list</code></a></li>
 <li><a href="#adding-an-event-code-addevent-code">3.7. Adding an event: <code>addEvent</code></a></li>
-<li><a href="#sorting-all-events-code-sort-code">3.8. Sorting all events: <code>sort</code></a></li>
-<li><a href="#invite-employees-code-invite-code">3.9. Invite employees: <code>invite</code></a></li>
-<li><a href="#remove-employee-code-remove-code">3.10. Remove employee: <code>remove</code></a></li>
-<li><a href="#modifying-an-event-code-editevent-code">3.11. Modifying an event: <code>editEvent</code></a></li>
-<li><a href="#locating-events-by-name-code-find-code">3.12. Locating events by name: <code>find</code></a></li>
-<li><a href="#deleting-an-event-code-deleteevent-code">3.13. Deleting an event : <code>deleteEvent</code></a></li>
-<li><a href="#selecting-an-event-code-select-code">3.14. Selecting an event: <code>select</code></a></li>
+<li><a href="#modifying-an-event-code-editevent-code">3.8. Modifying an event: <code>editEvent</code></a></li>
+<li><a href="#deleting-an-event-code-deleteevent-code">3.9. Deleting an event : <code>deleteEvent</code></a></li>
+<li><a href="#sorting-all-events-code-sort-code">3.10. Sorting all events: <code>sort</code></a></li>
+<li><a href="#invite-employees-code-invite-code">3.11. Invite employees: <code>invite</code></a></li>
+<li><a href="#remove-employee-code-remove-code">3.12. Remove employee: <code>remove</code></a></li>
+<li><a href="#selecting-a-person-code-select-code">3.13. Selecting a person: <code>select</code></a></li>
+<li><a href="#locating-persons-by-name-code-find-code">3.14. Locating persons by name: <code>find</code></a></li>
 <li><a href="#listing-entered-commands-code-history-code">3.15. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.16. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.17. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code-to-be-done-in-v1-4">3.16. Undoing previous command : <code>undo</code> [to be done in v1.4]</a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code-to-be-done-in-v1-4">3.17. Redoing the previously undone command : <code>redo</code> [to be done in v1.4]</a></li>
 <li><a href="#clearing-all-entries-code-clear-code">3.18. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.19. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.20. Saving the data</a></li>
@@ -47,7 +47,7 @@
 <p>ProManage is a <strong>professional desktop application</strong> for companies that specialises in executing projects that undergoes a
 long and tedious planning phase, prior to their event. This is particularly useful for companies that have a distinct structure
 and chain of command. For each project, there is a project team, which is usually led by a <strong>Manager</strong>. The planning
-committee consists of various branches: <strong>Admin, Logistics, Programmes, Finance, Publicity, Marketing and Safety</strong>.</p>
+committee consists of various branches such as <strong>Admin, Logistics, Programmes, Finance, Publicity, Marketing and Safety</strong>.</p>
 </div>
 <div class="paragraph">
 <p>Our application aims to ease the mode of task, event allocation and management by providing an all-in-one platform for
@@ -146,6 +146,9 @@ can be used as <code>add n/Some Meeting</code>.</p>
 <p>Three types priorities: <code>default</code>,<code>manager</code>,<code>employee</code><br>
 If login command is not executed, the priority will be <code>default</code>.</p>
 </div>
+<div class="paragraph">
+<p>All clicking features are disabled. Clicking on persons and events will not trigger anything.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -157,7 +160,7 @@ If login command is not executed, the priority will be <code>default</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="login-the-app-login"><a class="link" href="#login-the-app-login">3.2. Login the app: 'login'</a></h3>
+<h3 id="login-the-app-code-login-code"><a class="link" href="#login-the-app-code-login-code">3.2. Login the app: <code>login</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code></p>
 </div>
@@ -170,11 +173,11 @@ Once login cannot logout till the app is closed.</p>
 </div>
 <div class="paragraph">
 <p>Example:<br>
-login manager</p>
+<code>login manager</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-employee-add"><a class="link" href="#adding-an-employee-add">3.3. Adding an employee : 'add'</a></h3>
+<h3 id="adding-an-employee-code-add-code"><a class="link" href="#adding-an-employee-code-add-code">3.3. Adding an employee : <code>add</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -184,38 +187,39 @@ Format/Prompts:<br>
 Enter a command: <code>add</code><br>
 Enter employee details: <code>n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+An employee can have any number of tags (including 0)
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Example:<br>
 <code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dep/ADMIN</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-personnel-of-the-company-list"><a class="link" href="#listing-all-personnel-of-the-company-list">3.4. Listing all personnel of the company : 'list'</a></h3>
-<div class="paragraph">
-<p>Priority level: all</p>
-</div>
-<div class="paragraph">
-<p>Shows a list of personnel in the company<br>
-Format/Prompts:<br>
-Enter a command: <code>list</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-an-employee-edit"><a class="link" href="#editing-an-employee-edit">3.5. Editing an employee : 'edit'</a></h3>
+<h3 id="editing-an-employee-code-edit-code"><a class="link" href="#editing-an-employee-code-edit-code">3.4. Editing an employee : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
 <div class="paragraph">
 <p>Edits the details of the employee:<br>
 Format/Prompts:<br>
-Enter a command: <code>edit LIST_INDEX p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT t/TAG…​</code></p>
+Enter a command: <code>edit PERSON_INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [dep/DEPARTMENT] [t/TAG]…​</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the event at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed event list. The
+<p>Edits the employee at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed event list. The
 index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p>
 </li>
 <li>
@@ -228,10 +232,10 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
+<p>When editing tags, the existing tags of the employee will be removed i.e adding of tags is not cumulative.</p>
 </li>
 <li>
-<p>You can remove all the person’s tags by typing t/ without specifying any tags after it.</p>
+<p>You can remove all the employee’s tags by typing t/ without specifying any tags after it.</p>
 </li>
 </ul>
 </div>
@@ -239,14 +243,42 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-employee-delete"><a class="link" href="#deleting-an-employee-delete">3.6. Deleting an employee : 'delete'</a></h3>
+<h3 id="deleting-an-employee-code-delete-code"><a class="link" href="#deleting-an-employee-code-delete-code">3.5. Deleting an employee : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
 <div class="paragraph">
 <p>Delete an employee from ProManage:<br>
 Format/Prompts:<br>
-Enter a command: <code>delete LIST_INDEX</code></p>
+Enter a command: <code>delete PERSON_INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the employee at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed person list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-employee-of-the-company-code-list-code"><a class="link" href="#listing-all-employee-of-the-company-code-list-code">3.6. Listing all employee of the company : <code>list</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
+<div class="paragraph">
+<p>Shows a list of employee in the company<br>
+Format/Prompts:<br>
+Enter a command: <code>list</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -255,10 +287,45 @@ Enter a command: <code>delete LIST_INDEX</code></p>
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
 <div class="paragraph">
-<p>Adds an event to ProManage, via a series of prompts<br>
+<p>Adds an event to ProManage<br>
 Format/Prompts:<br>
 Enter a command: <code>addEvent</code><br>
-Enter event details: <code>n/NAME d/DESCRIPTION l/LOCATION date/DATE(DDMMYY) s/START TIME e/END TIME</code> <br></p>
+Enter event details: <code>n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_TIME</code> <br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>DATE needs to be in YYYY-MM-DD format</p>
+</li>
+<li>
+<p>TIME needs to be in 00:00 format</p>
+</li>
+<li>
+<p>START_TIME must not be later than END_TIME</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Current checking of date format is loose. Certain invalid date may still be accepted, such as 2018-02-30.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Example:<br>
@@ -268,7 +335,90 @@ Creates an event named Board Meeting.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-all-events-code-sort-code"><a class="link" href="#sorting-all-events-code-sort-code">3.8. Sorting all events: <code>sort</code></a></h3>
+<h3 id="modifying-an-event-code-editevent-code"><a class="link" href="#modifying-an-event-code-editevent-code">3.8. Modifying an event: <code>editEvent</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
+<div class="paragraph">
+<p>Edits the details of the events:
+Format/Prompts:<br>
+Enter a command: <code>editEvent EVENT_INDEX</code><br>
+Enter event details: <code>[n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME [e/END_TIME]</code> <br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the event at the specified <code>EVENT_INDEX</code>. The index refers to the index number shown in the displayed event list. The
+index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>DATE needs to be in YYYY-MM-DD format</p>
+</li>
+<li>
+<p>TIME needs to be in 00:00 format</p>
+</li>
+<li>
+<p>START_TIME must not be later than END_TIME</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:
+* Enter a command: <code>editEvent 10</code> <br>
+Enter event details: <code>n/Weekly Meeting d/Check on progress l/Conference Room 2 date/2018-09-10 s/12:00 e/14:00</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-an-event-code-deleteevent-code"><a class="link" href="#deleting-an-event-code-deleteevent-code">3.9. Deleting an event : <code>deleteEvent</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
+<div class="paragraph">
+<p>Delete the specified event from ProManage.<br>
+Format/Prompts:<br>
+Enter a command: <code>deleteEvent EVENT_INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the event at the specified <code>EVENT_INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed event list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteEvent 2</code><br>
+Deletes the 2nd event in the address book.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-all-events-code-sort-code"><a class="link" href="#sorting-all-events-code-sort-code">3.10. Sorting all events: <code>sort</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -287,72 +437,139 @@ Example: sort name</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="invite-employees-code-invite-code"><a class="link" href="#invite-employees-code-invite-code">3.9. Invite employees: <code>invite</code></a></h3>
+<h3 id="invite-employees-code-invite-code"><a class="link" href="#invite-employees-code-invite-code">3.11. Invite employees: <code>invite</code></a></h3>
 <div class="paragraph">
-<p>Priority level: <code>default</code>,<code>manager</code></p>
+<p>Priority level: all</p>
 </div>
 <div class="paragraph">
-<p>Add employees to the project event at the respective specified INDEX. The index refers to the index number shown in the
-displayed person and event list. The index must be a positive integer 1, 2, 3&#8230;&#8203;<br>
+<p>Invites an employee to an event.<br>
 Format: <code>invite PERSON_INDEX to/EVENT_INDEX</code><br>
 Example: invite 1 to/2</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="remove-employee-code-remove-code"><a class="link" href="#remove-employee-code-remove-code">3.10. Remove employee: <code>remove</code></a></h3>
-<div class="paragraph">
-<p>Priority level: <code>default</code>,<code>manager</code></p>
-</div>
-<div class="paragraph">
-<p>Removes an employee from the project event.<br>
-Format/Prompts: <code>remove PERSON_INDEX  from/EVENT_INDEX</code><br>
-Example: remove 1 from/2</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="modifying-an-event-code-editevent-code"><a class="link" href="#modifying-an-event-code-editevent-code">3.11. Modifying an event: <code>editEvent</code></a></h3>
-<div class="paragraph">
-<p>Priority level: <code>default</code>,<code>manager</code></p>
-</div>
-<div class="paragraph">
-<p>Modifying the event at the specified INDEX. The index refers to the index number shown in the displayed event list. The
-index must be a positive integer 1, 2, 3&#8230;&#8203;<br>
-Input nil if it is not the field to be changed.<br>
-Format/Prompts:<br>
-Enter a command: <code>editEvent SCHEDULE_INDEX</code><br>
-Enter event details: <code>n/NAME d/DESCRIPTION l/LOCATION date/DATE(DDMMYY) s/START TIME e/END TIME</code> <br></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the event at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed event list. The
-index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p>
+<p>Invites the employee at the specified <code>PERSON_INDEX</code> <strong>TO</strong> the event at the specified <code>EVENT_INDEX</code>.</p>
 </li>
 <li>
-<p>At least one of the optional fields must be provided.</p>
+<p>The index refers to the index number shown in the displayed person list and event list respectively.</p>
 </li>
 <li>
-<p>Existing values will be updated to the input values.</p>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Employee should not have already been invited to the selected event.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remove-employee-code-remove-code"><a class="link" href="#remove-employee-code-remove-code">3.12. Remove employee: <code>remove</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
+<div class="paragraph">
+<p>Removes an employee from the an event.<br>
+Format/Prompts: <code>remove PERSON_INDEX  from/EVENT_INDEX</code><br>
+Example: remove 1 from/2</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Remove the employee at the specified <code>PERSON_INDEX</code> <strong>FROM</strong> the event at the specified <code>EVENT_INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed person list and event list respectively.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The employee to be remove must be previously invited to an event in order to be removed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">3.13. Selecting a person: <code>select</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
+<div class="paragraph">
+<p>Selects an employee and view the specified employee&#8217;s events by date, year, month, month and year, or all his/her events.<br>
+Format/Prompts:<br>
+Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Select the employee at the specified <code>PERSON_INDEX</code> and view all his/her events or events at certain time as indicated.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed person list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+<li>
+<p>DATE needs to be in YYYY-MM-DD format</p>
+</li>
+<li>
+<p>MONTH needs to be in 00 format (e.g. 01, 02, &#8230;&#8203; , 12)</p>
+</li>
+<li>
+<p>YEAR needs to be in 0000 format. (e.g. 2018)</p>
+</li>
+<li>
+<p>If DATE is indicated, MONTH and YEAR must NOT be indicated. Then, all events of the selected employee at the specific DATE will be displayed.</p>
+</li>
+<li>
+<p>MONTH and YEAR can be both used at the same time, resulting in events on the selected MONTH and YEAR to be displayed.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:
-* Enter a command: <code>editEvent 10</code> <br>
-Enter event details: n/Weekly Meeting d/Check on progress l/Conference Room 2 date/2018-09-10 s/12:00 e/14:00`</p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>select 1</code></p>
+</li>
+<li>
+<p><code>select 1 date/2018-10-31</code></p>
+</li>
+<li>
+<p><code>select 1 m/08</code></p>
+</li>
+<li>
+<p><code>select 1 y/2018</code></p>
+</li>
+<li>
+<p><code>select 1 y/2018 m/08</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-events-by-name-code-find-code"><a class="link" href="#locating-events-by-name-code-find-code">3.12. Locating events by name: <code>find</code></a></h3>
+<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.14. Locating persons by name: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
 <div class="paragraph">
-<p>Finds the event whose names contain any of the given keywords.<br>
+<p>Finds employees whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
@@ -360,128 +577,23 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>Budget Review</code> will match <code>budget review</code></p>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>Budget Review</code> will match <code>Review Budget</code></p>
+<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
 </li>
 <li>
 <p>Only the name is searched.</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>Budget</code> will not match <code>Budg</code></p>
+<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
 </li>
 <li>
-<p>Events matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Budget Review</code> will return <code>Budget</code>, <code>Review</code></p>
+<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find Budget</code><br>
-Returns <code>Budget Review</code> and <code>Budget Press Release</code></p>
-</li>
-<li>
-<p><code>find Budget Review</code><br>
-Returns any event having names <code>Budget</code> or <code>Review</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-an-event-code-deleteevent-code"><a class="link" href="#deleting-an-event-code-deleteevent-code">3.13. Deleting an event : <code>deleteEvent</code></a></h3>
-<div class="paragraph">
-<p>Priority level: <code>default</code>,<code>manager</code></p>
-</div>
-<div class="paragraph">
-<p>Delete the event at the specified INDEX.<br>
-Format/Prompts:<br>
-Enter a command: <code>deleteEvent SCHEDULE_INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the event at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed event/task list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>schedule</code><br>
-<code>deleteEvent 2</code><br>
-Deletes the 2nd event in the address book.</p>
-</li>
-<li>
-<p><code>find Meeting</code><br>
-<code>deleteEvent 1</code><br>
-Deletes the 1st event in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="selecting-an-event-code-select-code"><a class="link" href="#selecting-an-event-code-select-code">3.14. Selecting an event: <code>select</code></a></h3>
-<div class="paragraph">
-<p>Priority level: <code>default</code>,<code>manager</code></p>
-</div>
-<div class="paragraph">
-<p>Selects the event identified by the index number used in the displayed event list.<br>
-Format/Prompts:<br>
-Enter a command: <code>select SCHEDULE_INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Selects the event and loads the full description of the event at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed event list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>schedule</code><br>
-<code>select 2</code><br>
-Selects the 2nd event in the event schedule.</p>
-</li>
-<li>
-<p><code>find Meeting</code><br>
-<code>select 1</code><br>
-Selects the 1st event in the results of the <code>find</code> command.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
@@ -510,7 +622,7 @@ Enter a command: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.16. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code-to-be-done-in-v1-4"><a class="link" href="#undoing-previous-command-code-undo-code-to-be-done-in-v1-4">3.16. Undoing previous command : <code>undo</code> [to be done in v1.4]</a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -559,7 +671,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.17. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code-to-be-done-in-v1-4"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code-to-be-done-in-v1-4">3.17. Redoing the previously undone command : <code>redo</code> [to be done in v1.4]</a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -643,37 +755,34 @@ There is no need to save manually.</p>
 <p><strong>Add</strong>: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
 </li>
 <li>
+<p><strong>Edit</strong> : <code>edit PERSON_INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [dep/DEPARTMENT] [t/TAG]…​</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete PERSON_INDEX</code></p>
+</li>
+<li>
 <p><strong>List</strong> : <code>list</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit LIST_INDEX p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT t/TAG…​</code></p>
+<p><strong>addEvent</strong> : <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_TIME</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete LIST_INDEX</code></p>
-</li>
-<li>
-<p><strong>addEvent</strong> : `addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START TIME e/END TIME `<br></p>
-</li>
-<li>
-<p><strong>Schedule</strong> : <code>schedule</code></p>
-</li>
-<li>
-<p><strong>Invite</strong> : <code>invite PERSON_INDEX to/EVENT_INDEX</code></p>
-</li>
-<li>
-<p><strong>Remove</strong> : <code>remove PERSON_INDEX  n/EVENT_INDEX</code></p>
-</li>
-<li>
-<p><strong>editEvent</strong> : `n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START TIME e/END TIME `</p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p><strong>editEvent</strong> : <code>editEvent `[n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME [e/END_TIME]</code></p>
 </li>
 <li>
 <p><strong>deleteEvent</strong> : <code>deleteEvent SCHEDULE_INDEX</code></p>
 </li>
 <li>
+<p><strong>Invite</strong> : <code>invite PERSON_INDEX to/EVENT_INDEX</code></p>
+</li>
+<li>
+<p><strong>Remove</strong> : <code>remove PERSON_INDEX  from/EVENT_INDEX</code></p>
+</li>
+<li>
 <p><strong>Select</strong> : <code>select SCHEDULE_INDEX</code></p>
+</li>
+<li>
+<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </li>
 <li>
 <p><strong>History</strong> : <code>history</code></p>
@@ -693,4 +802,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 07:42:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 11:52:45 UTC</div></div></div></body></html>
