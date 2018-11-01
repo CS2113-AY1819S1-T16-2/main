@@ -702,7 +702,7 @@ Enter a command: <code>history</code></p>
 <p>Priority level: all</p>
 </div>
 <div class="paragraph">
-<p>Restores the event schedule or address book to the state before the previous <em>undoable</em> command was executed.<br>
+<p>Restores the event schedule or address book to the state before the previous <em>undoable</em> command was executed. Only commands that modify the entries in the event schedule or address book are able to be undone. The unfiltered event schedule and address book will be displayed after undoing the previous command.<br>
 Format/Prompts:<br>
 Enter a command: <code>undo</code></p>
 </div>
@@ -751,7 +751,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 <p>Priority level: all</p>
 </div>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
+<p>Reverses the most recent <code>undo</code> command. Only commands that modify the entries in the event schedule or address book will be reversed. The unfiltered event schedule and address book will be displayed after redoing the command.<br>
 Format/Prompts:<br>
 Enter a command: <code>redo</code></p>
 </div>
@@ -877,4 +877,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 08:35:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 11:07:44 UTC</div></div></div></body></html>
