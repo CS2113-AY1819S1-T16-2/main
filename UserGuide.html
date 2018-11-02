@@ -23,8 +23,8 @@
 <li><a href="#modifying-an-event-code-editevent-code">3.8. Modifying an event: <code>editEvent</code></a></li>
 <li><a href="#deleting-an-event-code-deleteevent-code">3.9. Deleting an event : <code>deleteEvent</code></a></li>
 <li><a href="#sorting-all-events-code-sort-code">3.10. Sorting all events: <code>sort</code></a></li>
-<li><a href="#invite-employees-code-invite-code">3.11. Invite employees: <code>invite</code></a></li>
-<li><a href="#remove-employee-code-remove-code">3.12. Remove employee: <code>remove</code></a></li>
+<li><a href="#inviting-employee-to-event-code-invite-code">3.11. Inviting employee to event: <code>invite</code></a></li>
+<li><a href="#removing-employee-from-event-code-remove-code">3.12. Removing employee from event: <code>remove</code></a></li>
 <li><a href="#selecting-a-person-code-select-code">3.13. Selecting a person: <code>select</code></a></li>
 <li><a href="#locating-persons-by-name-code-find-code">3.14. Locating persons by name: <code>find</code></a></li>
 <li><a href="#listing-entered-commands-code-history-code">3.15. Listing entered commands : <code>history</code></a></li>
@@ -491,7 +491,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="invite-employees-code-invite-code"><a class="link" href="#invite-employees-code-invite-code">3.11. Invite employees: <code>invite</code></a></h3>
+<h3 id="inviting-employee-to-event-code-invite-code"><a class="link" href="#inviting-employee-to-event-code-invite-code">3.11. Inviting employee to event: <code>invite</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>all</code><br>
 Invites an employee to an event.<br>
@@ -533,7 +533,7 @@ Invite 1st employee at employee list to 3rd event at event list</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="remove-employee-code-remove-code"><a class="link" href="#remove-employee-code-remove-code">3.12. Remove employee: <code>remove</code></a></h3>
+<h3 id="removing-employee-from-event-code-remove-code"><a class="link" href="#removing-employee-from-event-code-remove-code">3.12. Removing employee from event: <code>remove</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -845,10 +845,10 @@ There is no need to save manually.</p>
 <p><strong>addEvent</strong> : <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_TIME</code></p>
 </li>
 <li>
-<p><strong>editEvent</strong> : <code>editEvent `[n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME [e/END_TIME]</code></p>
+<p><strong>editEvent</strong> : <code>editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME [e/END_TIME]</code></p>
 </li>
 <li>
-<p><strong>deleteEvent</strong> : <code>deleteEvent SCHEDULE_INDEX</code></p>
+<p><strong>deleteEvent</strong> : <code>deleteEvent EVENT_INDEX</code></p>
 </li>
 <li>
 <p><strong>Invite</strong> : <code>invite PERSON_INDEX to/EVENT_INDEX</code></p>
@@ -857,7 +857,7 @@ There is no need to save manually.</p>
 <p><strong>Remove</strong> : <code>remove PERSON_INDEX  from/EVENT_INDEX</code></p>
 </li>
 <li>
-<p><strong>Select</strong> : <code>select SCHEDULE_INDEX</code></p>
+<p><strong>Select</strong> : <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code></p>
 </li>
 <li>
 <p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -880,4 +880,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 14:45:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 03:46:08 UTC</div></div></div></body></html>
