@@ -86,7 +86,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds an employee named
+<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dep/ADMIN</code> : adds an employee named
 <code>John Doe</code> to the Employee List.</p>
 </li>
 <li>
@@ -372,8 +372,8 @@ Format: <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/
 <div class="ulist">
 <ul>
 <li>
-<p><code>addEvent n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59 `<br>
-Creates an event named Board Meeting.</code></p>
+<p><code>addEvent n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59</code><br>
+Creates an event named Board Meeting.</p>
 </li>
 </ul>
 </div>
@@ -526,6 +526,9 @@ Invite 1st employee at employee list to 3rd event at event list</p>
 </li>
 <li>
 <p>Employee should not have already been invited to the selected event.</p>
+</li>
+<li>
+<p>Event invited to should not clash with the selected employee&#8217;s schedule.</p>
 </li>
 </ul>
 </div>
@@ -830,6 +833,12 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
+<p><strong>Help</strong>: <code>help</code></p>
+</li>
+<li>
+<p><strong>Login</strong>: <code>login IDENTITY</code></p>
+</li>
+<li>
 <p><strong>Add</strong>: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
 </li>
 <li>
@@ -840,6 +849,9 @@ There is no need to save manually.</p>
 </li>
 <li>
 <p><strong>List</strong> : <code>list all</code> OR <code>list all people</code> OR <code>list all events</code> or <code>list dep Admin</code></p>
+</li>
+<li>
+<p><strong>Sort</strong> : <code>sort KEYWORD</code></p>
 </li>
 <li>
 <p><strong>addEvent</strong> : <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_TIME</code></p>
@@ -880,4 +892,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 08:31:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-03 15:38:05 UTC</div></div></div></body></html>
