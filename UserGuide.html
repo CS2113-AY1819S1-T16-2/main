@@ -20,7 +20,7 @@
 <li><a href="#deleting-an-employee-code-delete-code">3.5. Deleting an employee : <code>delete</code></a></li>
 <li><a href="#listing-all-personnel-of-the-company-code-list-code">3.6. Listing all personnel of the company : <code>list</code></a></li>
 <li><a href="#adding-an-event-code-addevent-code">3.7. Adding an event: <code>addEvent</code></a></li>
-<li><a href="#modifying-an-event-code-editevent-code">3.8. Modifying an event: <code>editEvent</code></a></li>
+<li><a href="#editing-an-event-code-editevent-code">3.8. Editing an event: <code>editEvent</code></a></li>
 <li><a href="#deleting-an-event-code-deleteevent-code">3.9. Deleting an event : <code>deleteEvent</code></a></li>
 <li><a href="#sorting-all-events-code-sort-code">3.10. Sorting all events: <code>sort</code></a></li>
 <li><a href="#inviting-employee-to-event-code-invite-code">3.11. Inviting employee to event: <code>invite</code></a></li>
@@ -190,6 +190,27 @@ Once login cannot logout till the app is closed.</p>
 <p>Adds an employee to ProManage<br>
 Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Each employee must have a unique work email address.</p>
+</li>
+<li>
+<p>Email address is case insensitive.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -221,7 +242,7 @@ An employee can have any number of tags (including 0)
 <div class="paragraph">
 <p>Edits the details of the employee:<br>
 Format:
-<code>edit PERSON_INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [dep/DEPARTMENT] [t/TAG]…​</code></p>
+<code>edit PERSON_INDEX [n/NAME] [p/PHONE_NUMBER] [a/ADDRESS] [dep/DEPARTMENT] [t/TAG]…​</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -235,7 +256,7 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 <p>At least one of the optional fields must be provided.</p>
 </li>
 <li>
-<p>Name is not editable</p>
+<p><strong>Email is not editable</strong></p>
 </li>
 <li>
 <p>Existing values will be updated to the input values.</p>
@@ -256,8 +277,8 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+<p><code>edit 1 p/91234567 a/The Vision</code><br>
+Edits the phone number and address of the 1st person to be <code>91234567</code> and <code>The Vision</code> respectively.</p>
 </li>
 </ul>
 </div>
@@ -355,10 +376,13 @@ Format: <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/
 <div class="ulist">
 <ul>
 <li>
-<p>Leap years are not considered during date validation.</p>
+<p>One location can only hold one event at any time.</p>
 </li>
 <li>
 <p>Events created cannot span multiple days.</p>
+</li>
+<li>
+<p>Leap years are not considered during date validation.</p>
 </li>
 </ul>
 </div>
@@ -373,13 +397,13 @@ Format: <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/
 <ul>
 <li>
 <p><code>addEvent n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59</code><br>
-Creates an event named Board Meeting.</p>
+Creates an event named Board Meeting at Conference Room 1 at 2018-09-28, 12:00 to 23:59.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="modifying-an-event-code-editevent-code"><a class="link" href="#modifying-an-event-code-editevent-code">3.8. Modifying an event: <code>editEvent</code></a></h3>
+<h3 id="editing-an-event-code-editevent-code"><a class="link" href="#editing-an-event-code-editevent-code">3.8. Editing an event: <code>editEvent</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -409,6 +433,9 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 </li>
 <li>
 <p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>One location can only hold one event at any time.</p>
 </li>
 </ul>
 </div>
@@ -474,7 +501,7 @@ Deletes the 2nd event in the address book.</p>
 Able to sort with event&#8217;s name, event&#8217;s date, event&#8217;s starttime, event&#8217;s endtime. <br>
 <strong>Key word:</strong><br>
 1) event&#8217;s name: <code>name</code><br>
-2) event&#8217;s data: <code>date</code><br>
+2) event&#8217;s date: <code>date</code><br>
 3) event&#8217;s starttime: <code>starttime</code><br>
 4) event&#8217;s endtime: <code>endtime</code></p>
 </div>
@@ -650,7 +677,7 @@ view all events of employee at index 1 in August 2018</p>
 <p>Priority level: all</p>
 </div>
 <div class="paragraph">
-<p>Finds employees whose names contain any of the given keywords.<br>
+<p>Finds employees whose names contain any of the given keywords or whose email matches any of the given keywords (case-insensitive).<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
@@ -658,16 +685,19 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code>, <code>hans@example.com</code> will match <code>Hans@Example.Com</code></p>
 </li>
 <li>
 <p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
 </li>
 <li>
-<p>Only the name is searched.</p>
+<p>Only the name and email is searched.</p>
 </li>
 <li>
 <p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+</li>
+<li>
+<p>Only complete email will be matched e.g. <code>alice</code> will not match <code>alice@example.com</code></p>
 </li>
 <li>
 <p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
@@ -857,7 +887,7 @@ There is no need to save manually.</p>
 <p><strong>addEvent</strong> : <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_TIME</code></p>
 </li>
 <li>
-<p><strong>editEvent</strong> : <code>editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME [e/END_TIME]</code></p>
+<p><strong>editEvent</strong> : <code>editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME] [e/END_TIME]</code></p>
 </li>
 <li>
 <p><strong>deleteEvent</strong> : <code>deleteEvent EVENT_INDEX</code></p>
@@ -892,4 +922,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 11:48:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 11:54:19 UTC</div></div></div></body></html>
