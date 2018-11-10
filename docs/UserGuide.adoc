@@ -234,7 +234,6 @@ Examples:
 * `deleteEvent 2` +
 Deletes the 2nd event in the address book.
 
-
 === Sorting all events: `sort`
 Priority level: all
 
@@ -319,6 +318,30 @@ view all events of employee at index 1 in August
 view all events of employee at index 1 in 2018
 * `select 1 y/2018 m/08` +
 view all events of employee at index 1 in August 2018
+
+
+=== Selecting an event : `selectEvent`
+Priority level: all
+
+Selects the  specified event and displays all employees attending the event. +
+
+This will hide all other events in the displayed event schedule and filter it to show only the specified event. +
+
+Format:
+`selectEvent 1`
+
+****
+* Selects the event at the specified `EVENT_INDEX`.
+* The index refers to the index number shown in the displayed event list.
+* The index *must be a positive integer* 1, 2, 3, ...
+* Event list will be filtered to show only the specified event.
+****
+
+Examples:
+
+* `selectEvent 2` +
+Selects the 2nd event in the address book and shows its attendees.
+
 
 === Locating persons by name: `find`
 Priority level: all
@@ -453,6 +476,8 @@ There is no need to save manually.
 * *Remove* : `remove PERSON_INDEX  from/EVENT_INDEX`
 
 * *Select* : `select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]`
+
+* *selectEvent* : `selectEvent EVENT_INDEX`
 
 * *Find* : `find KEYWORD [MORE_KEYWORDS]`
 
