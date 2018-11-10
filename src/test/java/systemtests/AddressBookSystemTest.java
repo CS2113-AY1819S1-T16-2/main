@@ -3,6 +3,7 @@ package systemtests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ALL_EVENTS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ALL_PEOPLE;
 import static seedu.address.ui.StatusBarFooter.SYNC_STATUS_INITIAL;
 import static seedu.address.ui.StatusBarFooter.SYNC_STATUS_UPDATED;
@@ -20,6 +21,7 @@ import org.junit.BeforeClass;
 import org.junit.ClassRule;
 
 import guitests.guihandles.CommandBoxHandle;
+import guitests.guihandles.EventListPanelHandle;
 import guitests.guihandles.MainMenuHandle;
 import guitests.guihandles.MainWindowHandle;
 import guitests.guihandles.PersonListPanelHandle;
@@ -33,7 +35,9 @@ import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.SelectCommand;
 import seedu.address.model.AddressBook;
+import seedu.address.model.EventList;
 import seedu.address.model.Model;
+import seedu.address.testutil.TypicalEvents;
 import seedu.address.testutil.TypicalPersons;
 import seedu.address.ui.CommandBox;
 
@@ -61,7 +65,8 @@ public abstract class AddressBookSystemTest {
     @Before
     public void setUp() {
         setupHelper = new SystemTestSetupHelper();
-        testApp = setupHelper.setupApplication(this::getInitialData, getDataFileLocation());
+        testApp = setupHelper.setupApplication(this::getInitialData, this::getInitialEventListData,
+                getDataFileLocation(), getEventDataFileLocation());
         mainWindowHandle = setupHelper.setupMainWindowHandle();
         assertApplicationStartingStateIsCorrect();
     }
@@ -80,10 +85,21 @@ public abstract class AddressBookSystemTest {
     }
 
     /**
+     * Returns the data to be loaded into the file in {@link #getDataFileLocation()}.
+     */
+    protected EventList getInitialEventListData() {
+        return TypicalEvents.getTypicalEventList();
+    }
+
+    /**
      * Returns the directory of the data file.
      */
     protected Path getDataFileLocation() {
         return TestApp.SAVE_LOCATION_FOR_TESTING;
+    }
+
+    protected Path getEventDataFileLocation() {
+        return TestApp.SAVE_LOCATION_FOR_TESTING_EVENT;
     }
 
     public MainWindowHandle getMainWindowHandle() {
@@ -96,6 +112,10 @@ public abstract class AddressBookSystemTest {
 
     public PersonListPanelHandle getPersonListPanel() {
         return mainWindowHandle.getPersonListPanel();
+    }
+
+    public EventListPanelHandle getEventListPanel() {
+        return mainWindowHandle.getEventListPanel();
     }
 
     public MainMenuHandle getMainMenu() {
@@ -148,12 +168,21 @@ public abstract class AddressBookSystemTest {
     }
 
     /**
-     * Deletes all persons in the address book.
+     * Deletes all persons in ProManage.
      */
     protected void deleteAllPersons() {
         executeCommand(ClearCommand.COMMAND_WORD);
         assertEquals(0, getModel().getAddressBook().getPersonList().size());
     }
+
+    /**
+     * Displays all events in the event list.
+     */
+    protected void showAllEvents() {
+        executeCommand(ListCommand.COMMAND_WORD + " " + PREFIX_ALL_EVENTS);
+        assertEquals(getModel().getEventList().getEventList().size(), getModel().getFilteredEventList().size());
+    }
+
 
     /**
      * Asserts that the {@code CommandBox} displays {@code expectedCommandInput}, the {@code ResultDisplay} displays

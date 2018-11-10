@@ -1,6 +1,9 @@
 package seedu.address.testutil;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import seedu.address.model.EventList;
@@ -92,4 +95,64 @@ public class TypicalEvents {
 
         return eventList;
     }
+
+    public static EventList getAllTypicalEventList() {
+        EventList eventList = new EventList();
+        eventList.addEvent(EVENT_1);
+        eventList.addEvent(EVENT_2);
+        eventList.addEvent(EVENT_3);
+        eventList.addEvent(EVENT_4);
+        eventList.addEvent(EVENT_5);
+
+        return eventList;
+    }
+
+    public static EventList getSortByNameEventList() {
+        EventList eventList = new EventList();
+        eventList.addEvent(EVENT_1);
+        eventList.addEvent(EVENT_2);
+        eventList.addEvent(EVENT_3);
+        eventList.addEvent(EVENT_4);
+        eventList.addEvent(EVENT_5);
+
+        return eventList;
+    }
+
+    public static EventList getSortByDateEventList() {
+        EventList eventList = new EventList();
+        eventList.addEvent(EVENT_4);
+        eventList.addEvent(EVENT_3);
+        eventList.addEvent(EVENT_1);
+        eventList.addEvent(EVENT_2);
+        eventList.addEvent(EVENT_5);
+
+        return eventList;
+    }
+
+    public static EventList getSortByStartTimeEventList() {
+        EventList eventList = new EventList();
+        eventList.addEvent(EVENT_4);
+        eventList.addEvent(EVENT_5);
+        eventList.addEvent(EVENT_3);
+        eventList.addEvent(EVENT_1);
+        eventList.addEvent(EVENT_2);
+
+        return eventList;
+    }
+
+    public static EventList getSortByEndTimeEventList() {
+        EventList eventList = new EventList();
+        eventList.addEvent(EVENT_4);
+        eventList.addEvent(EVENT_5);
+        eventList.addEvent(EVENT_1);
+        eventList.addEvent(EVENT_2);
+        eventList.addEvent(EVENT_3);
+
+        return eventList;
+    }
+
+    public static List<Event> getTypicalEvents() {
+        return new ArrayList<>(Arrays.asList(EVENT_1, EVENT_2, EVENT_3, EVENT_4, EVENT_5));
+    }
+
 }
