@@ -15,25 +15,26 @@
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#login-the-app-code-login-code">3.2. Login the app: <code>login</code></a></li>
-<li><a href="#adding-an-employee-code-add-code">3.3. Adding an employee : <code>add</code></a></li>
-<li><a href="#editing-an-employee-code-edit-code">3.4. Editing an employee : <code>edit</code></a></li>
-<li><a href="#deleting-an-employee-code-delete-code">3.5. Deleting an employee : <code>delete</code></a></li>
-<li><a href="#listing-all-personnel-of-the-company-code-list-code">3.6. Listing all personnel of the company : <code>list</code></a></li>
-<li><a href="#adding-an-event-code-addevent-code">3.7. Adding an event: <code>addEvent</code></a></li>
-<li><a href="#editing-an-event-code-editevent-code">3.8. Editing an event: <code>editEvent</code></a></li>
-<li><a href="#deleting-an-event-code-deleteevent-code">3.9. Deleting an event : <code>deleteEvent</code></a></li>
-<li><a href="#sorting-all-events-code-sort-code">3.10. Sorting all events: <code>sort</code></a></li>
-<li><a href="#searching-for-the-events-using-keywords-code-findevent-code">3.11. Searching for the events using keywords: <code>findEvent</code></a></li>
-<li><a href="#inviting-employee-to-event-code-invite-code">3.12. Inviting employee to event: <code>invite</code></a></li>
-<li><a href="#removing-employee-from-event-code-remove-code">3.13. Removing employee from event: <code>remove</code></a></li>
-<li><a href="#selecting-a-person-code-select-code">3.14. Selecting a person: <code>select</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.15. Locating persons by name: <code>find</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.16. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.17. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.18. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.19. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.20. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.21. Saving the data</a></li>
+<li><a href="#logout-the-app-code-logout-code">3.3. Logout the app: <code>logout</code></a></li>
+<li><a href="#adding-an-employee-code-add-code">3.4. Adding an employee : <code>add</code></a></li>
+<li><a href="#editing-an-employee-code-edit-code">3.5. Editing an employee : <code>edit</code></a></li>
+<li><a href="#deleting-an-employee-code-delete-code">3.6. Deleting an employee : <code>delete</code></a></li>
+<li><a href="#listing-all-personnel-of-the-company-code-list-code">3.7. Listing all personnel of the company : <code>list</code></a></li>
+<li><a href="#adding-an-event-code-addevent-code">3.8. Adding an event: <code>addEvent</code></a></li>
+<li><a href="#editing-an-event-code-editevent-code">3.9. Editing an event: <code>editEvent</code></a></li>
+<li><a href="#deleting-an-event-code-deleteevent-code">3.10. Deleting an event : <code>deleteEvent</code></a></li>
+<li><a href="#sorting-all-events-code-sort-code">3.11. Sorting all events: <code>sort</code></a></li>
+<li><a href="#searching-for-the-events-using-keywords-code-findevent-code">3.12. Searching for the events using keywords: <code>findEvent</code></a></li>
+<li><a href="#inviting-employee-to-event-code-invite-code">3.13. Inviting employee to event: <code>invite</code></a></li>
+<li><a href="#removing-employee-from-event-code-remove-code">3.14. Removing employee from event: <code>remove</code></a></li>
+<li><a href="#selecting-a-person-code-select-code">3.15. Selecting a person: <code>select</code></a></li>
+<li><a href="#locating-persons-by-name-code-find-code">3.16. Locating persons by name: <code>find</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.17. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.18. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.19. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.20. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.21. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.22. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -171,9 +172,9 @@ If login command is not executed, the priority will be <code>default</code>.</p>
 <p>Priority level: <code>default</code></p>
 </div>
 <div class="paragraph">
-<p>Login to the app as one of the following identity: <code>manager</code> or <code>employee</code> or <code>as EMAIL</code><br>
+<p>Login to the app as one of the following identity: <code>manager</code> or <code>employee</code> or <code>as EMAIL</code>.<br>
 The user can only login into ProManage if his/her email has been registered in the ProManage system before.<br>
-Once login, the user is unable to logout till the app is closed.</p>
+Once login, you will not be able to login again unless the user chooses to logout</p>
 </div>
 <div class="paragraph">
 <p>Format: login <code>identity</code></p>
@@ -185,7 +186,24 @@ Once login, the user is unable to logout till the app is closed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-employee-code-add-code"><a class="link" href="#adding-an-employee-code-add-code">3.3. Adding an employee : <code>add</code></a></h3>
+<h3 id="logout-the-app-code-logout-code"><a class="link" href="#logout-the-app-code-logout-code">3.3. Logout the app: <code>logout</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>manager</code>, <code>employee</code></p>
+</div>
+<div class="paragraph">
+<p>Logout the app once you have login.<br>
+After successfully logging out, you will be able to login again.</p>
+</div>
+<div class="paragraph">
+<p>Format: logout</p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>logout</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-employee-code-add-code"><a class="link" href="#adding-an-employee-code-add-code">3.4. Adding an employee : <code>add</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -238,7 +256,7 @@ An employee can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-an-employee-code-edit-code"><a class="link" href="#editing-an-employee-code-edit-code">3.4. Editing an employee : <code>edit</code></a></h3>
+<h3 id="editing-an-employee-code-edit-code"><a class="link" href="#editing-an-employee-code-edit-code">3.5. Editing an employee : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -287,7 +305,7 @@ Edits the phone number and address of the 1st person to be <code>91234567</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-employee-code-delete-code"><a class="link" href="#deleting-an-employee-code-delete-code">3.5. Deleting an employee : <code>delete</code></a></h3>
+<h3 id="deleting-an-employee-code-delete-code"><a class="link" href="#deleting-an-employee-code-delete-code">3.6. Deleting an employee : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -326,7 +344,7 @@ Deletes the 2nd person in the employee list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-personnel-of-the-company-code-list-code"><a class="link" href="#listing-all-personnel-of-the-company-code-list-code">3.6. Listing all personnel of the company : <code>list</code></a></h3>
+<h3 id="listing-all-personnel-of-the-company-code-list-code"><a class="link" href="#listing-all-personnel-of-the-company-code-list-code">3.7. Listing all personnel of the company : <code>list</code></a></h3>
 <div class="paragraph">
 <p>Shows a list of all the personnel, all the events, or those people in the specific department in the project team<br>
 Format/Prompts:<br></p>
@@ -344,7 +362,7 @@ Enter a command to list people in the specific <code>DEPARTMENT</code>: <code>li
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-event-code-addevent-code"><a class="link" href="#adding-an-event-code-addevent-code">3.7. Adding an event: <code>addEvent</code></a></h3>
+<h3 id="adding-an-event-code-addevent-code"><a class="link" href="#adding-an-event-code-addevent-code">3.8. Adding an event: <code>addEvent</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -406,7 +424,7 @@ Creates an event named Board Meeting at Conference Room 1 at 2018-09-28, 12:00 t
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-an-event-code-editevent-code"><a class="link" href="#editing-an-event-code-editevent-code">3.8. Editing an event: <code>editEvent</code></a></h3>
+<h3 id="editing-an-event-code-editevent-code"><a class="link" href="#editing-an-event-code-editevent-code">3.9. Editing an event: <code>editEvent</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -459,7 +477,7 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-event-code-deleteevent-code"><a class="link" href="#deleting-an-event-code-deleteevent-code">3.9. Deleting an event : <code>deleteEvent</code></a></h3>
+<h3 id="deleting-an-event-code-deleteevent-code"><a class="link" href="#deleting-an-event-code-deleteevent-code">3.10. Deleting an event : <code>deleteEvent</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -498,7 +516,7 @@ Deletes the 2nd event in the address book.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-all-events-code-sort-code"><a class="link" href="#sorting-all-events-code-sort-code">3.10. Sorting all events: <code>sort</code></a></h3>
+<h3 id="sorting-all-events-code-sort-code"><a class="link" href="#sorting-all-events-code-sort-code">3.11. Sorting all events: <code>sort</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -524,7 +542,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="searching-for-the-events-using-keywords-code-findevent-code"><a class="link" href="#searching-for-the-events-using-keywords-code-findevent-code">3.11. Searching for the events using keywords: <code>findEvent</code></a></h3>
+<h3 id="searching-for-the-events-using-keywords-code-findevent-code"><a class="link" href="#searching-for-the-events-using-keywords-code-findevent-code">3.12. Searching for the events using keywords: <code>findEvent</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -554,7 +572,7 @@ Format: <code>findEvent KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="inviting-employee-to-event-code-invite-code"><a class="link" href="#inviting-employee-to-event-code-invite-code">3.12. Inviting employee to event: <code>invite</code></a></h3>
+<h3 id="inviting-employee-to-event-code-invite-code"><a class="link" href="#inviting-employee-to-event-code-invite-code">3.13. Inviting employee to event: <code>invite</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>all</code><br>
 Invites an employee to an event.<br>
@@ -599,7 +617,7 @@ Invite 1st employee on employee list to 3rd event on event list</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="removing-employee-from-event-code-remove-code"><a class="link" href="#removing-employee-from-event-code-remove-code">3.13. Removing employee from event: <code>remove</code></a></h3>
+<h3 id="removing-employee-from-event-code-remove-code"><a class="link" href="#removing-employee-from-event-code-remove-code">3.14. Removing employee from event: <code>remove</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>default</code>,<code>manager</code></p>
 </div>
@@ -638,7 +656,7 @@ Remove 1st employee at employee list from 2nd event at event list</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">3.14. Selecting a person: <code>select</code></a></h3>
+<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">3.15. Selecting a person: <code>select</code></a></h3>
 <div class="paragraph">
 <p>Priority level: <code>all</code></p>
 </div>
@@ -708,7 +726,7 @@ view all events of employee at index 1 in August 2018</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.15. Locating persons by name: <code>find</code></a></h3>
+<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.16. Locating persons by name: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -744,7 +762,7 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.16. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.17. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -769,7 +787,7 @@ Enter a command: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.17. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.18. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -818,7 +836,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.18. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.19. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -854,7 +872,7 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.19. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.20. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -865,7 +883,7 @@ Enter a command: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.20. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.21. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Priority level: all</p>
 </div>
@@ -876,7 +894,7 @@ Enter a command: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.21. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.22. Saving the data</a></h3>
 <div class="paragraph">
 <p>ProManage data saves data in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -961,4 +979,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 15:31:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 16:08:04 UTC</div></div></div></body></html>
