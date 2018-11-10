@@ -22,7 +22,7 @@ public class SelectEventCommand extends Command {
     public static final String COMMAND_WORD = "selectEvent";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Views all employees who are attending "
-            + "the event indicated by the index number used in the displayed event list. "
+            + "the selected event indicated by the index number used in the displayed event list. "
             + "Also filters the event schedule and only shows the selected event.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "Example: " + COMMAND_WORD + " 1";
