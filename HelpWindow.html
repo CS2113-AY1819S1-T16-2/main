@@ -381,7 +381,7 @@ Format: <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/
 <p>TIME needs to be in 00:00 format</p>
 </li>
 <li>
-<p>START_TIME must not be later than END_TIME</p>
+<p>START_TIME must be earlier than END_TIME</p>
 </li>
 </ul>
 </div>
@@ -430,7 +430,7 @@ Creates an event named Board Meeting at Conference Room 1 at 2018-09-28, 12:00 t
 </div>
 <div class="paragraph">
 <p>Edits the details of the events:<br>
-Format: <code>editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME [e/END_TIME]</code></p>
+Format: <code>editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME] [e/END_TIME]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -450,16 +450,19 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 <p>TIME needs to be in 00:00 format</p>
 </li>
 <li>
-<p>START_TIME must not be later than END_TIME</p>
+<p>START_TIME must be earlier than END_TIME</p>
 </li>
 <li>
 <p>Leap years are not considered during date validation.</p>
 </li>
 <li>
-<p>Existing values will be updated to the input values.</p>
+<p>One location can only hold one event at any time.</p>
 </li>
 <li>
-<p>One location can only hold one event at any time.</p>
+<p>Event cannot be editted if result clashes with any of the attendees' event schedule</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
 </li>
 </ul>
 </div>
@@ -548,7 +551,15 @@ Example:</p>
 </div>
 <div class="paragraph">
 <p>Finds events whose names contain any of the given keywords or whose description contains any of the given keywords (case-insensitive).<br>
-Format: <code>findEvent KEYWORD [MORE_KEYWORDS]</code></p>
+Format: <code>findEvent KEYWORD [MORE_KEYWORDS]</code>
+Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findEvent Meeting Weekly</code></p>
+</li>
+</ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -558,7 +569,7 @@ Format: <code>findEvent KEYWORD [MORE_KEYWORDS]</code></p>
 <p>The search is case insensitive</p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+<p>The order of the keywords does not matter. e.g. <code>Weekly Meeting</code> will match <code>Meeting Weekly</code></p>
 </li>
 <li>
 <p>Only full words will be matched</p>
@@ -609,7 +620,7 @@ Invite 1st employee on employee list to 3rd event on event list</p>
 <p>Employee should not have already been invited to the selected event.</p>
 </li>
 <li>
-<p>Event invited to should not clash with the selected employee&#8217;s schedule or other events at the same location and time.</p>
+<p>Event invited to <strong>should not clash</strong> with the selected employee&#8217;s schedule.</p>
 </li>
 </ul>
 </div>
@@ -979,4 +990,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 16:08:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 18:50:12 UTC</div></div></div></body></html>
