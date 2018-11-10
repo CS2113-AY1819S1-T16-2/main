@@ -29,7 +29,7 @@ import seedu.address.model.person.PersonAttendingEventPredicate;
 import seedu.address.testutil.EventBuilder;
 
 /**
- * Contains integration tests (interaction with the Model) and unit tests for ListCommand.
+ * Contains integration tests (interaction with the Model) and unit tests for SelectEventCommand.
  */
 public class SelectEventCommandTest {
 
@@ -101,9 +101,9 @@ public class SelectEventCommandTest {
     public void execute_eventContainsAttendee_success() {
         Event eventChosen = model.getFilteredEventList().get(INDEX_FIRST_EVENT.getZeroBased());
 
-        // EventSingleDisplayPredicate eventPredicate = new EventSingleDisplayPredicate(eventChosen);
+        EventSingleDisplayPredicate eventPredicate = new EventSingleDisplayPredicate(eventChosen);
         PersonAttendingEventPredicate personPredicate = new PersonAttendingEventPredicate(eventChosen);
-//        expectedModel.updateFilteredEventList(eventPredicate);
+        expectedModel.updateFilteredEventList(eventPredicate);
         expectedModel.updateFilteredPersonList(personPredicate);
 
         SelectEventCommand selectEventCommand = new SelectEventCommand(INDEX_FIRST_EVENT);
@@ -117,7 +117,9 @@ public class SelectEventCommandTest {
     public void execute_eventContainsMultipleAttendees_success() {
         Event eventChosen = model.getFilteredEventList().get(INDEX_SECOND_EVENT.getZeroBased());
 
+        EventSingleDisplayPredicate eventPredicate = new EventSingleDisplayPredicate(eventChosen);
         PersonAttendingEventPredicate personPredicate = new PersonAttendingEventPredicate(eventChosen);
+        expectedModel.updateFilteredEventList(eventPredicate);
         expectedModel.updateFilteredPersonList(personPredicate);
 
         SelectEventCommand selectEventCommand = new SelectEventCommand(INDEX_SECOND_EVENT);
