@@ -31,7 +31,7 @@ import seedu.address.testutil.EventBuilder;
 /**
  * Contains integration tests (interaction with the Model) and unit tests for ListCommand.
  */
-public class ViewAttendeesCommandTest {
+public class SelectEventCommandTest {
 
     private Model model;
     private Model expectedModel;
@@ -76,24 +76,24 @@ public class ViewAttendeesCommandTest {
     @Test
     public void equals() {
 
-        ViewAttendeesCommand viewAttendeesCommandOne = new ViewAttendeesCommand(INDEX_FIRST_EVENT);
-        ViewAttendeesCommand viewAttendeesCommandTwo = new ViewAttendeesCommand(INDEX_SECOND_EVENT);
+        SelectEventCommand selectEventCommandOne = new SelectEventCommand(INDEX_FIRST_EVENT);
+        SelectEventCommand selectEventCommandTwo = new SelectEventCommand(INDEX_SECOND_EVENT);
 
         // same object -> returns true
-        assertTrue(viewAttendeesCommandOne.equals(viewAttendeesCommandOne));
+        assertTrue(selectEventCommandOne.equals(selectEventCommandOne));
 
         // different types -> returns false
-        assertFalse(viewAttendeesCommandOne.equals(1));
+        assertFalse(selectEventCommandOne.equals(1));
 
         // null -> returns false
-        assertFalse(viewAttendeesCommandOne.equals(null));
+        assertFalse(selectEventCommandOne.equals(null));
 
         // different person -> returns false
-        assertFalse(viewAttendeesCommandOne.equals(viewAttendeesCommandTwo));
+        assertFalse(selectEventCommandOne.equals(selectEventCommandTwo));
 
         // same values -> returns true
-        ViewAttendeesCommand viewAttendeesCommandCopy = new ViewAttendeesCommand(INDEX_FIRST_EVENT);
-        assertEquals(viewAttendeesCommandOne, viewAttendeesCommandCopy);
+        SelectEventCommand selectEventCommandCopy = new SelectEventCommand(INDEX_FIRST_EVENT);
+        assertEquals(selectEventCommandOne, selectEventCommandCopy);
 
     }
 
@@ -101,32 +101,30 @@ public class ViewAttendeesCommandTest {
     public void execute_eventContainsAttendee_success() {
         Event eventChosen = model.getFilteredEventList().get(INDEX_FIRST_EVENT.getZeroBased());
 
-        EventSingleDisplayPredicate eventPredicate = new EventSingleDisplayPredicate(eventChosen);
+        // EventSingleDisplayPredicate eventPredicate = new EventSingleDisplayPredicate(eventChosen);
         PersonAttendingEventPredicate personPredicate = new PersonAttendingEventPredicate(eventChosen);
-        expectedModel.updateFilteredEventList(eventPredicate);
+//        expectedModel.updateFilteredEventList(eventPredicate);
         expectedModel.updateFilteredPersonList(personPredicate);
 
-        ViewAttendeesCommand viewAttendeesCommand = new ViewAttendeesCommand(INDEX_FIRST_EVENT);
+        SelectEventCommand selectEventCommand = new SelectEventCommand(INDEX_FIRST_EVENT);
 
-        String expectedMessage = String.format(ViewAttendeesCommand.MESSAGE_SUCCESS, INDEX_FIRST_EVENT.getOneBased());
+        String expectedMessage = String.format(SelectEventCommand.MESSAGE_SUCCESS, INDEX_FIRST_EVENT.getOneBased());
 
-        assertCommandSuccess(viewAttendeesCommand, model, commandHistory, expectedMessage, expectedModel);
+        assertCommandSuccess(selectEventCommand, model, commandHistory, expectedMessage, expectedModel);
     }
 
     @Test
     public void execute_eventContainsMultipleAttendees_success() {
         Event eventChosen = model.getFilteredEventList().get(INDEX_SECOND_EVENT.getZeroBased());
 
-        EventSingleDisplayPredicate eventPredicate = new EventSingleDisplayPredicate(eventChosen);
         PersonAttendingEventPredicate personPredicate = new PersonAttendingEventPredicate(eventChosen);
-        expectedModel.updateFilteredEventList(eventPredicate);
         expectedModel.updateFilteredPersonList(personPredicate);
 
-        ViewAttendeesCommand viewAttendeesCommand = new ViewAttendeesCommand(INDEX_SECOND_EVENT);
+        SelectEventCommand selectEventCommand = new SelectEventCommand(INDEX_SECOND_EVENT);
 
-        String expectedMessage = String.format(ViewAttendeesCommand.MESSAGE_SUCCESS, INDEX_SECOND_EVENT.getOneBased());
+        String expectedMessage = String.format(SelectEventCommand.MESSAGE_SUCCESS, INDEX_SECOND_EVENT.getOneBased());
 
-        assertCommandSuccess(viewAttendeesCommand, model, commandHistory, expectedMessage, expectedModel);
+        assertCommandSuccess(selectEventCommand, model, commandHistory, expectedMessage, expectedModel);
     }
 
     @Test
@@ -138,10 +136,10 @@ public class ViewAttendeesCommandTest {
         expectedModel.updateFilteredEventList(eventPredicate);
         expectedModel.updateFilteredPersonList(personPredicate);
 
-        ViewAttendeesCommand viewAttendeesCommand = new ViewAttendeesCommand(INDEX_THIRD_EVENT);
+        SelectEventCommand selectEventCommand = new SelectEventCommand(INDEX_THIRD_EVENT);
 
-        String expectedMessage = String.format(ViewAttendeesCommand.MESSAGE_SUCCESS, INDEX_THIRD_EVENT.getOneBased());
+        String expectedMessage = String.format(SelectEventCommand.MESSAGE_SUCCESS, INDEX_THIRD_EVENT.getOneBased());
 
-        assertCommandSuccess(viewAttendeesCommand, model, commandHistory, expectedMessage, expectedModel);
+        assertCommandSuccess(selectEventCommand, model, commandHistory, expectedMessage, expectedModel);
     }
 }

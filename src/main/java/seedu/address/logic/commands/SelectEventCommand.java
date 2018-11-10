@@ -14,15 +14,16 @@ import seedu.address.model.event.EventSingleDisplayPredicate;
 import seedu.address.model.person.PersonAttendingEventPredicate;
 
 /**
- * Lists all persons in the address book who are attending the specified event.
+ * Lists all persons in the address book who are attending the specified event. Filters displayed event list
+ * to only show the event that was selected.
  */
-public class ViewAttendeesCommand extends Command {
+public class SelectEventCommand extends Command {
 
-    public static final String COMMAND_WORD = "viewAttendees";
+    public static final String COMMAND_WORD = "selectEvent";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Views all employees who are attending "
             + "the event indicated by the index number used in the displayed event list. "
-            + "Also filters the event schedule and only shows the selected event\n"
+            + "Also filters the event schedule and only shows the selected event.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "Example: " + COMMAND_WORD + " 1";
 
@@ -32,7 +33,7 @@ public class ViewAttendeesCommand extends Command {
     private EventSingleDisplayPredicate eventPredicate;
     private PersonAttendingEventPredicate personPredicate;
 
-    public ViewAttendeesCommand(Index indexEvent) {
+    public SelectEventCommand(Index indexEvent) {
         requireNonNull(indexEvent);
 
         this.indexEvent = indexEvent;
@@ -56,6 +57,7 @@ public class ViewAttendeesCommand extends Command {
         eventPredicate = new EventSingleDisplayPredicate(eventToShow);
         personPredicate = new PersonAttendingEventPredicate(eventToShow);
 
+        // EventsCenter.getInstance().post(new EventListChangedEvent());
         model.updateFilteredEventList(eventPredicate);
         model.updateFilteredPersonList(personPredicate);
         return new CommandResult(String.format(MESSAGE_SUCCESS, indexEvent.getOneBased()));
@@ -67,13 +69,13 @@ public class ViewAttendeesCommand extends Command {
             return true;
         }
         // instanceof handles nulls
-        if (!(other instanceof ViewAttendeesCommand)) {
+        if (!(other instanceof SelectEventCommand)) {
             return false;
         }
         if (eventPredicate == null || personPredicate == null) {
-            return indexEvent.equals(((ViewAttendeesCommand) other).indexEvent);
+            return indexEvent.equals(((SelectEventCommand) other).indexEvent);
         }
-        return (eventPredicate.equals(((ViewAttendeesCommand) other).eventPredicate)
-                && personPredicate.equals(((ViewAttendeesCommand) other).personPredicate));
+        return (eventPredicate.equals(((SelectEventCommand) other).eventPredicate)
+                && personPredicate.equals(((SelectEventCommand) other).personPredicate));
     }
 }
