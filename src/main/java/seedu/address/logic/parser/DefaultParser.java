@@ -20,20 +20,25 @@ import seedu.address.logic.commands.HistoryCommand;
 import seedu.address.logic.commands.InviteCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.LoginCommand;
+import seedu.address.logic.commands.LogoutCommand;
 import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.RemoveCommand;
 import seedu.address.logic.commands.SelectCommand;
 import seedu.address.logic.commands.SelectEventCommand;
+import seedu.address.logic.commands.ShowMineCommand;
 import seedu.address.logic.commands.SortCommand;
 import seedu.address.logic.commands.UndoCommand;
+import seedu.address.logic.parser.exceptions.InvalidLogoutException;
 import seedu.address.logic.parser.exceptions.ParseException;
 
+//@@author: IcedCoffeeBoy
 /**
  * Parses user input.
  */
 public class DefaultParser extends CommandsParser {
 
     public static final String IDENTITY = "Default";
+
 
     /**
      * Parses user input into command for execution.
@@ -109,8 +114,14 @@ public class DefaultParser extends CommandsParser {
         case RedoCommand.COMMAND_WORD:
             return new RedoCommand();
 
-        case LoginCommand.COMMAND_WORD :
+        case LoginCommand.COMMAND_WORD:
             return new LoginCommandParser().parse(arguments);
+
+        case LogoutCommand.COMMAND_WORD:
+            throw new InvalidLogoutException(IDENTITY);
+
+        case ShowMineCommand.COMMAND_WORD:
+            return new ShowMineCommandParser().parse(null);
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
