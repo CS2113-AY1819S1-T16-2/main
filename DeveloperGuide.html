@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><meta name="author" content="By: `T16-2`      Since: `September 2018`      Licence: `NUS`"><title>ProManage - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ProManage - Developer Guide</h1><div class="details"><span class="author" id="author">By: `T16-2`      Since: `September 2018`      Licence: `NUS`</span><br></div></div><div id="content"><div class="sect1">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ProManage</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-T16-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ProManage - Developer Guide</h1><div class="details"><span class="author" id="author">By: `T16-2`      Since: `September 2018`      Licence: `NUS`</span><br></div></div><div id="content"><div class="sect1">
 <h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -357,7 +357,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S1-T16-2/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>EventListPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2113-AY1819S1-T16-2/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2113-AY1819S1-T16-2/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
@@ -394,7 +394,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>ProMangeParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
@@ -437,10 +437,10 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores the Address Book and Event List data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> and <code>ObservableList&lt;Event&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -482,7 +482,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in xml format and read it back.</p>
+<p>can save the Address Book and Event List data in xml format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -567,14 +567,13 @@ To allow sorting of these parameters, there are three types of comparators.</p>
 <div class="paragraph">
 <p>The <code>invite</code> command allows users to add attendees to an existing event, which is represented by an <code>Event</code> object.
 The command currently only allows users to add a single person to an event, based on the indices on the UI.
-This command adds the invited <code>Person</code> 's email, which is unique, to a chosen <code>Event</code>, so that the attendees of a particular event is recorded.
-This command only executes successfully if the event does not not clash with the person&#8217;s schedule.</p>
+This command adds the invited <code>Person&#8217;s email, which is unique, to a chosen `Event</code>, so that the attendees of a particular event is recorded.</p>
 </div>
 <div class="paragraph">
 <p>The adding of attendees is facilitated by the class: <code>Attendees</code>, a list of emails of type <code>String</code>.</p>
 </div>
 <div class="paragraph">
-<p>The following is a more detailed description of the class:</p>
+<p>The following is a more detailed description of the <code>Attendee</code> class:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -586,7 +585,7 @@ This command only executes successfully if the event does not not clash with the
 <p>Each <code>Event</code> object has an <code>Attendees</code>, which is a list of the emails of the different <code>Person</code> attending the event.</p>
 </li>
 <li>
-<p>This class is a wrapper class around the internal representation of a list of attendees that exposes only a few functions of a <code>Set</code> of <code>String</code>.</p>
+<p>This class is a wrapper class around the internal representation of a <code>Set</code> of emails.</p>
 </li>
 <li>
 <p>Only the email of the <code>Person</code> is recorded in an <code>Event</code>, as the email should be unique and uneditable.</p>
@@ -600,7 +599,28 @@ This command only executes successfully if the event does not not clash with the
 <p>Storing only the <strong>email</strong> of <code>Person</code> in the <code>Attendees</code> object of <code>Event</code> saves memory storage and facilitates the <code>select</code> feature. As we select a person, we can simply iterate through the event list and check whether the person&#8217;s email is in the attendees list.</p>
 </div>
 <div class="paragraph">
+<p>This command only executes successfully if the event does not not clash with the person&#8217;s schedule.</p>
+</div>
+<div class="paragraph">
 <p>Given below is an illustration to describe the detection of whether two events clash, which is facilitated by the method <code>hasClash</code> in <code>Event</code>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EventClashDiagram.png" alt="EventClashDiagram" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>Event#hasClash</code> is widely used in other features such as <code>addEvent</code> and <code>editEvent</code> to ensure that</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Different events are not held at the same location and time.</p>
+</li>
+<li>
+<p>An employee do not have two events to attend at the same time.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Implementation of <code>RemoveCommand</code> is similar to <code>InviteCommand</code>, but removes persons from attendees of events instead.</p>
@@ -609,44 +629,46 @@ This command only executes successfully if the event does not not clash with the
 <div class="sect3">
 <h4 id="execution-of-command"><a class="link" href="#execution-of-command">3.2.2. Execution of Command</a></h4>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the invite mechanism works.</p>
+<p>Given below is an example usage scenario and how the invite mechanism works.
+For example, the user inputs <code>invite 1 to/1</code> to invite the 1st person in the address book to the 1st event in the event list.</p>
 </div>
-<div class="paragraph">
-<p>Step 1. The user inputs <code>invite 1 to/1</code> to invite the 1st person in the address book to the 1st event in the event list. The command text is passed to an instance of the <code>LogicManager</code> class.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. The <code>LogicManager</code> instance calls <code>AddressBookParser#parsecommand</code>, which parses the <code>invite</code> command phrase.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. <code>InviteCommandParser#parse</code> parses the person and event index. An instance of the <code>InviteCommand</code> encapsulating the two indices information is then returned.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. <code>Logic Manager</code> then executes this <code>InviteCommand</code> by calling <code>InviteCommand#execute</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. The filtered person list and event list is first obtained by calling <code>PersonModel#getFilteredPersonList</code> and <code>EventModel#getFilteredEventList</code>. Based on the indices, the <code>Person</code> and <code>Event</code> is selected.</p>
-</div>
-<div class="paragraph">
-<p>Step 6. Next, the <code>Person</code> object&#8217;s email is obtained by calling <code>Person#getEmail</code></p>
-</div>
-<div class="paragraph">
-<p>Step 7. Two steps of verification is required before the person is invited to the event. First, <code>Event#hasAttendee</code> checks whether the person is already invited to the event. Secondly, <code>Model#hasClash</code> checks whether the event clashes with the person&#8217;s schedule.</p>
-</div>
-<div class="paragraph">
-<p>Step 8. After verification, the person&#8217;s email is added to the obtained <code>Attendees</code> object. The new <code>Attendees</code> object is then added to a new copy of the <code>Event</code> object.</p>
-</div>
-<div class="paragraph">
-<p>Step 9. The new <code>Event</code> object is updated to the model by calling <code>Model#updateEvent</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 10. The <code>InviteCommand#execute</code> finally returns a <code>CommandResult</code> with a success message.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The command text is passed to an instance of the <code>LogicManager</code> class.</p>
+</li>
+<li>
+<p>The <code>LogicManager</code> instance calls <code>ProManageParser#parsecommand</code>, which parses the <code>invite</code> command phrase.</p>
+</li>
+<li>
+<p><code>InviteCommandParser#parse</code> parses the person and event index. An instance of the <code>InviteCommand</code> encapsulating the two indices information is then returned after parsing.</p>
+</li>
+<li>
+<p><code>Logic Manager</code> then executes this <code>InviteCommand</code> by calling <code>InviteCommand#execute</code>.</p>
+</li>
+<li>
+<p>The filtered person list and event list is first obtained by calling <code>PersonModel#getFilteredPersonList</code> and <code>EventModel#getFilteredEventList</code>. Based on the indices, the <code>Person</code> and <code>Event</code> is selected. Then, the <code>Person</code> object&#8217;s email is obtained by calling <code>Person#getEmail</code></p>
+</li>
+<li>
+<p>Two steps of verification is required before the person is invited to the event. First, <code>Event#hasAttendee</code> checks whether the person is already invited to the event. Secondly, <code>Model#hasClash</code> checks whether the event clashes with the person&#8217;s schedule.</p>
+</li>
+<li>
+<p>After successful verification, the person&#8217;s email is added to the obtained <code>Attendees</code> object. The new <code>Attendees</code> object is then added to a new copy of the <code>Event</code> object.</p>
+</li>
+<li>
+<p>The new <code>Event</code> object is updated to the model by calling <code>Model#updateEvent</code>.</p>
+</li>
+<li>
+<p>The <code>InviteCommand#execute</code> finally returns a <code>CommandResult</code> with a success message.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>The sequence diagram below illustrates the execution of the <code>invite</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/InviteSequenceDiagram.png" alt="InviteSequenceDiagram" width="800">
+<img src="images/InviteSequenceDiagram.png" alt="InviteSequenceDiagram" width="700">
 </div>
 </div>
 </div>
@@ -690,7 +712,7 @@ This command only executes successfully if the event does not not clash with the
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use <code>HashSet</code> to store persons names.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use <code>HashSet</code> to store persons emails.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -703,11 +725,11 @@ This command only executes successfully if the event does not not clash with the
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use <code>ArrayList</code> to store persons names.</p>
+<p><strong>Alternative 2:</strong> Use <code>ArrayList</code> to store persons emails.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Names are stored in order of addition.</p>
+<p>Pros: Emails are stored in order of addition.</p>
 </li>
 <li>
 <p>Cons: Inefficient when handling data.</p>
@@ -733,10 +755,7 @@ One possible way to to implement this is to have the user</p>
 <p>input a certain range (2-5) or</p>
 </li>
 <li>
-<p>multiple indices (1, 3, 6) or</p>
-</li>
-<li>
-<p>a mixture of both (1-3, 4, 6-10)</p>
+<p>multiple indices (1,3,6,7,8) or</p>
 </li>
 <li>
 <p>input the department name</p>
@@ -747,7 +766,7 @@ One possible way to to implement this is to have the user</p>
 <p>The same concept can also be applied to events, being able to invite one person to multiple events with one single command.</p>
 </div>
 <div class="paragraph">
-<p>Implementation of this additional feature would require changes to both <code>InviteCommandParser</code> and <code>InviteCommand#execute</code>. Additionally, handling of clashing events needs to be considered as it now involves more than one participants.</p>
+<p>Implementation of this additional feature would require changes to both <code>InviteCommandParser</code> and <code>InviteCommand#execute</code>. Additionally, handling of clashing events needs to be considered as it now involves more than one participant and event.</p>
 </div>
 </div>
 </div>
@@ -771,43 +790,56 @@ This command only executes successfully if the input index is valid (not out of 
 <p>Given below is an example usage scenario and how the <code>select</code> mechanism works.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user inputs <code>select 1 y/2018 m/06</code> to select the 1st person in the address book and view his/her event schedule on June 2018.</p>
+<p>The user inputs <code>select 1 y/2018 m/06</code> to select the 1st person in the address book and view his/her event schedule on June 2018.</p>
 </div>
-<div class="paragraph">
-<p>Step 2. The command text is passed to an instance of the <code>LogicManager</code> class.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The command text is passed to an instance of the <code>LogicManager</code> class.</p>
+</li>
+<li>
+<p>The <code>LogicManager</code> instance calls <code>ProManageParser#parsecommand</code>, which parses the <code>select</code> command phrase.</p>
+</li>
+<li>
+<p><code>InviteCommandParser#parse</code> parses the person and date parameter(optional). Depending on whether the date parameter is inputted,  an instance of the <code>SelectCommand</code> encapsulating the relevant information is then returned.</p>
+</li>
+<li>
+<p><code>Logic Manager</code> then executes this <code>SelectCommand</code> by calling <code>SelectCommand#execute</code>.</p>
+</li>
+<li>
+<p>The filtered person list is first obtained by calling <code>PersonModel#getFilteredPersonList</code>. Based on the index, the <code>Person</code> is selected. The <code>Person</code> object&#8217;s email is obtained by calling <code>Person#getEmail</code></p>
+</li>
+<li>
+<p>A <code>Predicate</code> will be constructed to generate the filtered event list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the user chose to view all the events of the person (e.g. <code>select 1</code>), an <code>AttendeeContainsEmailPredicate</code> object will be instantiated.</p>
+</li>
+<li>
+<p>If the user chose to view the events of the person on a certain time period (e.g. <code>select 1 y/2018 m/12</code>), an <code>EventContainsAttendeeAndDatePredicate</code> object will be instantiated.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>Step 3. The <code>LogicManager</code> instance calls <code>AddressBookParser#parsecommand</code>, which parses the <code>select</code> command phrase.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. <code>InviteCommandParser#parse</code> parses the person and date parameter(optional). Depending on whether the date parameter is inputted,  an instance of the <code>Select</code> encapsulating the relevant information is then returned.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. <code>Logic Manager</code> then executes this <code>SelectCommand</code> by calling <code>SelectCommand#execute</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. The filtered person list is first obtained by calling <code>PersonModel#getFilteredPersonList</code>. Based on the index, the <code>Person</code> is selected.</p>
-</div>
-<div class="paragraph">
-<p>Step 6. Next, the <code>Person</code> object&#8217;s email is obtained by calling <code>Person#getEmail</code></p>
-</div>
-<div class="paragraph">
-<p>Step 7a. If the user chose to view all the events of the person (e.g. <code>select 1</code>), an <code>AttendeeContainsEmailPredicate</code> object will be instantiated.</p>
-</div>
-<div class="paragraph">
-<p>Step 7b. If the user chose to view the events of the person on a certain time period (e.g. <code>select 1 y/2018 m/12</code>), an <code>EventContainsAttendeeAndDatePredicate</code> object will be instantiated.</p>
-</div>
-<div class="paragraph">
-<p>Step 8. The filtered event list is then updated by calling <code>Model#updateFilteredEventList</code> with the generated predicate.</p>
-</div>
-<div class="paragraph">
-<p>Step 9. The filtered event list is then sorted by calling <code>Model@sortByDate</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 10. The <code>SelectCommand#execute</code> finally returns a <code>CommandResult</code> with a success message.</p>
+</li>
+<li>
+<p>The filtered event list is then updated by calling <code>Model#updateFilteredEventList</code> with the predicate.</p>
+</li>
+<li>
+<p>The filtered event list is then sorted by calling <code>Model#sortByDate</code>.</p>
+</li>
+<li>
+<p>The <code>SelectCommand#execute</code> finally returns a <code>CommandResult</code> with a success message.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>The sequence diagram below illustrates the execution of the <code>invite</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SelectSequenceDiagram.png" alt="SelectSequenceDiagram" width="700">
+</div>
 </div>
 </div>
 </div>
@@ -889,18 +921,14 @@ applicable, the predicates involved, is then returned to <code>Logic Manager</co
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></h3>
-
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -931,7 +959,7 @@ applicable, the predicates involved, is then returned to <code>Logic Manager</co
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1983,200 +2011,6 @@ need to attend</p></td>
 </li>
 </ul>
 </div>
-<h3 id="use-case-invite-employees-to-events" class="discrete">Use case: Invite employees to events</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to add employee to events.</p>
-</li>
-<li>
-<p>ProManage request employee details and event details.</p>
-</li>
-<li>
-<p>User enters employee and event information.</p>
-</li>
-<li>
-<p>ProManage adds employee to events</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>3a. Invalid employee.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3a1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3b. Employee is not originally invited to event.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3b1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3c. Event has no attendees</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3c1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-remove-employees-from-events" class="discrete">Use case: Remove employees from events</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to remove employee from an event.</p>
-</li>
-<li>
-<p>ProManage request employee details and event details.</p>
-</li>
-<li>
-<p>User enters employee and event information.</p>
-</li>
-<li>
-<p>ProManage remove employee from events</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>3a. Invalid employee.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3a1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3b. Employee is already invited to event.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3b1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3c. Event conflicts with employee&#8217;s schedule</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3c1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-view-an-employee-s-schedule-on-a-date-month-year" class="discrete">Use case: View an employee&#8217;s schedule on a date/month/year</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to view an employee&#8217;s schedule.</p>
-</li>
-<li>
-<p>ProManage request employee details and date details.</p>
-</li>
-<li>
-<p>User enters employee and date information.</p>
-</li>
-<li>
-<p>ProManage remove employee from events</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>3a. Invalid employee.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3a1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3b. Invalid date format</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3b1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 <h3 id="use-case-sorting-the-event-list-based-on-the-parameter-given" class="discrete">Use case: Sorting the event list based on the parameter given</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -2263,10 +2097,243 @@ need to attend</p></td>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
+<h3 id="use-case-invite-employees-to-events" class="discrete">Use case: Invite employees to events</h3>
+<div class="paragraph">
+<p><strong>Guarantee</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The invite will not result in clash of events in the employee schedule</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add employee to events.</p>
+</li>
+<li>
+<p>ProManage request employee details and event details.</p>
+</li>
+<li>
+<p>User enters employee and event information.</p>
+</li>
+<li>
+<p>ProManage adds employee to events</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. Invalid employee.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. Invalid event.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3c. Employee is already invited to event.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3c1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3d. Event conflicts with employee&#8217;s schedule</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3d1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-remove-employees-from-events" class="discrete">Use case: Remove employees from events</h3>
+<div class="paragraph">
+<p><strong>Precondition</strong>: User must be of manager or default privilege</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to remove employee from an event.</p>
+</li>
+<li>
+<p>ProManage request employee details and event details.</p>
+</li>
+<li>
+<p>User enters employee and event information.</p>
+</li>
+<li>
+<p>ProManage remove employee from events</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. Invalid employee.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. Invalid event.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3c. Event has no attendees</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3c1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3d. Employee is not originally invited to event.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3d1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-view-an-employee-s-schedule-on-a-date-month-year" class="discrete">Use case: View an employee&#8217;s schedule on a date/month/year</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view an employee&#8217;s schedule.</p>
+</li>
+<li>
+<p>ProManage request employee details and date details.</p>
+</li>
+<li>
+<p>User enters employee and date information.</p>
+</li>
+<li>
+<p>ProManage remove employee from events</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. Invalid employee.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. Invalid date format</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">7. Non Functional Requirements</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -2300,7 +2367,7 @@ be able to accomplish most of the tasks faster using commands than using the mou
 </div>
 </div>
 <div class="sect1">
-<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
+<h2 id="glossary"><a class="link" href="#glossary">Appendix D: Glossary</a></h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -2317,7 +2384,7 @@ be able to accomplish most of the tasks faster using commands than using the mou
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
+<h2 id="product-survey"><a class="link" href="#product-survey">Appendix E: Product Survey</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Product Name</strong></p>
@@ -2354,7 +2421,7 @@ be able to accomplish most of the tasks faster using commands than using the mou
 </div>
 </div>
 <div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -2372,7 +2439,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2410,7 +2477,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.2. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2418,7 +2485,7 @@ Expected: The most recent window size and location is retained.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all persons using the <code>list all</code> command. Multiple persons in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
@@ -2437,12 +2504,75 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="inviting-a-person"><a class="link" href="#inviting-a-person">F.3. Inviting a person</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Inviting a person while all persons are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list all</code> command. Multiple persons and events in the list.</p>
+</li>
+<li>
+<p>Test case: <code>invite 1 to/1</code><br>
+Expected: First employee is added to first event. Use <code>select 1</code> to verify that the fifth event is present in the event list.</p>
+</li>
+<li>
+<p>Test case: <code>invite 1 to/1</code> (continued from test case above)<br>
+Expected: Error message as employee is already invited to event.</p>
+</li>
+<li>
+<p>Test case: <code>invite 0 to/1</code><br>
+Expected: No employee is invited. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect invite commands to try: <code>invite</code>, <code>invite x to/1</code> (where x is larger than the list size)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="removing-a-person"><a class="link" href="#removing-a-person">F.4. Removing a person</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Inviting a person while all persons are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list all</code> command. Multiple persons and events in the list.</p>
+</li>
+<li>
+<p>Test case: <code>invite 1 to/1</code> then <code>remove 1 from/1</code>+
+Expected: First employee is added to first event and then removed. Use <code>select 1</code> to verify that the person is uninvited from the event.</p>
+</li>
+<li>
+<p>Test case: <code>remove 1 to/1</code> (continued from test case above)<br>
+Expected: Error message as employee is currently invited to event.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0 to/1</code><br>
+Expected: No employee is removed. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect invite commands to try: <code>remove</code>, <code>remove x to/1</code> (where x is larger than the list size)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.5. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2462,4 +2592,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 13:10:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 16:56:06 UTC</div></div></div></body></html>
