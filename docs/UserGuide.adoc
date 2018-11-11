@@ -16,6 +16,7 @@ endif::[]
 
 By: `T16-2`      Since: `Sept 2018`      Licence: `MIT`
 
+// tag::introduction[]
 == Introduction
 
 ProManage is a *professional desktop application* for companies that specialises in executing projects that undergoes a
@@ -30,6 +31,7 @@ their project team setting. There is no better way to work than a CLI applicatio
 More importantly, ProManage is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still
 having the benefits of a Graphical User Interface (GUI). ProManage can help you manage project scheduling effectively.
 Interested? Jump to the <<Quick Start>> to get started. Enjoy!
+// end::introduction[]
 
 == Quick Start
 
@@ -79,19 +81,33 @@ All clicking features are disabled. Clicking on persons and events will not trig
 
 Format: `help`
 
-
+// tag::login[]
 === Login the app: `login`
 Priority level: `default`
 
-Login to the app as one of the following identity: `manager` or `employee` or `as EMAIL` +
+Login to the app as one of the following identity: `manager` or `employee` or `as EMAIL`. +
 The user can only login into ProManage if his/her email has been registered in the ProManage system before. +
-Once login, the user is unable to logout till the app is closed.
+Once login, you will not be able to login again unless the user chooses to logout
 
 Format: login `identity`
 
 Example: +
 `login manager` +
 `login as johnd@example.com`
+// end::login[]
+
+// tag::logout[]
+=== Logout the app: `logout`
+Priority level: `manager`, `employee`
+
+Logout the app once you have login. +
+After successfully logging out, you will be able to login again.
+
+Format: logout
+
+Example: +
+`logout`
+// end::logout[]
 
 === Adding an employee : `add`
 Priority level: `default`,`manager`
@@ -158,6 +174,7 @@ Examples:
 `delete 2` +
 Deletes the 2nd person in the employee list.
 
+// tag::list[]
 === Listing all personnel of the company : `list`
 
 Shows a list of all the personnel, all the events, or those people in the specific department in the project team +
@@ -171,6 +188,7 @@ Enter a command to list people in the specific `DEPARTMENT`: `list dep DEPARTMEN
 Example: +
 `list dep Admin` +
 `list dep Admin Finance`
+// end::list[]
 
 // tag::addevent[]
 === Adding an event: `addEvent`
@@ -182,7 +200,7 @@ Format: `addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_T
 ****
 * DATE needs to be in YYYY-MM-DD format
 * TIME needs to be in 00:00 format
-* START_TIME must not be later than END_TIME
+* START_TIME must be earlier than END_TIME
 ****
 
 [NOTE]
@@ -203,7 +221,7 @@ Creates an event named Board Meeting at Conference Room 1 at 2018-09-28, 12:00 t
 Priority level: `default`,`manager`
 
 Edits the details of the events: +
-Format: `editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME [e/END_TIME]`
+Format: `editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME] [e/END_TIME]`
 
 ****
 * Edits the event at the specified `EVENT_INDEX`. The index refers to the index number shown in the displayed event list. The
@@ -211,10 +229,11 @@ index *must be a positive integer* 1, 2, 3, ... +
 * At least one of the optional fields must be provided.
 * DATE needs to be in YYYY-MM-DD format
 * TIME needs to be in 00:00 format
-* START_TIME must not be later than END_TIME
+* START_TIME must be earlier than END_TIME
 * Leap years are not considered during date validation.
-* Existing values will be updated to the input values.
 * One location can only hold one event at any time.
+* Event cannot be editted if result clashes with any of the attendees' event schedule
+* Existing values will be updated to the input values.
 ****
 
 Examples:
@@ -263,10 +282,13 @@ Priority level: all
 
 Finds events whose names contain any of the given keywords or whose description contains any of the given keywords (case-insensitive). +
 Format: `findEvent KEYWORD [MORE_KEYWORDS]`
+Example:
+
+* `findEvent Meeting Weekly`
 
 ****
 * The search is case insensitive
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+* The order of the keywords does not matter. e.g. `Weekly Meeting` will match `Meeting Weekly`
 * Only full words will be matched
 * Events matching at least one keyword will be returned
 ****
@@ -290,7 +312,7 @@ image::InviteCommandGuide.png[width="800"]
 * The index refers to the index number shown in the displayed person list and event list respectively.
 * The index *must be a positive integer* 1, 2, 3, ...
 * Employee should not have already been invited to the selected event.
-* Event invited to should not clash with the selected employee's schedule or other events at the same location and time.
+* Event invited to *should not clash* with the selected employee's schedule.
 ****
 // end::invite[]
 
@@ -453,11 +475,12 @@ There is no need to save manually.
 *Q*: How do I transfer my data to another Computer? +
 *A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.
 
+// tag::commandSummary[]
 == Command Summary
 
 * *Help*: `help`
 
-* *Login*: `login IDENTITY`
+* *Login*: `login IDENTITY` where IDENTITY is either manager or employee or `login existingemail@example.com`
 
 * *Add*: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT [t/TAG]...`
 
@@ -494,4 +517,4 @@ There is no need to save manually.
 * *Clear* : `clear`
 
 * *Exit* : `exit`
-
+// end::commandSummary[]
