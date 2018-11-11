@@ -49,8 +49,7 @@ using the sort date command.</p>
 </li>
 <li>
 <p>Updated the mainapp to load saved xml events or a sample list of events when the app starts
-<strong>
-</strong></p>
+**</p>
 </li>
 </ul>
 </div>
@@ -63,14 +62,32 @@ using the sort date command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:
-<strong>*
-</strong>*</p>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Helped to Managed releases on GitHub</p>
 </li>
 <li>
-<p>Documentation:
-<strong>*
-</strong>*</p>
+<p>Managed the issue tracker on GitHub
+<strong>*</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the User Guide for Practical Exam 1</p>
+</li>
+<li>
+<p>Updated the Developer Guide to include <code>sort</code> command
+<strong>*</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Community:
@@ -135,6 +152,49 @@ After successfully logging out, you will be able to login again.</p>
 <code>logout</code></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="sorting-all-events-code-sort-code"><a class="link" href="#sorting-all-events-code-sort-code">Sorting all events: <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
+<div class="paragraph">
+<p>Sort the event listing based on the key words provided.<br>
+Able to sort with event&#8217;s name, event&#8217;s date, event&#8217;s starttime, event&#8217;s endtime. <br></p>
+</div>
+<div class="paragraph">
+<p>If both event&#8217;s have the same date then starttime will be compared.<br>
+<strong>Key word:</strong><br>
+1) event&#8217;s name: <code>name</code><br>
+2) event&#8217;s date: <code>date</code><br>
+3) event&#8217;s starttime: <code>starttime</code><br>
+4) event&#8217;s endtime: <code>endtime</code></p>
+</div>
+<div class="paragraph">
+<p>Format: sort <code>key word</code><br>
+Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort name</code><br>
+Sort the event list alphabetically</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-all-events-code-showmine-code"><a class="link" href="#sorting-all-events-code-showmine-code">Sorting all events: <code>showmine</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>manager</code>, <code>employee</code></p>
+</div>
+<div class="paragraph">
+<p>This function is only applicable to users who have login with their email.<br>
+Filter and list out events which they are listed as attendees.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>showmine</code></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -151,4 +211,852 @@ After successfully logging out, you will be able to login again.</p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 03:32:45 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">User Stories</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 23%;">
+<col style="width: 25%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See usage instructions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to instructions when I forget how to use the ProManage</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add a new person</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maintain a record of that employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a person</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove employees that left the company</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit a person&#8217;s details</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change the relevant information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find a person by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Locate details of people without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find a person by email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Locate people through their unique work email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List the people in alphabetical order by name or by department</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the whole list of
+relevant people</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add a new event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maintain a record of that event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete an event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove events that are no longer relevant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit the information of an event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update the relevant information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View an employee&#8217;s events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To monitor my employee&#8217;s event schedule</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View a colleague&#8217;s events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To monitor my colleague&#8217;s event schedule before I plan an event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View an employee&#8217;s events on a certain date, month or year</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To view the employee&#8217;s events on a certain date, month or year</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View an underling&#8217;s events on a certain date, month or year</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To check what have my underlings have been busy with</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View a colleague&#8217;s events on a certain date, month or year</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To check if he/she is free for an important meeting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invite an employee to events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add the person to the a department meeting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invite an employee to events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add the person to the a company outing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove people from the event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove irrelevant people from an event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove people from the event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove people who I accidentally invited</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find an event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Locate details of the event without having to look through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort the event list by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the events by alphabetical order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort the event list by time and date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View what are the more recent events of the event list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To know more information about the event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">History of commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To view the commands previously inserted into ProManage</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo my previously entered command</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo my previously undo command</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View events related to myself</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To avoid looking through the entire event list to find out which events I
+need to attend</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exit command</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See usage instructions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to instructions when I forget how to use the ProManage</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find a person by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Locate details of people without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find a person by email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Locate people through their unique work email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort the event list by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the events by alphabetical order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort the event list by time and date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View what are the more recent events of the event list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo my previously entered command</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo my previously undo command</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View a colleague&#8217;s events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To check out what have my colleague been up to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View events related to myself</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To avoid looking through the entire event list to find out which events I
+need to attend</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invite my colleagues to events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add persons to the selected event</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>{More to be added}</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix A: Use Cases</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>(For all use cases below, the <strong>System</strong> is the <code>ProManage</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+</div>
+<h3 id="use-case-add-person" class="discrete">Use case: Add person</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a person.</p>
+</li>
+<li>
+<p>ProManage adds records down the input information of the person.</p>
+</li>
+<li>
+<p>ProManage adds person.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edit-person" class="discrete">Use case: Edit person</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to edit information of person</p>
+</li>
+<li>
+<p>ProManage shows a list of persons</p>
+</li>
+<li>
+<p>User requests to edit a specific person in the list</p>
+</li>
+<li>
+<p>AddressBook edits the person</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list persons</p>
+</li>
+<li>
+<p>AddressBook shows a list of persons</p>
+</li>
+<li>
+<p>User requests to delete a specific person in the list</p>
+</li>
+<li>
+<p>AddressBook deletes the person</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-add-event" class="discrete">Use case: Add Event</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to create an event.</p>
+</li>
+<li>
+<p>ProManage displays input format and requests user to enter event input details according to format.</p>
+</li>
+<li>
+<p>User enters event details.</p>
+</li>
+<li>
+<p>Program displays users input and confirm the input with user.</p>
+</li>
+<li>
+<p>User confirms with ProManage</p>
+</li>
+<li>
+<p>ProManage adds event to user&#8217;s event list.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. User input incorrect format.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. ProManage shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-event" class="discrete">Use case: Delete event</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete an event</p>
+</li>
+<li>
+<p>ProManage shows a list of events</p>
+</li>
+<li>
+<p>User requests to delete a specific event in the list</p>
+</li>
+<li>
+<p>AddressBook deletes the event</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edit-event" class="discrete">Use case: Edit event</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to edit an event.</p>
+</li>
+<li>
+<p>ProManage shows a list of events to the user.</p>
+</li>
+<li>
+<p>User requests to edit a specific event in the list</p>
+</li>
+<li>
+<p>User enters the updated details of the event.</p>
+</li>
+<li>
+<p>ProManage confirms edited details with the user.</p>
+</li>
+<li>
+<p>User confirms with ProManage.</p>
+</li>
+<li>
+<p>ProManage edits confirmed details of the chosen event.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-invite-employees-to-events" class="discrete">Use case: Invite employees to events</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add employee to events.</p>
+</li>
+<li>
+<p>ProManage request employee details and event details.</p>
+</li>
+<li>
+<p>User enters employee and event information.</p>
+</li>
+<li>
+<p>ProManage adds employee to events</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. Invalid employee.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. Employee is not originally invited to event.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3c. Event has no attendees</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3c1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-remove-employees-from-events" class="discrete">Use case: Remove employees from events</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to remove employee from an event.</p>
+</li>
+<li>
+<p>ProManage request employee details and event details.</p>
+</li>
+<li>
+<p>User enters employee and event information.</p>
+</li>
+<li>
+<p>ProManage remove employee from events</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. Invalid employee.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. Employee is already invited to event.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3c. Event conflicts with employee&#8217;s schedule</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3c1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-view-an-employee-s-schedule-on-a-date-month-year" class="discrete">Use case: View an employee&#8217;s schedule on a date/month/year</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view an employee&#8217;s schedule.</p>
+</li>
+<li>
+<p>ProManage request employee details and date details.</p>
+</li>
+<li>
+<p>User enters employee and date information.</p>
+</li>
+<li>
+<p>ProManage remove employee from events</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. Invalid employee.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. Invalid date format</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. AddressBook shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-sorting-the-event-list-based-on-the-parameter-given" class="discrete">Use case: Sorting the event list based on the parameter given</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list event in a particular order.</p>
+</li>
+<li>
+<p>ProManage request what order to list the event.</p>
+</li>
+<li>
+<p>User enters the order he/she wishes to list the event.</p>
+</li>
+<li>
+<p>ProManage list the event in that particular order</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. Invalid parameters</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-finding-out-events-which-is-associated-with-user" class="discrete">Use case: Finding out events which is associated with user</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User login the app</p>
+</li>
+<li>
+<p>User request to list event associated with he/she</p>
+</li>
+<li>
+<p>ProManage list the event that is associated with the user</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. User did not login</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. ProManage shows an error message to prompt user to login before using this function</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>{More to be added}</em></p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 05:15:25 UTC</div></div></div></body></html>
