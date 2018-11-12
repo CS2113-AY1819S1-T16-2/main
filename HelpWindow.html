@@ -380,7 +380,7 @@ Format: <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/
 <p>DATE needs to be in YYYY-MM-DD format</p>
 </li>
 <li>
-<p>TIME needs to be in 00:00 format</p>
+<p>START_TIME and END_TIME needs to be in HH:MM format</p>
 </li>
 <li>
 <p>START_TIME must be earlier than END_TIME</p>
@@ -402,7 +402,10 @@ Format: <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/
 <p>One location can only hold one event at any time.</p>
 </li>
 <li>
-<p>Events created cannot span multiple days.</p>
+<p>Location is case insensitive</p>
+</li>
+<li>
+<p>Events created cannot span multiple days with a single command.</p>
 </li>
 <li>
 <p>Leap years are not considered during date validation.</p>
@@ -419,8 +422,8 @@ Format: <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/
 <div class="ulist">
 <ul>
 <li>
-<p><code>addEvent n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59</code><br>
-Creates an event named Board Meeting at Conference Room 1 at 2018-09-28, 12:00 to 23:59.</p>
+<p><code>addEvent n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/14:00 e/15:45</code><br>
+Creates an event named Board Meeting at Conference Room 1 at 2018-09-28, from 14:00 to 15:45.</p>
 </li>
 </ul>
 </div>
@@ -459,6 +462,9 @@ index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;<br></p
 </li>
 <li>
 <p>One location can only hold one event at any time.</p>
+</li>
+<li>
+<p>Location is case insensitive</p>
 </li>
 <li>
 <p>Event cannot be editted if result clashes with any of the attendees' event schedule</p>
@@ -630,7 +636,7 @@ Invite 1st employee on employee list to 3rd event on event list</p>
 <p>Invites the employee at the specified <code>PERSON_INDEX</code> <strong>TO</strong> the event at the specified <code>EVENT_INDEX</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed person list and event list respectively.</p>
+<p>The index refers to the index number shown in the displayed employee list and event list respectively.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
@@ -639,7 +645,7 @@ Invite 1st employee on employee list to 3rd event on event list</p>
 <p>Employee should not have already been invited to the selected event.</p>
 </li>
 <li>
-<p>Event invited to <strong>should not clash</strong> with the selected employee&#8217;s schedule.</p>
+<p>Event invited to <strong>should not clash</strong> with the selected employee&#8217;s event schedule.</p>
 </li>
 </ul>
 </div>
@@ -653,16 +659,21 @@ Invite 1st employee on employee list to 3rd event on event list</p>
 </div>
 <div class="paragraph">
 <p>Removes an employee from the an event.<br>
-Format/Prompts: <code>remove PERSON_INDEX  from/EVENT_INDEX</code><br>
+Format/Prompts: <code>remove PERSON_INDEX from/EVENT_INDEX</code><br>
 Example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>remove 1 from/2</code><br>
-Remove 1st employee at employee list from 2nd event at event list</p>
+<p><code>remove 2 from/4</code><br>
+Remove 2nd employee at employee list from 4th event at event list</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/RemoveCommandGuide.png" alt="RemoveCommandGuide" width="450">
+</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -691,7 +702,7 @@ Remove 1st employee at employee list from 2nd event at event list</p>
 <p>Priority level: <code>all</code></p>
 </div>
 <div class="paragraph">
-<p>Selects an employee and view the specified employee&#8217;s events by date, year, month, month and year, or all his/her events.<br>
+<p>Selects an employee and view the specified employee&#8217;s events on a date, year, month, month and year, or all of his/her events.<br>
 Format/Prompts:<br>
 Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code></p>
 </div>
@@ -700,7 +711,7 @@ Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code>
 <div class="ulist">
 <ul>
 <li>
-<p>Select the employee at the specified <code>PERSON_INDEX</code> and view all his/her events or events at certain time as indicated.</p>
+<p>Select the employee at the specified <code>PERSON_INDEX</code> and view all his/her events or events at certain time if indicated.</p>
 </li>
 <li>
 <p>The index refers to the index number shown in the displayed person list.</p>
@@ -712,10 +723,10 @@ Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code>
 <p>DATE needs to be in YYYY-MM-DD format</p>
 </li>
 <li>
-<p>MONTH needs to be in 00 format (e.g. 01, 02, &#8230;&#8203; , 12)</p>
+<p>MONTH needs to be in MM format (e.g. 01, 02, &#8230;&#8203; , 12)</p>
 </li>
 <li>
-<p>YEAR needs to be in 0000 format. (e.g. 2018)</p>
+<p>YEAR needs to be in YYYY format. (e.g. 2018)</p>
 </li>
 <li>
 <p>If DATE is indicated, MONTH and YEAR must NOT be indicated. Then, all events of the selected employee at the specific DATE will be displayed.</p>
@@ -727,30 +738,30 @@ Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code>
 </div>
 </div>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SelectCommandGuide.png" alt="SelectCommandGuide" width="500">
+</div>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>select 1</code><br>
-view all events of employee at index 1</p>
+<p><code>select 1</code> : view all events of employee at index 1</p>
 </li>
 <li>
-<p><code>select 1 date/2018-10-31</code><br>
-view all events of employee at index 1 at 2018-10-31</p>
+<p><code>select 1 date/2018-10-31</code> : view all events of employee at index 1 at 2018-10-31</p>
 </li>
 <li>
-<p><code>select 1 m/08</code><br>
-view all events of employee at index 1 in August</p>
+<p><code>select 1 m/08</code> : view all events of employee at index 1 in August</p>
 </li>
 <li>
-<p><code>select 1 y/2018</code><br>
-view all events of employee at index 1 in 2018</p>
+<p><code>select 1 y/2018</code> : view all events of employee at index 1 in 2018</p>
 </li>
 <li>
-<p><code>select 1 y/2018 m/08</code><br>
-view all events of employee at index 1 in August 2018</p>
+<p><code>select 1 y/2018 m/08</code> : view all events of employee at index 1 in August 2018</p>
 </li>
 </ul>
 </div>
@@ -1017,13 +1028,19 @@ There is no need to save manually.</p>
 <p><strong>Logout</strong>: <code>logout</code></p>
 </li>
 <li>
+<p><strong>Add Employee</strong>: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT des/DESIGNATION [t/TAG]&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Edit Employee</strong> : <code>edit PERSON_INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [dep/DEPARTMENT] [t/TAG]…​</code></p>
+</li>
+<li>
 <p><strong>Add</strong>: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS dep/DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit PERSON_INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [dep/DEPARTMENT] [t/TAG]…​</code></p>
+<p><strong>Delete Employee</strong> : <code>delete PERSON_INDEX</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete PERSON_INDEX</code></p>
+<p><strong>Find Employee</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </li>
 <li>
 <p><strong>List</strong> : <code>list all</code> OR <code>list all people</code> OR <code>list all events</code> or <code>list dep Admin</code></p>
@@ -1032,16 +1049,16 @@ There is no need to save manually.</p>
 <p><strong>Sort</strong> : <code>sort KEYWORD</code></p>
 </li>
 <li>
-<p><strong>addEvent</strong> : <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_TIME</code></p>
+<p><strong>Add Event</strong> : <code>addEvent n/NAME d/DESCRIPTION l/LOCATION date/DATE s/START_TIME e/END_TIME</code></p>
 </li>
 <li>
-<p><strong>editEvent</strong> : <code>editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME] [e/END_TIME]</code></p>
+<p><strong>Edit Event</strong> : <code>editEvent EVENT_INDEX [n/NAME] [d/DESCRIPTION] [l/LOCATION] [date/DATE] [s/START_TIME] [e/END_TIME]</code></p>
 </li>
 <li>
-<p><strong>deleteEvent</strong> : <code>deleteEvent EVENT_INDEX</code></p>
+<p><strong>Delete Event</strong> : <code>deleteEvent EVENT_INDEX</code></p>
 </li>
 <li>
-<p><strong>findEvent</strong> : <code>findEvent KEYWORD [MORE KEYWORDS]</code></p>
+<p><strong>Find Event</strong> : <code>findEvent KEYWORD [MORE KEYWORDS]</code></p>
 </li>
 <li>
 <p><strong>Invite</strong> : <code>invite PERSON_INDEX to/EVENT_INDEX</code></p>
@@ -1050,13 +1067,10 @@ There is no need to save manually.</p>
 <p><strong>Remove</strong> : <code>remove PERSON_INDEX  from/EVENT_INDEX</code></p>
 </li>
 <li>
-<p><strong>Select</strong> : <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code></p>
+<p><strong>Select Employee</strong> : <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code></p>
 </li>
 <li>
 <p><strong>selectEvent</strong> : <code>selectEvent EVENT_INDEX</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </li>
 <li>
 <p><strong>History</strong> : <code>history</code></p>
@@ -1076,4 +1090,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:58:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:07:51 UTC</div></div></div></body></html>
