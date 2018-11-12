@@ -1018,14 +1018,239 @@ it can list out the upcoming birthdays of the personnel in the company.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.6. Undo/Redo Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">3.6.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>undo</code> and <code>redo</code> feature allows users to undo and redo their previous commands. The commands that can
+be undone are only those that modify the contents of the address book or event list, such as adding a person
+or event within the app. This is managed within <code>ModelManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>The undo/redo mechanism is implemented separately for the address book and event list by the
+<code>VersionedAddressBook</code> and <code>VersionedEventList</code>. They are extensions of the superclass <code>AddressBook</code> and
+<code>EventList</code> respectively with a history of states stored internally as an <code>addressBookStateList</code>
+for the address book, <code>eventListStateList</code> for the event list, and a <code>currentStatePointer</code> in each of them.
+To ensure that the address book and event list are undone/redone correctly, a <code>StateHistoryList</code> (sub-class
+of <code>LinkedList</code>) is kept in the <code>ModelManager</code> to keep track of the list that was modified.</p>
+</div>
+<div class="paragraph">
+<p>The following operations were implemented:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>VersionedAddressBook#commit()</code> — Saves the current address book state in its internal history.</p>
+</li>
+<li>
+<p><code>VersionedAddressBook#undo()</code> — Restores the previous address book state from its internal history.</p>
+</li>
+<li>
+<p><code>VersionedAddressBook#redo()</code> — Restores a previously undone address book state from its internal history.</p>
+</li>
+<li>
+<p><code>VersionedEventList#commit()</code> — Saves the current event list in its internal history.</p>
+</li>
+<li>
+<p><code>VersionedEventList#undo()</code> — Restores the previous event list state from its internal history.</p>
+</li>
+<li>
+<p><code>VersionedEventList#redo()</code> — Restores a previously undone event list state from its internal history.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These operations are exposed in the Model interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code>
+and <code>Model#redoAddressBook()</code> for the address book, and <code>Model#commitEventList()</code>, <code>Model#undoEventList()</code>
+and <code>Model#redoEventList()</code> for the event list. Two wrapper methods, <code>Model#undo()</code> and <code>Model#redo()</code>
+are also implemented. These will be the methods called by the commands <code>undo</code> and <code>redo</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>StateHistoryList</code> implements the following operations for the <code>Model</code> to decide whether to
+undo/redo the address book or event list:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>StateHistoryList#getCurrentState()</code> - Retrieves the latest record state.</p>
+</li>
+<li>
+<p><code>StateHistoryList#getNextState()</code> - Retrieves the next (previously undone) record state.</p>
+</li>
+<li>
+<p><code>StateHistoryList#decrementPointer()</code> - Shifts record state pointer back. Called during <code>undo</code>.</p>
+</li>
+<li>
+<p><code>StateHistoryList#incrementPointer()</code> - Shifts record state pointer forward. Called during <code>redo</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A command can either modify the address book, event list, or both. Within the model, the <code>StateHistoryList</code>
+keeps track of all model methods which modify the address book or event list, and stores a history
+record value within itself for each method called.</p>
+</div>
+<div class="paragraph">
+<p>When undoing a command, the <code>ModelManager</code> requests for the latest record by <code>StateHistoryList#getCurrentState()</code>
+and calls the corresponding <code>VersionedAddressBook#undo()</code> and/or <code>VersionedEventList#undo()</code>. The ModelManager
+also informs the <code>StateHistoryList</code> that an undo command was issued to shift the pointer back.</p>
+</div>
+<div class="paragraph">
+<p>When redoing a command,the <code>ModelManager</code> requests for the next record from <code>StateHistoryList</code> and
+calls the corresponding <code>VersionedAddressBook#redo()</code> and/or <code>VersionedEventList#redo()</code>. The ModelManager
+also informs the <code>StateHistoryList</code> that an undo command was issued to shift the pointer forward.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The VersionedAddressBook and VersionedEventList
+will be initialized with the initial address book and event list states, and the currentStatePointers will
+point to their single state respectively. The StateHistoryList is instantiated as an empty list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoModelInitializationStateListDiagram.png" alt="UndoRedoModelInitializationStateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>add</code> (with valid input arguments) to add a person to the address book. The <code>add</code> command calls
+<code>Model#addPerson()</code>, which will add a state record index integer <code>STATE_ADDRESSBOOK</code> to the <code>StateHistoryList</code>.
+This command is the last entered command, therefore the <code>pointer</code> in <code>StateHistoryList</code> shifts forward.
+The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after
+the <code>add</code> command executes to be saved in the <code>addressBookStateList</code>, and the address book <code>currentStatePointer</code>
+is shifted to the newly inserted address book state. The <code>currentStatePointer</code> for <code>VersionedEventList</code> remains unchanged
+as only the <code>VersionedAddressBook</code> was modified..</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommandAB1StateListDiagram.png" alt="UndoRedoNewCommandAB1StateListDiagram" width="800">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a command fails its execution, it will not call <code>Model#commitAddressBook()</code> or <code>Model#commitEventList()</code>,
+so the address book or event list state will not be saved into <code>addressBookStateList</code> or <code>eventListStateList</code>.
+The <code>StateHistoryList</code> will also not save a record state.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. The user realises that they have accidentally added the wrong person, and decides to undo the action by
+executing the <code>undo</code> command. The <code>undo</code> command calls <code>Model#undo()</code>, which gets the latest record state
+from <code>StateHistoryList</code> and recognises that the <code>VersionedAddressBook</code> was modified in the previous command.
+The <code>Model#undoAddressBook()</code> is then called, which shift the currentStatePointer once to the left, pointing it to
+the previous address book state, and restores the address book to that state. Also, the <code>pointer</code> in <code>StateHistoryList</code>
+is shifted to the left by <code>StateHistoryList#decrementPointer</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommandAB2StateListDiagram.png" alt="UndoRedoNewCommandAB2StateListDiagram" width="800">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous
+address book states to restore. The undo command uses <code>Model#canUndo()</code> to check if this is the case.
+If so, it will return an error to the user rather than attempting to perform the undo.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the undo operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 4.
+The redo command does the opposite — it calls <code>Model#redo()</code>, which shifts the <code>currentStatePointer</code> in either
+the <code>VersionedAddressBook</code> and/or <code>VersionedEventList</code> once to the right, pointing to the previously
+undone state, and restores it to that state.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>pointer</code> is at index <code>stateHistoryList.size() - 1</code>, pointing to the latest memory state, then
+there are no undone states to restore. The redo command uses <code>Model#canRedo()</code> to check if this is the case.
+If so, it will return an error to the user rather than attempting to perform the redo.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommandAB3StateListDiagram.png" alt="UndoRedoNewCommandAB3StateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 5.
+The user then decides to add a new event to the event list, by the <code>addEvent</code> command. The <code>addEvent</code> command calls
+<code>Model#addEvent()</code>, which will add a state record index integer <code>STATE_EVENTLIST</code> to the <code>StateHistoryList</code>.
+This command is the last entered command, therefore the <code>pointer</code> in <code>StateHistoryList</code> shifts forward.
+The <code>addEvent</code> command also calls <code>Model#commitEventList()</code>, causing the modified state of the event list after
+the <code>addEvent</code> command executes to be saved in the <code>eventListStateList</code>, and the event list <code>currentStatePointer</code>
+is shifted to the newly inserted address book state. The <code>currentStatePointer</code> for <code>VersionedAddressBook</code> remains unchanged
+as only the <code>VersionedEventList</code> was modified.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommandELStateListDiagram.png" alt="UndoRedoNewCommandELStateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 6.
+The user then decides to execute <code>clear</code>. Since this command must clear both the address book and event list,
+the <code>clear</code> command calls both <code>Model#commitAddressBook()</code> and <code>Model#commitEventList()</code>. It adds a state
+record index integer <code>STATE_BOTH</code> to the <code>StateHistoryList</code>. The <code>currentStatePointer</code> in both
+<code>VersionedAddressBook</code> and <code>VersionedEventList</code> shifts to point to the newly added states respectively.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommandBothStateListDiagram.png" alt="UndoRedoNewCommandBothStateListDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="future-improvements-3"><a class="link" href="#future-improvements-3">3.6.2. Future Improvements</a></h4>
+<div class="sect4">
+<h5 id="façade-class-for-versionedaddressbook-and-versionedeventlist"><a class="link" href="#façade-class-for-versionedaddressbook-and-versionedeventlist">Façade Class for VersionedAddressBook and VersionedEventList</a></h5>
+<div class="paragraph">
+<p>To improve abstraction and shift the responsibility of deciding which list to undo or redo away from the
+<code>Model</code>, a façade class can be created, e.g. <code>VersionedProManage</code>, to hold the <code>StateHistoryList</code>,
+<code>VersionedAddressBook</code> and <code>VersionedEventList</code>. The model will then only have to call the <code>VersionedProManage#undo()</code>
+or <code>VersionedProManage#redo()</code> methods.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.7. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.8, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1056,7 +1281,7 @@ it can list out the upcoming birthdays of the personnel in the company.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2712,4 +2937,4 @@ Expected: The details of all personnel and events will be listed.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:15:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:38:49 UTC</div></div></div></body></html>
