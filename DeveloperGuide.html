@@ -2763,7 +2763,52 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.2. Deleting a person</a></h3>
+<h3 id="logging-into-the-app"><a class="link" href="#logging-into-the-app">F.2. Logging into the app</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Logging without email</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: App is not login yet. Privilege is default</p>
+</li>
+<li>
+<p>Test Case: <code>login manager</code><br>
+Expected: login successfully as manager</p>
+</li>
+<li>
+<p>Test Case: <code>login employee</code><br>
+Expected: login successfully as manager</p>
+</li>
+<li>
+<p>Other incorrect login commands to try: <code>login</code>,<code>login ceo</code> (login without email only accepts manager and employee)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Logging with email</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: App is not login yet. Privilege is default. Email of an existing person in addressbook</p>
+</li>
+<li>
+<p>Test Case: <code>login as <a href="mailto:lol@example.com">lol@example.com</a></code><br>
+Expected: login successfully as the designation of the person</p>
+</li>
+<li>
+<p>Other incorrect login commands to try: <code>login as</code> <code>login as invalidemail</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.3. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2792,7 +2837,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="inviting-a-person"><a class="link" href="#inviting-a-person">F.3. Inviting a person</a></h3>
+<h3 id="inviting-a-person"><a class="link" href="#inviting-a-person">F.4. Inviting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2825,7 +2870,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="removing-a-person"><a class="link" href="#removing-a-person">F.4. Removing a person</a></h3>
+<h3 id="removing-a-person"><a class="link" href="#removing-a-person">F.5. Removing a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2858,7 +2903,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-people-and-events"><a class="link" href="#listing-people-and-events">F.5. Listing people and events</a></h3>
+<h3 id="listing-people-and-events"><a class="link" href="#listing-people-and-events">F.6. Listing people and events</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2911,7 +2956,38 @@ Expected: The details of all personnel and events will be listed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.6. Saving data</a></h3>
+<h3 id="sorting-of-events"><a class="link" href="#sorting-of-events">F.7. Sorting of events</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sorting of the event list based on the given params</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: No prerequisites</p>
+</li>
+<li>
+<p>Test case: <code>sort name</code><br>
+Expected: Event list to be sorted according their name.</p>
+</li>
+<li>
+<p>Test case: <code>sort date</code><br>
+Expected: Event list to be sorted according to the date from the earliest to the latest</p>
+</li>
+<li>
+<p>Other incorrect sort command to try: <code>sort</code> , <code>sort random</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.8. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2931,4 +3007,4 @@ Expected: The details of all personnel and events will be listed.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:49:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:34:56 UTC</div></div></div></body></html>
