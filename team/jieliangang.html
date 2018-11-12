@@ -10,8 +10,8 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ProManage is a <strong>professional desktop application</strong> for companies that specialises in executing projects that undergoes a
-long and tedious planning phase. ProManage allow <strong>Manager</strong> and <strong>Employees</strong> of project teams to manage their team members and events easily.
+<p>ProManage is a <strong>professional desktop application</strong> for companies that specialises in handling and executing projects.
+ProManage allow <strong>Manager</strong> and <strong>Employees</strong> of project teams to manage their team members and events easily.
 ProManage is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
 </div>
 <div class="paragraph">
@@ -29,13 +29,13 @@ ProManage is <strong>optimized for those who prefer to work with a Command Line 
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to invite employees to events, remove employees from events, and view an employee&#8217;s event schedule on a selected date, month or year which is displayed on the event list panel.</p>
+<p>What it does: allows the user to invite employees to events, remove employees from events, and select and view an employee&#8217;s event schedule on the indicated date, month or year which is displayed on the <strong>event list panel</strong>.</p>
 </li>
 <li>
-<p>Justification: This feature facilitates managing and scheduling of events among teams of employees who have different work schedules, and allow managers and employees to monitor and handle their event schedules easily.</p>
+<p>Justification: This feature facilitates managing and scheduling of events among teams of employees who have different work schedules, and allow managers and employees to monitor and handle their event schedules easily. Schedule conflicts can be avoided and resolved easily with this enhancement.</p>
 </li>
 <li>
-<p>Highlights: This feature considers whether the event an employee is invited to <strong>clashes</strong> with the particular employee&#8217;s work schedule, and <strong>guarantees</strong> that schedule conflict will not occur. The underlying model structure implemented for this enhancement is carefully designed and allows extension commands <code>viewmine</code> and <code>selectEvent</code> to be easily implemented.</p>
+<p>Highlights: This feature considers whether the event an employee is invited to <strong>clashes</strong> with the particular employee&#8217;s work schedule, and <strong>guarantees</strong> that schedule conflict will not occur. The underlying <code>Event</code> model structure implemented for this enhancement is carefully designed and allows extension commands <code>viewmine</code> and <code>selectEvent</code> to be easily implemented.</p>
 </li>
 </ul>
 </div>
@@ -84,13 +84,10 @@ ProManage is <strong>optimized for those who prefer to work with a Command Line 
 <p>Updated the GUI color scheme <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/134">#134</a></p>
 </li>
 <li>
-<p>Updated the <code>add</code> and <code>edit</code> command to distinguish different employees by their unique email address</p>
+<p>Updated the <code>add</code> and <code>edit</code> command to distinguish employees by their unique email address</p>
 </li>
 <li>
-<p>Updated the <code>find</code> command to search for employees via their email address</p>
-</li>
-<li>
-<p>Updated the UI for <code>selectEvent</code> command to highlight selected event</p>
+<p>Updated the <code>find</code> command to also search for employees via their email address</p>
 </li>
 <li>
 <p>Wrote additional tests for existing features to increase coverage from 82% to 87% <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/128">#128</a> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/130">#130</a> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/131">#131</a></p>
@@ -106,10 +103,10 @@ ProManage is <strong>optimized for those who prefer to work with a Command Line 
 <p>Updated the User Guide to include <code>addEvent</code>, <code>editEvent</code>, <code>invite</code>, <code>remove</code> and <code>select</code> command</p>
 </li>
 <li>
-<p>Updated the Developer Guide to include implementation details, use case and user stories for <code>invite</code> and <code>select</code> command.</p>
+<p>Updated the Developer Guide to include implementation details, use case, user stories and instructions for manual testing for <code>invite</code> and <code>select</code> command.</p>
 </li>
 <li>
-<p>Updated the Model, UI and Logic class diagram in Developer Guide</p>
+<p>Updated the <code>Model</code>, <code>UI</code> and <code>Logic</code> class diagram in Developer Guide</p>
 </li>
 </ul>
 </div>
@@ -119,10 +116,13 @@ ProManage is <strong>optimized for those who prefer to work with a Command Line 
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/114">#114</a> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/122">#122</a></p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/77">#77</a> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/114">#114</a> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/122">#122</a></p>
 </li>
 <li>
-<p>Reported feature bugs discovered during system testing (Issue: <a href="https://github.com/CS2113-AY1819S1-T16-2/main/issues/125">#125</a> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/issues/126">#126</a>)</p>
+<p>Reported feature bugs discovered during system testing (Issue: <a href="https://github.com/CS2113-AY1819S1-T16-2/main/issues/75">#75</a> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/issues/125">#125</a> <a href="https://github.com/CS2113-AY1819S1-T16-2/main/issues/126">#126</a>)</p>
+</li>
+<li>
+<p>Prepare sample data for final demo <a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/149">#149</a></p>
 </li>
 </ul>
 </div>
@@ -178,7 +178,7 @@ Invite 1st employee on employee list to 3rd event on event list</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/InviteCommandGuide.png" alt="InviteCommandGuide" width="500">
+<img src="../images/InviteCommandGuide.png" alt="InviteCommandGuide" width="480">
 </div>
 </div>
 <div class="sidebarblock">
@@ -194,13 +194,24 @@ Invite 1st employee on employee list to 3rd event on event list</p>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
-<li>
-<p>Employee should not have already been invited to the selected event.</p>
-</li>
-<li>
-<p>Event invited to <strong>should not clash</strong> with the selected employee&#8217;s event schedule.</p>
-</li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Employee should not have <strong>already</strong> been invited to the selected event.<br>
+Event invited to <strong>should not clash</strong> with the selected employee&#8217;s event schedule.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -225,7 +236,7 @@ Remove 2nd employee at employee list from 4th event at event list</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/RemoveCommandGuide.png" alt="RemoveCommandGuide" width="450">
+<img src="../images/RemoveCommandGuide.png" alt="RemoveCommandGuide" width="480">
 </div>
 </div>
 <div class="sidebarblock">
@@ -241,10 +252,23 @@ Remove 2nd employee at employee list from 4th event at event list</p>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
-<li>
-<p>The employee to be remove must be previously invited to an event in order to be removed.</p>
-</li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The employee to be remove must be previously invited to an event in order to be removed.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -255,7 +279,7 @@ Remove 2nd employee at employee list from 4th event at event list</p>
 <p>Priority level: <code>all</code></p>
 </div>
 <div class="paragraph">
-<p>Selects an employee and view the specified employee&#8217;s events on a date, year, month, month and year, or all of his/her events.<br>
+<p>Selects an employee and view the selected employee&#8217;s events at the indicated time on the event list panel.<br>
 Format/Prompts:<br>
 Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code></p>
 </div>
@@ -264,10 +288,13 @@ Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code>
 <div class="ulist">
 <ul>
 <li>
-<p>Select the employee at the specified <code>PERSON_INDEX</code> and view all his/her events or events at certain time if indicated.</p>
+<p>Select the employee at the specified <code>PERSON_INDEX</code> and view all his/her events at certain date/year/month if indicated.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed person list.</p>
+<p>Events will be displayed on the event list panel on the right in chronological order.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed employee list.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
@@ -281,19 +308,45 @@ Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code>
 <li>
 <p>YEAR needs to be in YYYY format. (e.g. 2018)</p>
 </li>
-<li>
-<p>If DATE is indicated, MONTH and YEAR must NOT be indicated. Then, all events of the selected employee at the specific DATE will be displayed.</p>
-</li>
-<li>
-<p>MONTH and YEAR can be both used at the same time, resulting in events on the selected MONTH and YEAR to be displayed.</p>
-</li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+MONTH and YEAR can be both used at the same time, resulting in events on the selected MONTH and YEAR to be displayed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If DATE is indicated, MONTH and YEAR must NOT be indicated. Then, all events of the selected employee at the specific DATE will be displayed.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/SelectCommandGuide.png" alt="SelectCommandGuide" width="500">
+<img src="../images/SelectCommandGuide.png" alt="SelectCommandGuide" width="650">
 </div>
 </div>
 <div class="paragraph">
@@ -335,55 +388,21 @@ Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UiClassDiagram.png" alt="UiClassDiagram" width="500">
-</div>
-<div class="title">Figure 1. Structure of the UI Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>EventListPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
-</div>
-</div>
-<div class="sect2">
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 2. Structure of the Storage Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Storage</code> component,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
-</li>
-<li>
-<p>can save the Address Book and Event List data in xml format and read it back.</p>
-</li>
-</ul>
+<div class="title">Figure 1. Structure of the Storage Component</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram" width="600">
+<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram" width="620">
 </div>
-<div class="title">Figure 3. Structure of the Model Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<div class="title">Figure 2. Structure of the Model Component</div>
 </div>
 </div>
 <div class="sect2">
@@ -392,16 +411,17 @@ Enter a command: <code>select PERSON_INDEX [date/DATE] [m/MONTH] [y/YEAR]</code>
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>invite</code> command allows users to add attendees to an existing event, which is represented by an <code>Event</code> object.
-The command currently only allows users to add a single person to an event, based on the indices on the UI.
+The command currently only allows users to add a single person to an event at a time, based on the indices on the UI.
 This command adds the to-be-invited <code>Person</code> 's email, which is unique, to the chosen <code>Event</code>, so that the attendees of a particular event is recorded.</p>
 </div>
 <div class="paragraph">
-<p>The adding of attendees is facilitated by the class: <code>Attendees</code>, a list of emails of type <code>String</code>.</p>
+<p>The adding of attendees is facilitated by the class: <code>Attendees</code>, which consists of a list of emails of type <code>String</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/EventClassDiagram.png" alt="EventClassDiagram" width="300">
+<img src="../images/EventAndAttendeeClassDiagram.png" alt="EventAndAttendeeClassDiagram" width="800">
 </div>
+<div class="title">Figure 3. Class Diagram of Event and Attendee class</div>
 </div>
 <div class="paragraph">
 <p>The following is a more detailed description of the <code>Attendee</code> class:</p>
@@ -413,7 +433,7 @@ This command adds the to-be-invited <code>Person</code> 's email, which is uniqu
 <div class="ulist">
 <ul>
 <li>
-<p>Each <code>Event</code> object has an <code>Attendees</code>, which is a list of the emails of the different <code>Person</code> attending the event.</p>
+<p>Each <code>Event</code> object consist of an <code>Attendees</code> object, which is a list of the emails of the different <code>Person</code> attending the event.</p>
 </li>
 <li>
 <p>This class is a wrapper class around the internal representation of a <code>Set</code> of emails.</p>
@@ -427,7 +447,9 @@ This command adds the to-be-invited <code>Person</code> 's email, which is uniqu
 </ul>
 </div>
 <div class="paragraph">
-<p>Storing only the <strong>email</strong> of <code>Person</code> in the <code>Attendees</code> object of <code>Event</code> saves memory storage and facilitates the <code>select</code> feature. As we select a person, we can simply iterate through the event list and check whether the person&#8217;s email is in the attendees list.</p>
+<p>Storing only the <strong>email</strong> of <code>Person</code> in the <code>Attendees</code> object of <code>Event</code> saves memory storage and facilitates the <code>select</code>, <code>viewmine</code> and <code>selectEvent</code> feature.
+As we select a person, we can simply iterate through the event list and check whether the person&#8217;s email is in the attendees list.
+Similarly, as we select an event, we can first obtain the list of emails from the <code>Attendees</code>, and filter the employee list accordingly.</p>
 </div>
 <div class="paragraph">
 <p>This command only executes successfully if the event does not not clash with the person&#8217;s schedule.</p>
@@ -437,11 +459,17 @@ This command adds the to-be-invited <code>Person</code> 's email, which is uniqu
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/EventClashDiagram.png" alt="EventClashDiagram" width="400">
+<img src="../images/EventClashDiagram.png" alt="EventClashDiagram" width="450">
 </div>
+<div class="title">Figure 4. Logic behind <code>Event#hasClash</code></div>
 </div>
 <div class="paragraph">
-<p>The <code>Event#hasClash</code> is widely used in other features such as <code>addEvent</code> and <code>editEvent</code> to ensure that</p>
+<p>Thus, to check whether the event clashes with an employee&#8217;s schedule, we iterate through the <code>ObservableList&lt;Event&gt;</code> and check whether the <code>Event</code> 1) contains the employee&#8217;s email in the <code>Attendee</code> and 2) clashes with the selected event.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><code>Event#hasClash</code> is widely used in other features such as <code>addEvent</code> and <code>editEvent</code> to ensure that</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -453,21 +481,25 @@ This command adds the to-be-invited <code>Person</code> 's email, which is uniqu
 </li>
 </ol>
 </div>
+</div>
+</div>
 <div class="paragraph">
-<p>Implementation of <code>RemoveCommand</code> is similar to <code>InviteCommand</code>, but removes persons from attendees of events instead.</p>
+<p>Implementation of <code>RemoveCommand</code> is similar to <code>InviteCommand</code>, but removes persons from <code>Attendees</code> of events instead.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="execution-of-command"><a class="link" href="#execution-of-command">Execution of Command</a></h4>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the invite mechanism works.
-For example, the user inputs <code>invite 1 to/1</code> to invite the 1st person in the address book to the 1st event in the event list.</p>
+<p>Given below is an example usage scenario and how the invite mechanism works.</p>
+</div>
+<div class="paragraph">
+<p>For example, the user inputs <code>invite 1 to/1</code> to invite the 1st person in the address book to the 1st event in the event list.</p>
 </div>
 <div class="paragraph">
 <p>Step 1. The command text is passed to an instance of the <code>LogicManager</code> class.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The <code>LogicManager</code> instance calls <code>ProManageParser#parseCommand</code>, which parses the <code>invite</code> command phrase.</p>
+<p>Step 2. The <code>LogicManager</code> instance calls <code>ProManageParser#parseCommand</code>, which parses the invite command phrase.</p>
 </div>
 <div class="paragraph">
 <p>Step 3. <code>InviteCommandParser#parse</code> parses the person and event index. An instance of the <code>InviteCommand</code> encapsulating the two indices information is then returned after parsing.</p>
@@ -523,7 +555,7 @@ For example, the user inputs <code>invite 1 to/1</code> to invite the 1st person
 <p>Pros: Saves space. Able to filter EventList easily.</p>
 </li>
 <li>
-<p>Cons: Requires going through the entire list of AddressBook to obtain details of persons attending the particular event.</p>
+<p>Cons: Requires going through the entire list of EventList to obtain details of events attended by the person.</p>
 </li>
 </ul>
 </div>
@@ -605,100 +637,11 @@ One possible way to to implement this is to have the user</p>
 <div class="paragraph">
 <p>Implementation of this additional feature would require changes to both <code>InviteCommandParser</code> and <code>InviteCommand#execute</code>. Additionally, handling of clashing events needs to be considered as it now involves more than one participant and event.</p>
 </div>
-<h3 id="use-case-invite-employees-to-events" class="discrete">Use case: Invite employees to events</h3>
 <div class="paragraph">
-<p><strong>Guarantee</strong>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The invite will not result in clash of events in the employee schedule</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to add employee to events.</p>
-</li>
-<li>
-<p>ProManage request employee details and event details.</p>
-</li>
-<li>
-<p>User enters employee and event information.</p>
-</li>
-<li>
-<p>ProManage adds employee to events</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>3a. Invalid employee.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3a1. ProManage shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3b. Invalid event.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3b1. ProManage shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3c. Employee is already invited to event.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3c1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3d. Event conflicts with employee&#8217;s schedule</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3d1. AddressBook shows an error message.</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<p>Similar improvements can be made to <code>remove</code> command, being able to remove a person from a number of events with one single command.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:51:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:02:30 UTC</div></div></div></body></html>

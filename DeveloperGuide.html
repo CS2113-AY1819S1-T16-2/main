@@ -455,7 +455,7 @@ but its behaviour depends on implementation of its subclass.</p>
 <h3 id="Design-Model"><a class="link" href="#Design-Model">2.5. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="600">
+<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="620">
 </div>
 <div class="title">Figure 9. Structure of the Model Component</div>
 </div>
@@ -600,16 +600,17 @@ To allow sorting of these parameters, there are three types of comparators.</p>
 <h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>invite</code> command allows users to add attendees to an existing event, which is represented by an <code>Event</code> object.
-The command currently only allows users to add a single person to an event, based on the indices on the UI.
+The command currently only allows users to add a single person to an event at a time, based on the indices on the UI.
 This command adds the to-be-invited <code>Person</code> 's email, which is unique, to the chosen <code>Event</code>, so that the attendees of a particular event is recorded.</p>
 </div>
 <div class="paragraph">
-<p>The adding of attendees is facilitated by the class: <code>Attendees</code>, a list of emails of type <code>String</code>.</p>
+<p>The adding of attendees is facilitated by the class: <code>Attendees</code>, which consists of a list of emails of type <code>String</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EventClassDiagram.png" alt="EventClassDiagram" width="300">
+<img src="images/EventAndAttendeeClassDiagram.png" alt="EventAndAttendeeClassDiagram" width="800">
 </div>
+<div class="title">Figure 11. Class Diagram of Event and Attendee class</div>
 </div>
 <div class="paragraph">
 <p>The following is a more detailed description of the <code>Attendee</code> class:</p>
@@ -621,7 +622,7 @@ This command adds the to-be-invited <code>Person</code> 's email, which is uniqu
 <div class="ulist">
 <ul>
 <li>
-<p>Each <code>Event</code> object has an <code>Attendees</code>, which is a list of the emails of the different <code>Person</code> attending the event.</p>
+<p>Each <code>Event</code> object consist of an <code>Attendees</code> object, which is a list of the emails of the different <code>Person</code> attending the event.</p>
 </li>
 <li>
 <p>This class is a wrapper class around the internal representation of a <code>Set</code> of emails.</p>
@@ -635,7 +636,9 @@ This command adds the to-be-invited <code>Person</code> 's email, which is uniqu
 </ul>
 </div>
 <div class="paragraph">
-<p>Storing only the <strong>email</strong> of <code>Person</code> in the <code>Attendees</code> object of <code>Event</code> saves memory storage and facilitates the <code>select</code> feature. As we select a person, we can simply iterate through the event list and check whether the person&#8217;s email is in the attendees list.</p>
+<p>Storing only the <strong>email</strong> of <code>Person</code> in the <code>Attendees</code> object of <code>Event</code> saves memory storage and facilitates the <code>select</code>, <code>viewmine</code> and <code>selectEvent</code> feature.
+As we select a person, we can simply iterate through the event list and check whether the person&#8217;s email is in the attendees list.
+Similarly, as we select an event, we can first obtain the list of emails from the <code>Attendees</code>, and filter the employee list accordingly.</p>
 </div>
 <div class="paragraph">
 <p>This command only executes successfully if the event does not not clash with the person&#8217;s schedule.</p>
@@ -645,11 +648,17 @@ This command adds the to-be-invited <code>Person</code> 's email, which is uniqu
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EventClashDiagram.png" alt="EventClashDiagram" width="400">
+<img src="images/EventClashDiagram.png" alt="EventClashDiagram" width="450">
 </div>
+<div class="title">Figure 12. Logic behind <code>Event#hasClash</code></div>
 </div>
 <div class="paragraph">
-<p>The <code>Event#hasClash</code> is widely used in other features such as <code>addEvent</code> and <code>editEvent</code> to ensure that</p>
+<p>Thus, to check whether the event clashes with an employee&#8217;s schedule, we iterate through the <code>ObservableList&lt;Event&gt;</code> and check whether the <code>Event</code> 1) contains the employee&#8217;s email in the <code>Attendee</code> and 2) clashes with the selected event.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><code>Event#hasClash</code> is widely used in other features such as <code>addEvent</code> and <code>editEvent</code> to ensure that</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -661,21 +670,25 @@ This command adds the to-be-invited <code>Person</code> 's email, which is uniqu
 </li>
 </ol>
 </div>
+</div>
+</div>
 <div class="paragraph">
-<p>Implementation of <code>RemoveCommand</code> is similar to <code>InviteCommand</code>, but removes persons from attendees of events instead.</p>
+<p>Implementation of <code>RemoveCommand</code> is similar to <code>InviteCommand</code>, but removes persons from <code>Attendees</code> of events instead.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="execution-of-command"><a class="link" href="#execution-of-command">3.2.2. Execution of Command</a></h4>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the invite mechanism works.
-For example, the user inputs <code>invite 1 to/1</code> to invite the 1st person in the address book to the 1st event in the event list.</p>
+<p>Given below is an example usage scenario and how the invite mechanism works.</p>
+</div>
+<div class="paragraph">
+<p>For example, the user inputs <code>invite 1 to/1</code> to invite the 1st person in the address book to the 1st event in the event list.</p>
 </div>
 <div class="paragraph">
 <p>Step 1. The command text is passed to an instance of the <code>LogicManager</code> class.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The <code>LogicManager</code> instance calls <code>ProManageParser#parseCommand</code>, which parses the <code>invite</code> command phrase.</p>
+<p>Step 2. The <code>LogicManager</code> instance calls <code>ProManageParser#parseCommand</code>, which parses the invite command phrase.</p>
 </div>
 <div class="paragraph">
 <p>Step 3. <code>InviteCommandParser#parse</code> parses the person and event index. An instance of the <code>InviteCommand</code> encapsulating the two indices information is then returned after parsing.</p>
@@ -731,7 +744,7 @@ For example, the user inputs <code>invite 1 to/1</code> to invite the 1st person
 <p>Pros: Saves space. Able to filter EventList easily.</p>
 </li>
 <li>
-<p>Cons: Requires going through the entire list of AddressBook to obtain details of persons attending the particular event.</p>
+<p>Cons: Requires going through the entire list of EventList to obtain details of events attended by the person.</p>
 </li>
 </ul>
 </div>
@@ -812,6 +825,9 @@ One possible way to to implement this is to have the user</p>
 </div>
 <div class="paragraph">
 <p>Implementation of this additional feature would require changes to both <code>InviteCommandParser</code> and <code>InviteCommand#execute</code>. Additionally, handling of clashing events needs to be considered as it now involves more than one participant and event.</p>
+</div>
+<div class="paragraph">
+<p>Similar improvements can be made to <code>remove</code> command, being able to remove a person from a number of events with one single command.</p>
 </div>
 </div>
 </div>
@@ -1347,7 +1363,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 11. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 13. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2915,11 +2931,11 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="inviting-a-person"><a class="link" href="#inviting-a-person">F.4. Inviting a person</a></h3>
+<h3 id="inviting-a-person-to-an-event"><a class="link" href="#inviting-a-person-to-an-event">F.4. Inviting a person to an event</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Inviting a person while all persons are listed</p>
+<p>Inviting a person while all persons and events are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2938,8 +2954,8 @@ Expected: Error message as employee is already invited to event.</p>
 Expected: No employee is invited. Error details shown in the status message.</p>
 </li>
 <li>
-<p>Other incorrect invite commands to try: <code>invite</code>, <code>invite x to/1</code> (where x is larger than the list size)<br>
-Expected: Similar to previous.</p>
+<p>Other incorrect invite commands to try: <code>invite</code>, <code>invite x to/1</code> (where x is larger than the person list size), <code>invite 1 to/y</code> (where y is larger than the event list size)<br>
+Expected: Error message.</p>
 </li>
 </ol>
 </div>
@@ -2948,11 +2964,11 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="removing-a-person"><a class="link" href="#removing-a-person">F.5. Removing a person</a></h3>
+<h3 id="removing-a-person-from-an-event"><a class="link" href="#removing-a-person-from-an-event">F.5. Removing a person from an event</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Inviting a person while all persons are listed</p>
+<p>Removing a person while all persons and events are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2971,8 +2987,8 @@ Expected: Error message as employee is currently not invited to event.</p>
 Expected: No employee is removed. Error details shown in the status message.</p>
 </li>
 <li>
-<p>Other incorrect invite commands to try: <code>remove</code>, <code>remove x to/1</code> (where x is larger than the list size)<br>
-Expected: Similar to previous.</p>
+<p>Other incorrect invite commands to try: <code>remove</code>, <code>remove x to/1</code> (where x is larger than the person list size), <code>remove 1 to/y</code> (where y is larger than the event list size)<br>
+Expected: Similar to error message.</p>
 </li>
 </ol>
 </div>
@@ -3118,4 +3134,4 @@ Expected: Event list to be sorted according to the date from the earliest to the
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:51:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:02:30 UTC</div></div></div></body></html>
