@@ -916,7 +916,7 @@ one of keywords in their names or description.</p>
 <h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>list</code> feature allows users to filter through all the individual people in ProManage and understand which department
-they are from. The command currently has 4 sub-features; <code>list all</code>. <code>list all people</code>, <code>list all events</code> and <code>list dep DEPARTMENT</code>. The user can list all the
+they are from. The command currently has 4 sub-features; <code>list all</code> , <code>list all people</code>, <code>list all events</code> and <code>list dep DEPARTMENT</code>. The user can list all the
 people and events in ProManage by simply typing <code>list all</code>. Alternatively, the user can filter through ProManage and get the
 relevant Person&#8217;s information by listing those of the specified department. The user can list multiple departments such
 as <code>list dep Admin Finance</code>. As of now, each person can only be inside one department.</p>
@@ -964,7 +964,7 @@ to an instance of the <code>LogicManager</code> class.</p>
 </div>
 <div class="paragraph">
 <p>Step 3. <code>ListCommandParser#parse</code> parses the type of command that is called upon and if applicable, the departments
-listed. The list command can take in either <code>all</code> or <code>dep</code>. <code>all</code> means that are no predicates and 'dep' means specific
+listed. The list command can take in either <code>all</code>, <code>all people</code> , <code>all events</code> or <code>dep</code>. <code>all</code> means that are no predicates and 'dep' means specific
 departments are about to be listed. An instance of the <code>ListCommand</code> encapsulating the type of <code>ListCommand</code> and if
 applicable, the predicates involved, is then returned to <code>Logic Manager</code>.</p>
 </div>
@@ -2141,13 +2141,13 @@ need to attend</p></td>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 <h3 id="use-case-add-event" class="discrete">Use case: Add Event</h3>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2650,9 +2650,6 @@ be able to accomplish most of the tasks faster using commands than using the mou
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2885,7 +2882,7 @@ Expected: The details of John and Tracy or any personnel who is in the Admin and
 Expected: The details of all personnel will be listed.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>list admn</code>, <code>list al people</code> (where the input is not of correct spelling form)+
+<p>Other incorrect delete commands to try: <code>list admn</code>, <code>list al people</code> (where the input is not of correct spelling form)<br>
 Expected: Error thrown.</p>
 </li>
 </ol>
@@ -2900,7 +2897,7 @@ Expected: Error thrown.</p>
 <code>addEvent n/Financial Review d/Review the financial quarter l/Conference Room 4 date/2018-10-23 s/14:00 e/16:30</code>.</p>
 </li>
 <li>
-<p>Test case: <code>list all events</code><br>
+<p>Test case: <code>list all events</code>
 Expected: The details of all events will be listed.</p>
 </li>
 <li>
@@ -2911,9 +2908,6 @@ Expected: The details of all personnel and events will be listed.</p>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
@@ -2937,4 +2931,4 @@ Expected: The details of all personnel and events will be listed.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:38:49 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:49:11 UTC</div></div></div></body></html>
