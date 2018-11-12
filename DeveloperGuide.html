@@ -418,12 +418,46 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Parser"><a class="link" href="#Design-Parser">2.4. Parser component</a></h3>
+<div id="fig-ParserClassDiagram" class="imageblock">
+<div class="content">
+<img src="images/ParserClassDiagram.png" alt="ParserClassDiagram" width="800">
+</div>
+<div class="title">Figure 8. Structure of the Parser Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="https://github.com/CS2113-AY1819S1-T16-2/main/src/main/java/seedu/address/logic/parser/ProManageParser.java"><code>ProManageParser.java</code></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>ProManageParser</code> use children class of <code>CommandParser</code> (eg. ManagerParser) to parse the user command.</p>
+</li>
+<li>
+<p>When login/logout command is executed, the CommandParser object within ProManageParser is changed accordingly to DefaultParser,
+ManagerParser or EmployeeParser.</p>
+</li>
+<li>
+<p>DefaultParser, ManagerParser or EmployeeParser are subclass of the abstract class CommandParser</p>
+</li>
+<li>
+<p>This display the behaviour of polymorphism as ProManageParser will always pass the input into CommandParser
+but its behaviour depends on implementation of its subclass.</p>
+</li>
+<li>
+<p>Each of it subclass will only know commands that is according to the privilege level.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">2.5. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="600">
 </div>
-<div class="title">Figure 8. Structure of the Model Component</div>
+<div class="title">Figure 9. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S1-T16-2/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -463,12 +497,12 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.6. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 9. Structure of the Storage Component</div>
+<div class="title">Figure 10. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S1-T16-2/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -488,7 +522,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.7. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
 </div>
@@ -1088,7 +1122,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 10. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 11. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2678,4 +2712,4 @@ Expected: The details of all personnel and events will be listed.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:55:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:15:54 UTC</div></div></div></body></html>
