@@ -855,9 +855,31 @@ This command only executes successfully if the input index is valid (not out of 
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-feature"><a class="link" href="#list-feature">3.4. List Feature</a></h3>
+<h3 id="find-event-feature"><a class="link" href="#find-event-feature">3.4. Find Event feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>findEvent</code> allows the user to search for an event using some keywords. It searches for such events which contain at least
+one of keywords in their names or description.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="execution-of-command-3"><a class="link" href="#execution-of-command-3">3.4.2. Execution of Command</a></h4>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>findEvent</code> mechanism works.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user inputs <code>findEvent meeting</code> to find the event containing the word meeting in its name or description.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The command is parsed and the result is shown.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-feature"><a class="link" href="#list-feature">3.5. List Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>list</code> feature allows users to filter through all the individual people in ProManage and understand which department
 they are from. The command currently has 4 sub-features; <code>list all</code>. <code>list all people</code>, <code>list all events</code> and <code>list dep DEPARTMENT</code>. The user can list all the
@@ -894,7 +916,7 @@ a list of departments of type <code>String</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-of-command-3"><a class="link" href="#execution-of-command-3">3.4.2. Execution of Command</a></h4>
+<h4 id="execution-of-command-4"><a class="link" href="#execution-of-command-4">3.5.2. Execution of Command</a></h4>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the list mechanism works.</p>
 </div>
@@ -931,7 +953,7 @@ applicable, the predicates involved, is then returned to <code>Logic Manager</co
 </div>
 </div>
 <div class="sect3">
-<h4 id="future-improvements-2"><a class="link" href="#future-improvements-2">3.4.3. Future Improvements</a></h4>
+<h4 id="future-improvements-2"><a class="link" href="#future-improvements-2">3.5.3. Future Improvements</a></h4>
 <div class="sect4">
 <h5 id="listing-people-who-stay-in-the-same-town"><a class="link" href="#listing-people-who-stay-in-the-same-town">Listing people who stay in the same town</a></h5>
 <div class="paragraph">
@@ -962,14 +984,14 @@ it can list out the upcoming birthdays of the personnel in the company.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1000,7 +1022,7 @@ it can list out the upcoming birthdays of the personnel in the company.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2656,4 +2678,4 @@ Expected: The details of all personnel and events will be listed.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:35:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:55:07 UTC</div></div></div></body></html>
