@@ -1,0 +1,1065 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Perry Wang - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">ProManage</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-T16-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Perry Wang - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-promanage"><a class="link" href="#project-promanage">PROJECT: ProManage</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ProManage is a <strong>professional desktop application</strong> for companies that specialises in executing projects that undergoes a
+long and tedious planning phase. ProManage allow <strong>Manager</strong> and <strong>Employees</strong> of project teams to manage their team members and events easily.
+ProManage is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This project portfolio documents my contributions to the development of the CS2113 project, as part of my team T16-2.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: Extended <strong>undo and redo capability of the model</strong> via the <code>undo</code> and <code>redo</code> commands to all existing or new commands.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Justification: With so many commands with different purposes, it can be very easy to make mistakes with unintended
+effects. For example, if an employee was wrongly renamed, without the undo command, the employee&#8217;s original name
+would be irreversibly lost. Being able to undo or redo commands improves the flexibility of the app, where
+users do not have to be worried that their wrongly entered commands have irreversible effects.</p>
+</li>
+<li>
+<p>Highlights: This implementation required an overhaul of the existing <code>Model</code> to enable intelligent undo and redo
+capability to both the address book and event list, where the model recognises which of them to undo or redo.
+As they are intertwined with all other modifying commands, extensive testing was required to harden the app
+against bugs and ensure that the commands worked properly in all scenarios.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Created EditEvent command which allows the user to edit an event in the event list according to the parameters
+they entered. Regex was used to ensure that the input parameters were valid.</p>
+</li>
+<li>
+<p>Created DeleteEvent command which allows the user to delete an event specified by its index on the filtered
+event list.</p>
+</li>
+<li>
+<p>Created SelectEvent command which allows the user to select an event to show its attendees. It filters the
+person list on the UI to show only the attendees.</p>
+</li>
+<li>
+<p>Implemented <code>VersionedEventList</code> class as a subclass of <code>EventList</code> but with historical record.</p>
+</li>
+<li>
+<p>Implemented <code>EventModel</code> interface and <code>PersonModel</code> interface which are extended by the <code>Model</code> interface.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nuscs2113-ay1819s1.github.io/dashboard/#=undefined&amp;search=perrythewang">Functional code</a>]</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Helped to manage releases on GitHub</p>
+</li>
+<li>
+<p>Managed the issue tracker on GitHub by creating new issues and closed existing issues that have been resolved.</p>
+</li>
+<li>
+<p>Wrote test cases to increase coverage by 1.2% in total<br>
+[<a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/147">PR 1</a>]
+[<a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/148">PR 2</a>]
+[<a href="https://github.com/CS2113-AY1819S1-T16-2/main/pull/150">PR 3</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the User Guide for <code>deleteEvent</code>, <code>selectEvent</code>, <code>undo</code>, and <code>redo</code> commands.</p>
+</li>
+<li>
+<p>Updated the Developer Guide to include implementation and usage example of <code>undo</code> and <code>redo</code> commands.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed and merged</p>
+</li>
+<li>
+<p>Helped other teammates to debug their code</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="deleting-an-event-code-deleteevent-code"><a class="link" href="#deleting-an-event-code-deleteevent-code">Deleting an event : <code>deleteEvent</code></a></h3>
+<div class="paragraph">
+<p>Priority level: <code>default</code>,<code>manager</code></p>
+</div>
+<div class="paragraph">
+<p>Delete the specified event from ProManage.<br>
+Format:
+<code>deleteEvent EVENT_INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the event at the specified <code>EVENT_INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed event list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteEvent 2</code><br>
+Deletes the 2nd event in the address book.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-an-event-code-selectevent-code"><a class="link" href="#selecting-an-event-code-selectevent-code">Selecting an event : <code>selectEvent</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
+<div class="paragraph">
+<p>Selects the specified event by index and displays all employees attending the event.<br>
+Format: <code>selectEvent 1</code><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If any of the attendees are edited or removed, the filtered employee list will not update. The <code>selectEvent</code>
+command must be input again to view the updated list of attendees.<br></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the event at the specified <code>EVENT_INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed event list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>selectEvent 2</code><br>
+Selects the 2nd event in the address book and shows its attendees.</p>
+</li>
+<li>
+<p><code>invite 1 to/1</code> (invites an attendee to an event)<br>
+<code>selectEvent 1</code> (select the event to show the attendee)<br>
+<code>edit 1 n/New Name</code> (edit the name of the attendee)<br>
+<code>selectEvent 1</code> (re-selects the event to show the updated name of the attendee)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command : <code>undo</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
+<div class="paragraph">
+<p>Restores the event schedule or address book to the state before the previous <em>undoable</em> command was executed. Only commands that modify the entries in the event schedule or address book are able to be undone. The unfiltered event schedule and address book will be displayed after undoing the previous command.<br>
+Format/Prompts:<br>
+Enter a command: <code>undo</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Undoable commands: those commands that modify the event schedule&#8217;s or address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>list all</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>select 1</code><br>
+<code>list all</code><br>
+<code>undo</code><br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command : <code>redo</code></a></h3>
+<div class="paragraph">
+<p>Priority level: all</p>
+</div>
+<div class="paragraph">
+<p>Reverses the most recent <code>undo</code> command. Only commands that modify the entries in the event schedule or address book will be reversed. The unfiltered event schedule and address book will be displayed after redoing the command.<br>
+Format/Prompts:<br>
+Enter a command: <code>redo</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>redo</code><br>
+The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>undo</code> and <code>redo</code> feature allows users to undo and redo their previous commands. The commands that can
+be undone are only those that modify the contents of the address book or event list, such as adding a person
+or event within the app. This is managed within <code>ModelManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>The undo/redo mechanism is implemented separately for the address book and event list by the
+<code>VersionedAddressBook</code> and <code>VersionedEventList</code>. They are extensions of the superclass <code>AddressBook</code> and
+<code>EventList</code> respectively with a history of states stored internally as an <code>addressBookStateList</code>
+for the address book, <code>eventListStateList</code> for the event list, and a <code>currentStatePointer</code> in each of them.
+To ensure that the address book and event list are undone/redone correctly, a <code>StateHistoryList</code> (sub-class
+of <code>LinkedList</code>) is kept in the <code>ModelManager</code> to keep track of the list that was modified.</p>
+</div>
+<div class="paragraph">
+<p>The following operations were implemented:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>VersionedAddressBook#commit()</code> — Saves the current address book state in its internal history.</p>
+</li>
+<li>
+<p><code>VersionedAddressBook#undo()</code> — Restores the previous address book state from its internal history.</p>
+</li>
+<li>
+<p><code>VersionedAddressBook#redo()</code> — Restores a previously undone address book state from its internal history.</p>
+</li>
+<li>
+<p><code>VersionedEventList#commit()</code> — Saves the current event list in its internal history.</p>
+</li>
+<li>
+<p><code>VersionedEventList#undo()</code> — Restores the previous event list state from its internal history.</p>
+</li>
+<li>
+<p><code>VersionedEventList#redo()</code> — Restores a previously undone event list state from its internal history.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These operations are exposed in the Model interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code>
+and <code>Model#redoAddressBook()</code> for the address book, and <code>Model#commitEventList()</code>, <code>Model#undoEventList()</code>
+and <code>Model#redoEventList()</code> for the event list. Two wrapper methods, <code>Model#undo()</code> and <code>Model#redo()</code>
+are also implemented. These will be the methods called by the commands <code>undo</code> and <code>redo</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>StateHistoryList</code> implements the following operations for the <code>Model</code> to decide whether to
+undo/redo the address book or event list:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>StateHistoryList#getCurrentState()</code> - Retrieves the latest record state.</p>
+</li>
+<li>
+<p><code>StateHistoryList#getNextState()</code> - Retrieves the next (previously undone) record state.</p>
+</li>
+<li>
+<p><code>StateHistoryList#decrementPointer()</code> - Shifts record state pointer back. Called during <code>undo</code>.</p>
+</li>
+<li>
+<p><code>StateHistoryList#incrementPointer()</code> - Shifts record state pointer forward. Called during <code>redo</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A command can either modify the address book, event list, or both. Within the model, the <code>StateHistoryList</code>
+keeps track of all model methods which modify the address book or event list, and stores a history
+record value within itself for each method called.</p>
+</div>
+<div class="paragraph">
+<p>When undoing a command, the <code>ModelManager</code> requests for the latest record by <code>StateHistoryList#getCurrentState()</code>
+and calls the corresponding <code>VersionedAddressBook#undo()</code> and/or <code>VersionedEventList#undo()</code>. The ModelManager
+also informs the <code>StateHistoryList</code> that an undo command was issued to shift the pointer back.</p>
+</div>
+<div class="paragraph">
+<p>When redoing a command,the <code>ModelManager</code> requests for the next record from <code>StateHistoryList</code> and
+calls the corresponding <code>VersionedAddressBook#redo()</code> and/or <code>VersionedEventList#redo()</code>. The ModelManager
+also informs the <code>StateHistoryList</code> that an undo command was issued to shift the pointer forward.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The VersionedAddressBook and VersionedEventList
+will be initialized with the initial address book and event list states, and the currentStatePointers will
+point to their single state respectively. The StateHistoryList is instantiated as an empty list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UndoRedoModelInitializationStateListDiagram.png" alt="UndoRedoModelInitializationStateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>add</code> (with valid input arguments) to add a person to the address book. The <code>add</code> command calls
+<code>Model#addPerson()</code>, which will add a state record index integer <code>STATE_ADDRESSBOOK</code> to the <code>StateHistoryList</code>.
+This command is the last entered command, therefore the <code>pointer</code> in <code>StateHistoryList</code> shifts forward.
+The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after
+the <code>add</code> command executes to be saved in the <code>addressBookStateList</code>, and the address book <code>currentStatePointer</code>
+is shifted to the newly inserted address book state. The <code>currentStatePointer</code> for <code>VersionedEventList</code> remains unchanged
+as only the <code>VersionedAddressBook</code> was modified..</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UndoRedoNewCommandAB1StateListDiagram.png" alt="UndoRedoNewCommandAB1StateListDiagram" width="800">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a command fails its execution, it will not call <code>Model#commitAddressBook()</code> or <code>Model#commitEventList()</code>,
+so the address book or event list state will not be saved into <code>addressBookStateList</code> or <code>eventListStateList</code>.
+The <code>StateHistoryList</code> will also not save a record state.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. The user realises that they have accidentally added the wrong person, and decides to undo the action by
+executing the <code>undo</code> command. The <code>undo</code> command calls <code>Model#undo()</code>, which gets the latest record state
+from <code>StateHistoryList</code> and recognises that the <code>VersionedAddressBook</code> was modified in the previous command.
+The <code>Model#undoAddressBook()</code> is then called, which shift the currentStatePointer once to the left, pointing it to
+the previous address book state, and restores the address book to that state. Also, the <code>pointer</code> in <code>StateHistoryList</code>
+is shifted to the left by <code>StateHistoryList#decrementPointer</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UndoRedoNewCommandAB2StateListDiagram.png" alt="UndoRedoNewCommandAB2StateListDiagram" width="800">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous
+address book states to restore. The undo command uses <code>Model#canUndo()</code> to check if this is the case.
+If so, it will return an error to the user rather than attempting to perform the undo.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the undo operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 4.
+The redo command does the opposite — it calls <code>Model#redo()</code>, which shifts the <code>currentStatePointer</code> in either
+the <code>VersionedAddressBook</code> and/or <code>VersionedEventList</code> once to the right, pointing to the previously
+undone state, and restores it to that state.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>pointer</code> is at index <code>stateHistoryList.size() - 1</code>, pointing to the latest memory state, then
+there are no undone states to restore. The redo command uses <code>Model#canRedo()</code> to check if this is the case.
+If so, it will return an error to the user rather than attempting to perform the redo.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UndoRedoNewCommandAB3StateListDiagram.png" alt="UndoRedoNewCommandAB3StateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 5.
+The user then decides to add a new event to the event list, by the <code>addEvent</code> command. The <code>addEvent</code> command calls
+<code>Model#addEvent()</code>, which will add a state record index integer <code>STATE_EVENTLIST</code> to the <code>StateHistoryList</code>.
+This command is the last entered command, therefore the <code>pointer</code> in <code>StateHistoryList</code> shifts forward.
+The <code>addEvent</code> command also calls <code>Model#commitEventList()</code>, causing the modified state of the event list after
+the <code>addEvent</code> command executes to be saved in the <code>eventListStateList</code>, and the event list <code>currentStatePointer</code>
+is shifted to the newly inserted address book state. The <code>currentStatePointer</code> for <code>VersionedAddressBook</code> remains unchanged
+as only the <code>VersionedEventList</code> was modified.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UndoRedoNewCommandELStateListDiagram.png" alt="UndoRedoNewCommandELStateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 6.
+The user then decides to execute <code>clear</code>. Since this command must clear both the address book and event list,
+the <code>clear</code> command calls both <code>Model#commitAddressBook()</code> and <code>Model#commitEventList()</code>. It adds a state
+record index integer <code>STATE_BOTH</code> to the <code>StateHistoryList</code>. The <code>currentStatePointer</code> in both
+<code>VersionedAddressBook</code> and <code>VersionedEventList</code> shifts to point to the newly added states respectively.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UndoRedoNewCommandBothStateListDiagram.png" alt="UndoRedoNewCommandBothStateListDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="future-improvements"><a class="link" href="#future-improvements">Future Improvements</a></h4>
+<div class="sect4">
+<h5 id="façade-class-for-versionedaddressbook-and-versionedeventlist"><a class="link" href="#façade-class-for-versionedaddressbook-and-versionedeventlist">Façade Class for VersionedAddressBook and VersionedEventList</a></h5>
+<div class="paragraph">
+<p>To improve abstraction and shift the responsibility of deciding which list to undo or redo away from the
+<code>Model</code>, a façade class can be created, e.g. <code>VersionedProManage</code>, to hold the <code>StateHistoryList</code>,
+<code>VersionedAddressBook</code> and <code>VersionedEventList</code>. The model will then only have to call the <code>VersionedProManage#undo()</code>
+or <code>VersionedProManage#redo()</code> methods.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-undo-the-previously-entered-command"><a class="link" href="#use-case-undo-the-previously-entered-command">Use case: Undo the previously entered command.</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to undo previous command</p>
+</li>
+<li>
+<p>ProManage undos the command, restoring the previous state.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. No commands left to undo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+<div class="paragraph">
+<p>=== Use case: Redo the previously undone command.
+<strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to redo the previously undone command</p>
+</li>
+<li>
+<p>ProManage redos the command, restoring the address book or event list state.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. No previously undone commands available.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+<div class="paragraph">
+<p>== Non Functional Requirements</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>9</code> or higher installed.</p>
+</li>
+<li>
+<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+</li>
+<li>
+<p>A user new to the program should be able to navigate and utilize the CLI easily.</p>
+</li>
+<li>
+<p>Experienced CLI users should be able to be familiar with all the commands and navigation within the program.</p>
+</li>
+<li>
+<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should
+be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+</li>
+<li>
+<p>User cannot be in multiple departments.</p>
+</li>
+<li>
+<p>The program should respond within 2 seconds after creation, editing, and deletion of events.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="link" href="#glossary">Appendix A: Glossary</a></h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
+<dd>
+<p>Windows, Linux, Unix, OS-X</p>
+</dd>
+<dt class="hdlist1"><a id="private-contact-detail"></a> Private contact detail</dt>
+<dd>
+<p>A contact detail that is not meant to be shared with others</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="product-survey"><a class="link" href="#product-survey">Appendix B: Product Survey</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Product Name</strong></p>
+</div>
+<div class="paragraph">
+<p>Author: &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Pros:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix C: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given below are instructions to test the app manually.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">Launch and Shutdown</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initial launch</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Download the jar file and copy into an empty folder</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving window preferences</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
+</li>
+<li>
+<p>Re-launch the app by double-clicking the jar file.<br>
+Expected: The most recent window size and location is retained.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging-into-the-app"><a class="link" href="#logging-into-the-app">Logging into the app</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Logging without email</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: App is not login yet. Privilege is default</p>
+</li>
+<li>
+<p>Test Case: <code>login manager</code><br>
+Expected: login successfully as manager</p>
+</li>
+<li>
+<p>Test Case: <code>login employee</code><br>
+Expected: login successfully as manager</p>
+</li>
+<li>
+<p>Other incorrect login commands to try: <code>login</code>,<code>login ceo</code> (login without email only accepts manager and employee)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Logging with email</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: App is not login yet. Privilege is default. Email of an existing person in addressbook</p>
+</li>
+<li>
+<p>Test Case: <code>login as <a href="mailto:lol@example.com">lol@example.com</a></code><br>
+Expected: login successfully as the designation of the person</p>
+</li>
+<li>
+<p>Other incorrect login commands to try: <code>login as</code> <code>login as invalidemail</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">Deleting a person</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a person while all persons are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list all people</code> command. Multiple persons in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="inviting-a-person"><a class="link" href="#inviting-a-person">Inviting a person</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Inviting a person while all persons are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list all</code> command. Multiple persons and events in the list.</p>
+</li>
+<li>
+<p>Test case: <code>invite 1 to/1</code><br>
+Expected: First employee is added to first event. Use <code>select 1</code> to verify that the fifth event is present in the event list.</p>
+</li>
+<li>
+<p>Test case: <code>invite 1 to/1</code> (continued from test case above)<br>
+Expected: Error message as employee is already invited to event.</p>
+</li>
+<li>
+<p>Test case: <code>invite 0 to/1</code><br>
+Expected: No employee is invited. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect invite commands to try: <code>invite</code>, <code>invite x to/1</code> (where x is larger than the list size)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removing-a-person"><a class="link" href="#removing-a-person">Removing a person</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Inviting a person while all persons are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list all</code> command. Multiple persons and events in the list.</p>
+</li>
+<li>
+<p>Test case: <code>invite 1 to/1</code> then <code>remove 1 from/1</code>+
+Expected: First employee is added to first event and then removed. Use <code>select 1</code> to verify that the person is uninvited from the event.</p>
+</li>
+<li>
+<p>Test case: <code>remove 1 to/1</code> (continued from test case above)<br>
+Expected: Error message as employee is currently not invited to event.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0 to/1</code><br>
+Expected: No employee is removed. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect invite commands to try: <code>remove</code>, <code>remove x to/1</code> (where x is larger than the list size)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-people-and-events"><a class="link" href="#listing-people-and-events">Listing people and events</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing personnel of specific departments</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Add personnel of different departments into ProManage using the <code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dep/ADMIN des/Manager</code>
+and <code>add n/Mark p/93455678 e/mark@example.com a/Mark street, block 12, #05-01 dep/Marketing des/Manager</code> and <code>add n/Tracy p/98213456 e/tracy@example.com a/Tracy Street, WaterWorks Condo, block J1, #01-01 dep/Finance des/Employee</code></p>
+</li>
+<li>
+<p>Test case: <code>list dep Marketing</code><br>
+Expected: The details of Mark or any personnel who is in the Marketing department will appear. Details of the listed personnel will be listed.</p>
+</li>
+<li>
+<p>Test case: <code>list dep Admin Finance</code><br>
+Expected: The details of John and Tracy or any personnel who is in the Admin and Finance department will appear. Details of the listed personnel will be listed.</p>
+</li>
+<li>
+<p>Test case: <code>list all people</code><br>
+Expected: The details of all personnel will be listed.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>list admn</code>, <code>list al people</code> (where the input is not of correct spelling form)<br>
+Expected: Error thrown.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Listing all personnel and events</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Add personnel of different departments such as the example above. Add different events into ProManage using the <code>addEvent n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59</code> and
+<code>addEvent n/Financial Review d/Review the financial quarter l/Conference Room 4 date/2018-10-23 s/14:00 e/16:30</code>.</p>
+</li>
+<li>
+<p>Test case: <code>list all events</code>
+Expected: The details of all events will be listed.</p>
+</li>
+<li>
+<p>Test case: <code>list dep Admin Finance</code> or any DEPARTMENT &#8594; <code>list all</code>
+Expected: The details of all personnel and events will be listed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-an-event"><a class="link" href="#selecting-an-event">Selecting an Event</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Selecting event while all events are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list all</code> command. There must be at least one person and one event in the list.</p>
+</li>
+<li>
+<p>Test case: <code>invite 1 to/1</code> then <code>selectEvent 1</code><br>
+Expected: First event in the list is highlighted. Employee list is filtered to only show the first person.</p>
+</li>
+<li>
+<p>Test case: <code>selectEvent 2</code> (continued from test case above)<br>
+Expected: Second event in the list is highlighted. Employee list is empty.</p>
+</li>
+<li>
+<p>Test case: <code>selectEvent 0</code><br>
+Expected: Error thrown.</p>
+</li>
+<li>
+<p>Other incorrect selectEvent commands to try: <code>selectevent</code> (command is case-sensitive),
+<code>selectEvent a</code>, <code>selectEvent x</code> (where x is larger than the event list shown).</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-of-events"><a class="link" href="#sorting-of-events">Sorting of events</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sorting of the event list based on the given params</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: No prerequisites</p>
+</li>
+<li>
+<p>Test case: <code>sort name</code><br>
+Expected: Event list to be sorted according their name.</p>
+</li>
+<li>
+<p>Test case: <code>sort date</code><br>
+Expected: Event list to be sorted according to the date from the earliest to the latest</p>
+</li>
+<li>
+<p>Other incorrect sort command to try: <code>sort</code> , <code>sort random</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">Saving data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with missing/corrupted data files</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:51:22 UTC</div></div></div></body></html>

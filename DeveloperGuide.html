@@ -2619,6 +2619,84 @@ need to attend</p></td>
 </li>
 </ul>
 </div>
+<div class="sect2">
+<h3 id="use-case-undo-the-previously-entered-command"><a class="link" href="#use-case-undo-the-previously-entered-command">C.1. Use case: Undo the previously entered command.</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to undo previous command</p>
+</li>
+<li>
+<p>ProManage undos the command, restoring the previous state.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. No commands left to undo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-redo-the-previously-undone-command"><a class="link" href="#use-case-redo-the-previously-undone-command">C.2. Use case: Redo the previously undone command.</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to redo the previously undone command</p>
+</li>
+<li>
+<p>ProManage redos the command, restoring the address book or event list state.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. No previously undone commands available.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. ProManage shows an error message.</p>
+</li>
+<li>
+<p>Use case ends</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2956,7 +3034,40 @@ Expected: The details of all personnel and events will be listed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-of-events"><a class="link" href="#sorting-of-events">F.7. Sorting of events</a></h3>
+<h3 id="selecting-an-event"><a class="link" href="#selecting-an-event">F.7. Selecting an Event</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Selecting event while all events are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list all</code> command. There must be at least one person and one event in the list.</p>
+</li>
+<li>
+<p>Test case: <code>invite 1 to/1</code> then <code>selectEvent 1</code><br>
+Expected: First event in the list is highlighted. Employee list is filtered to only show the first person.</p>
+</li>
+<li>
+<p>Test case: <code>selectEvent 2</code> (continued from test case above)<br>
+Expected: Second event in the list is highlighted. Employee list is empty.</p>
+</li>
+<li>
+<p>Test case: <code>selectEvent 0</code><br>
+Expected: Error thrown.</p>
+</li>
+<li>
+<p>Other incorrect selectEvent commands to try: <code>selectevent</code> (command is case-sensitive),
+<code>selectEvent a</code>, <code>selectEvent x</code> (where x is larger than the event list shown).</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-of-events"><a class="link" href="#sorting-of-events">F.8. Sorting of events</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2987,7 +3098,7 @@ Expected: Event list to be sorted according to the date from the earliest to the
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.8. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">F.9. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3007,4 +3118,4 @@ Expected: Event list to be sorted according to the date from the earliest to the
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:45:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:51:22 UTC</div></div></div></body></html>
