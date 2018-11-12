@@ -394,7 +394,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>ProMangeParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>ProManageParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
@@ -860,9 +860,9 @@ This command only executes successfully if the input index is valid (not out of 
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>list</code> feature allows users to filter through all the individual people in ProManage and understand which department
-they are from. The command currently has 2 sub-features; <code>list all</code> and <code>list dep DEPARTMENT</code>. The user can list all the
-people in ProManage by simply typing <code>list all</code>. Alternatively, the user can filter through ProManage and get the
-relevant Person&#8217;s information by listing those of the relevant department. The user can list multiple departments such
+they are from. The command currently has 4 sub-features; <code>list all</code>. <code>list all people</code>, <code>list all events</code> and <code>list dep DEPARTMENT</code>. The user can list all the
+people and events in ProManage by simply typing <code>list all</code>. Alternatively, the user can filter through ProManage and get the
+relevant Person&#8217;s information by listing those of the specified department. The user can list multiple departments such
 as <code>list dep Admin Finance</code>. As of now, each person can only be inside one department.</p>
 </div>
 <div class="paragraph">
@@ -922,11 +922,41 @@ applicable, the predicates involved, is then returned to <code>Logic Manager</co
 <p>Step 9. The <code>ListCommand#execute</code> finally returns a <code>CommandResult</code> with a success message.</p>
 </div>
 <div class="paragraph">
-<p>The sequence diagram below illustrates the execution of the <code>invite</code> command.</p>
+<p>The sequence diagram below illustrates the execution of the <code>list</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ListSequenceDiagram.png" alt="ListSequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="future-improvements-2"><a class="link" href="#future-improvements-2">3.4.3. Future Improvements</a></h4>
+<div class="sect4">
+<h5 id="listing-people-who-stay-in-the-same-town"><a class="link" href="#listing-people-who-stay-in-the-same-town">Listing people who stay in the same town</a></h5>
+<div class="paragraph">
+<p>The current <code>list</code> command does not utilize the address of each person. Thus, to make data more easily accessible, ProManage can implement Google Maps API and mark out where each employee stays on the map.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Utilize Google Maps API and store the map - <code>list map</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="listing-people-s-birthdays"><a class="link" href="#listing-people-s-birthdays">Listing people&#8217;s birthdays</a></h5>
+<div class="paragraph">
+<p>The current person has no date of birth attribute. Thus, a date of birth attribute could be implemented. On top of that, ProManage can display the current date and time. Along with this,
+it can list out the upcoming birthdays of the personnel in the company.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Implement date of birth attribute and display current date and time the moment the application is launched. List out upcoming birthdays - <code>list birthdays</code></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1413,30 +1443,12 @@ b. Require developers to download those libraries manually (this creates extra w
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Department Head:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>In charge of his/her department .</p>
-</li>
-<li>
-<p>He/she has the autonomy to communicate with
-other department heads within the system.</p>
-</li>
-<li>
-<p>He/she has the autonomy to add/edit/view/delete all of
-the events of his/her employees within the department.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
 <p><strong>Employees:</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>He/she is only entitled to add/edit/view/delete all of the events of himself/herself within
+<p>He/she is only entitled to view all of the events of himself/herself within
 the department.</p>
 </li>
 </ul>
@@ -1542,12 +1554,6 @@ relevant people</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View an employee&#8217;s events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To monitor my employee&#8217;s event schedule</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">View a colleague&#8217;s events</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To monitor my colleague&#8217;s event schedule before I plan an event</p></td>
 </tr>
@@ -1556,12 +1562,6 @@ relevant people</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">View an employee&#8217;s events on a certain date, month or year</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To view the employee&#8217;s events on a certain date, month or year</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Project Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View an underling&#8217;s events on a certain date, month or year</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To check what have my underlings have been busy with</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1758,7 +1758,7 @@ need to attend</p></td>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. ProManage shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -1784,7 +1784,7 @@ need to attend</p></td>
 <p>User requests to edit a specific person in the list</p>
 </li>
 <li>
-<p>AddressBook edits the person</p>
+<p>ProManage edits the person</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1807,7 +1807,7 @@ need to attend</p></td>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. ProManage shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -1827,13 +1827,13 @@ need to attend</p></td>
 <p>User requests to list persons</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
+<p>ProManage shows a list of persons</p>
 </li>
 <li>
 <p>User requests to delete a specific person in the list</p>
 </li>
 <li>
-<p>AddressBook deletes the person</p>
+<p>ProManage deletes the person</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1856,7 +1856,7 @@ need to attend</p></td>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. ProManage shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -1931,7 +1931,7 @@ need to attend</p></td>
 <p>User requests to delete a specific event in the list</p>
 </li>
 <li>
-<p>AddressBook deletes the event</p>
+<p>ProManage deletes the event</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1954,7 +1954,7 @@ need to attend</p></td>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. ProManage shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2012,7 +2012,7 @@ need to attend</p></td>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. ProManage shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2148,7 +2148,7 @@ need to attend</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. ProManage shows an error message.</p>
 </li>
 <li>
 <p>Use case ends</p>
@@ -2315,7 +2315,7 @@ need to attend</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. ProManage shows an error message.</p>
 </li>
 <li>
 <p>Use case ends</p>
@@ -2328,7 +2328,7 @@ need to attend</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>3b1. AddressBook shows an error message.</p>
+<p>3b1. ProManage shows an error message.</p>
 </li>
 <li>
 <p>Use case ends</p>
@@ -2493,7 +2493,7 @@ Expected: The most recent window size and location is retained.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list all</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all persons using the <code>list all people</code> command. Multiple persons in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
@@ -2580,7 +2580,63 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.5. Saving data</a></h3>
+<h3 id="listing-people-and-events"><a class="link" href="#listing-people-and-events">F.5. Listing people and events</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing personnel of specific departments</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Add personnel of different departments into ProManage using the <code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dep/ADMIN des/Manager</code>
+and <code>add n/Mark p/93455678 e/mark@example.com a/Mark street, block 12, #05-01 dep/Marketing des/Manager</code> and <code>add n/Tracy p/98213456 e/tracy@example.com a/Tracy Street, WaterWorks Condo, block J1, #01-01 dep/Finance des/Employee</code></p>
+</li>
+<li>
+<p>Test case: <code>list dep Marketing</code><br>
+Expected: The details of Mark or any personnel who is in the Marketing department will appear. Details of the listed personnel will be listed.</p>
+</li>
+<li>
+<p>Test case: <code>list dep Admin Finance</code><br>
+Expected: The details of John and Tracy or any personnel who is in the Admin and Finance department will appear. Details of the listed personnel will be listed.</p>
+</li>
+<li>
+<p>Test case: <code>list all people</code><br>
+Expected: The details of all personnel will be listed.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>list admn</code>, <code>list al people</code> (where the input is not of correct spelling form)+
+Expected: Error thrown.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Listing all personnel and events</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Add personnel of different departments such as the example above. Add different events into ProManage using the <code>addEvent n/Board Meeting d/Weekly Meeting l/Conference Room 1 date/2018-09-28 s/12:00 e/23:59</code> and
+<code>addEvent n/Financial Review d/Review the financial quarter l/Conference Room 4 date/2018-10-23 s/14:00 e/16:30</code>.</p>
+</li>
+<li>
+<p>Test case: <code>list all events</code><br>
+Expected: The details of all events will be listed.</p>
+</li>
+<li>
+<p>Test case: <code>list dep Admin Finance</code> or any DEPARTMENT &#8594; <code>list all</code>
+Expected: The details of all personnel and events will be listed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.6. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2600,4 +2656,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:07:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:35:46 UTC</div></div></div></body></html>
